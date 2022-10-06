@@ -134,6 +134,7 @@
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FileStream.cpp" />
     <ClCompile Include="FileWriter.cpp" />
+    <ClCompile Include="TranslateManager.cpp" />
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="TradClass.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="FileStream.h" />
     <ClInclude Include="FileWriter.h" />
+    <ClInclude Include="TranslateManager.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Utils.h" />

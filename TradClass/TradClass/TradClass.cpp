@@ -8,6 +8,9 @@
 #include "FileWriter.h"
 #include "FileStream.h"
 #include "File.h"
+#include <map>
+#include <vector>
+#include <string>
 
 int main()
 {
@@ -58,5 +61,12 @@ int main()
 	for (int i = 0; i < _allLines.size(); i++)
 		Utils::Log(_allLines[i]);
 	_stream->Close(); 
+
+	std::map<std::string, std::vector<std::string>>tab = std::map<std::string, std::vector<std::string>>(); 
+	tab.insert(std::pair("t", std::vector<std::string>{ "Toto" }));
+	tab.insert(std::pair("a", std::vector<std::string>{ "Toto" }));
+	tab.insert(std::pair("b", std::vector<std::string>{ "Toto" }));
+
+	std::vector<std::string> _v = tab["t"]; 
 }
 
