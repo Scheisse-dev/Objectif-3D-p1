@@ -8,9 +8,7 @@
 #include "FileWriter.h"
 #include "FileStream.h"
 #include "File.h"
-#include <map>
-#include <vector>
-#include <string>
+
 
 int main()
 {
@@ -52,7 +50,17 @@ int main()
 	_allLines = _stream->Reader()->GetAllLine();
 	for (int i = 0; i < _allLines.size(); i++)
 		Utils::Log(_allLines[i]);
-	_stream->Close();*/
+	_stream->Close();
+
+	#include <map>
+#include <vector>
+#include <string>
+		std::map<std::string, std::vector<std::string>>tab = std::map<std::string, std::vector<std::string>>(); 
+	tab.insert(std::pair("t", std::vector<std::string>{ "Toto" }));
+	tab.insert(std::pair("a", std::vector<std::string>{ "isabelle" }));
+	tab.insert(std::pair("b", std::vector<std::string>{ "Arbre" }));
+
+	std::vector<std::string> _v = tab["t"]; */
 
 	FileStream* _stream = File::Create("C:\\Users\\GAUT2905\\Documents\\GitHub\\Objectif - 3D - p1\\TradClass\\GameSave.exe");
 	_stream->Writer()->Write("PlayerName: Toto");
@@ -62,11 +70,6 @@ int main()
 		Utils::Log(_allLines[i]);
 	_stream->Close(); 
 
-	std::map<std::string, std::vector<std::string>>tab = std::map<std::string, std::vector<std::string>>(); 
-	tab.insert(std::pair("t", std::vector<std::string>{ "Toto" }));
-	tab.insert(std::pair("a", std::vector<std::string>{ "Toto" }));
-	tab.insert(std::pair("b", std::vector<std::string>{ "Toto" }));
 
-	std::vector<std::string> _v = tab["t"]; 
 }
 
