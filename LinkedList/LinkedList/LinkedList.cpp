@@ -5,7 +5,22 @@
 
 int main()
 {
-    List<std::string> _list = List<std::string>();
+    List<int> _list = List<int>();
+    _list.AddLast(0);
+    _list.AddLast(1); 
+
+    try
+    {
+       std::cout << _list.At(10) << std::endl;
+    }
+    catch (const std::exception& e)
+    {
+        std::cout << e.what() << std::endl; 
+    }
+    
+
+    return 0; 
+    /*
     _list.AddLast("Hello");
     _list.AddLast("Coucou");
 
@@ -33,8 +48,8 @@ int main()
     _list.Clear(); 
 
     _list.Display();
-
-
+    */
+    
 
 
 }
