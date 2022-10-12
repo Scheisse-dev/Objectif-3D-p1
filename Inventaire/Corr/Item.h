@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+
+class Entity; 
+
 class Item
 {
 #pragma region f/p
@@ -25,7 +28,8 @@ public:
 	void SetIsStackable (const bool _status);
 	void AddStack(const int _value); 
 	void SetStack(const int _stack); 
-	void SetMawStack(const int _maxStack); 
+	void SetMaxStack(const int _maxStack); 
+	virtual void OneUse(class Entity* _entity);
 	virtual std::string ToString() const;
 	virtual bool Equals(const Item* _other)const ; 
 
