@@ -58,19 +58,26 @@ inline void Invent<T>::Add(const T& _item)
 	T* _invent = invent; 
 	for (int i = 0; i < objectNum; i++)
 	{
-		if (_item == tolower"popo" && _invent[i] == "popo") numPopo++;
+		if (_item == _tolower("popo") && _invent[i] == "popo") numPopo++;
 
 	}
-	if (_item == tolower"popo") return; 
-	else {
 		T* _tmp = invent;
 		invent = new T[objectNum + 1];
 		for (int i = 0; i < objectNum; i++)
 			invent[i] = _tmp[i];
 		invent[objectNum] = _item;
 		objectNum++;
+		for (int i = 0; i < objectNum; i++) {
+			if (_item == _tolower("popo") && _invent[i] == "popo")
+			{
+				_tmp = invent;
+				invent = new T[objectNum - 1];
+				for (int i = 0; i < objectNum; i++)
+					invent[i] = _tmp[i];
+				objectNum--;
+			}
+		}
 
-	}
 
 }
 
@@ -84,5 +91,10 @@ template<typename T>
 inline void Invent<T>::Display()
 {
 	for (int i = 0; i < objectNum; i++)
-		std::cout << invent[i] << std::endl; 
+	{
+		if (invent[i]== _tolower("popo"))
+			std::cout << invent[i] << numPopo << std::endl;
+		std::cout << invent[i] << std::endl;
+	}
+
 }
