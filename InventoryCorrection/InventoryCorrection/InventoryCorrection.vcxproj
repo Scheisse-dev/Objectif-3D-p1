@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3aa59936-2917-4fc8-b069-bfcd77ebc098}</ProjectGuid>
-    <RootNamespace>Corr</RootNamespace>
+    <ProjectGuid>{fe9c7985-155a-4c9c-8ce9-30d7503e8235}</ProjectGuid>
+    <RootNamespace>InventoryCorrection</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>InventCorr</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,9 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Corr.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="InventoryCorrection.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Potion.cpp" />

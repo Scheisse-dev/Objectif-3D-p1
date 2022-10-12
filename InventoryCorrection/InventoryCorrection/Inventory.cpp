@@ -5,7 +5,7 @@
 #pragma region constructor
 Inventory::Inventory(const std::string& _name, Entity* _owner)
 {
-	name = _name; 
+	name = _name;
 	owner = _owner;
 }
 
@@ -14,65 +14,76 @@ Inventory::Inventory(const Inventory& _copy)
 	name = _copy.name;
 	items = _copy.items;
 	owner = _copy.owner;
-
 }
+
 Inventory::~Inventory()
 {
-	items.clear(); 
+	items.clear();
 }
+
+#pragma endregion constructor
+
+#pragma region methods
 size_t Inventory::FindItem(const Item* _item)
 {
 	const size_t _size = items.size();
 	for (size_t i = 0; i < _size; i++)
 	{
 		if (_item->Equals(items[i]))
-			return i; 
+			return i;
 	}
 	return -1;
 }
+
 void Inventory::UseItem(const int _index)
 {
-	if(_index < 0 || _index > items.size()) throw std::exception("use item invalid index !");
-	Item* _item = items[_index];
-	if (_item == nullptr) return; 
-	_item->OneUse(owner);
+	const int _currentIndex = _index - 1;
+	if (_currentIndex < 0 || _currentIndex > items.size()) throw std::exception("use item invalid index !");
+	Item* _item = items[_currentIndex];
+	if (_item == nullptr) return;
+	_item->OnUse(owner);
 	if (_item->Stack() == 0)
-		RemoveItem(_item); 
+		RemoveItem(_item);
 }
+
 void Inventory::AddItem(Item* _item)
 {
-	const size_t _index = FindItem(_item); 
+	const size_t _index = FindItem(_item);
 	if (_index == -1)
 		items.push_back(_item);
-	else
-		items[_index]->AddStack(1); 
+	else 
+		items[_index]->AddStack(1);
 }
+
 void Inventory::RemoveItem(Item* _item)
 {
 	const size_t _index = FindItem(_item);
-	if (_index == -1)return; 
-	items.erase(items.begin() + _index); 
+	if (_index == -1) return;
+	items.erase(items.begin() + _index);
 }
+
 void Inventory::Clear()
 {
-	items.clear(); 
+	items.clear();
 }
 int Inventory::Count() const
 {
-	return (int)items.size(); 
+	return (int)items.size();
 }
+
 void Inventory::DisplayInventory()
 {
-	std::cout << "_____________________" << name << "_____________________" << std::endl; 
-	const size_t _size = items.size(); 
+	std::cout << "--------------------" << name << "--------------------" << std::endl;
+	const size_t _size = items.size();
 	for (size_t i = 0; i < _size; i++)
 	{
-		std::cout << i + 1 << ": " << items[i]->ToString() << std::endl; 
+		std::cout << i + 1 << ": " << items[i]->ToString() << std::endl;
 	}
-	std::cout << "_____________________" << std::string(name.size(), '_') << "_____________________" << std::endl;
+	std::cout << "--------------------" << std::string(name.size(), '-') << "--------------------" << std::endl;
 }
+
 std::vector<Item*> Inventory::Items() const
 {
-	return std::vector<Item*>();
+	return items;
 }
-#pragma endregion constructor
+#pragma endregion methods
