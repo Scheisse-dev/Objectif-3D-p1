@@ -36,5 +36,5 @@ void Vector2::Set(const Vector2& _other)
 
 bool Vector2::Equals(const Vector2* _other) const
 {
-    return x == _other->x && y == _other->y; ;
+    return x == _other->x && y == _other->y;
 }

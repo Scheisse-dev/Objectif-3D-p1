@@ -43,6 +43,18 @@
     <Filter Include="Vector">
       <UniqueIdentifier>{68d43f71-a1d6-463b-a91f-fc1052314e0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="File">
+      <UniqueIdentifier>{93d96494-8782-4316-a24c-99b71a2b8c30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Environment">
+      <UniqueIdentifier>{adc56a19-247f-43b2-abcb-c20e10f77a78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Path">
+      <UniqueIdentifier>{213e7c97-6b54-4356-b76c-3c9a21ebf906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\String">
+      <UniqueIdentifier>{2bba62cd-da57-41be-8420-9095b9ced6be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Corr.cpp">
@@ -72,17 +84,26 @@
     <ClCompile Include="Weapon.cpp">
       <Filter>Weapon</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Map</Filter>
-    </ClCompile>
-    <ClCompile Include="MapDataBase.cpp">
-      <Filter>Map</Filter>
-    </ClCompile>
     <ClCompile Include="Case.cpp">
       <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Path</Filter>
+    </ClCompile>
+    <ClCompile Include="StringUtils.cpp">
+      <Filter>Utils\String</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,9 +131,6 @@
     <ClInclude Include="Weapon.h">
       <Filter>Weapon</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Map</Filter>
-    </ClInclude>
     <ClInclude Include="MapDataBase.h">
       <Filter>Map</Filter>
     </ClInclude>
@@ -121,6 +139,21 @@
     </ClInclude>
     <ClInclude Include="Vector2.h">
       <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Path</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtils.h">
+      <Filter>Utils\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

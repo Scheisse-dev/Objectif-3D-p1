@@ -4,11 +4,13 @@
 Case::Case(const char _value, Vector2* _position)
 {
 	caseValue = _value; 
+	position = _position;
 }
 
 Case::Case(const Case& _copy)
 {
 	caseValue = _copy.caseValue; 
+	position = _copy.position;
 }
 
 Case::~Case()

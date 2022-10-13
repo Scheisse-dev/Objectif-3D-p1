@@ -1,9 +1,11 @@
 #include "Entity.h"
 #include "Utils.h"
+#include "Vector2.h"
 #pragma region constructor
-Entity::Entity(const std::string& _name, const float _maxLife, const float _maxMana)
+Entity::Entity(const std::string& _name, Vector2* _position, const float _maxLife, const float _maxMana)
 {
 	name = _name;
+	position = _position; 
 	life = maxLife = _maxLife; 
 	mana = maxMana = _maxMana;
 }
@@ -11,6 +13,7 @@ Entity::Entity(const std::string& _name, const float _maxLife, const float _maxM
 Entity::Entity(const Entity& _copy)
 {
 	name = _copy.name;
+	position = _copy.position; 
 	life = _copy.life;
 	maxLife = _copy.maxLife;
 	mana = _copy.mana;
@@ -18,9 +21,17 @@ Entity::Entity(const Entity& _copy)
 
 
 }
+Entity::~Entity()
+{
+	delete position; 
+}
 #pragma endregion constructor
 
 #pragma region methods
+Vector2* Entity::Position() const
+{
+	return position;
+}
 std::string Entity::Name() const
 {
 	return std::string();

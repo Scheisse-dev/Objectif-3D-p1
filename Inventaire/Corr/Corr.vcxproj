@@ -105,6 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,13 +132,16 @@
     <ClCompile Include="Case.cpp" />
     <ClCompile Include="Corr.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Environment.cpp" />
+    <ClCompile Include="File.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Map.cpp" />
-    <ClCompile Include="MapDataBase.cpp" />
+    <ClCompile Include="Path.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Potion.cpp" />
     <ClCompile Include="PotionHealth.cpp" />
+    <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Weapon.cpp" />
@@ -145,13 +149,17 @@
   <ItemGroup>
     <ClInclude Include="Case.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Environment.h" />
+    <ClInclude Include="File.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapDataBase.h" />
+    <ClInclude Include="Path.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Potion.h" />
     <ClInclude Include="PotionHealth.h" />
+    <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Weapon.h" />

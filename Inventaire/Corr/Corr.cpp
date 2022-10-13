@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Environment.h"
+#include "Map.h"
 /*
 #include <string>
 #include "Utils.h"
@@ -11,7 +13,10 @@
 */
 int main()
 {
-
+	Map map = Map("mapTest");
+	if (!map.IsValid()) return -4;
+	map.Display();
+	return 0; 
 
 	/*
 	Map map = Map();

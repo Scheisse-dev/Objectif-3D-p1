@@ -12,7 +12,7 @@ private:
 #pragma region constructor/destructor
 public:
 	Player() = default; 
-	Player(const std::string& _name, const float _maxLife = 100.0f, const float _maxMana = 100.0f);
+	Player(const std::string& _name, Vector2* _position, const float _maxLife = 100.0f, const float _maxMana = 100.0f);
 	Player(const Player& _copy);
 	~Player();
 #pragma endregion constructor/destructor
