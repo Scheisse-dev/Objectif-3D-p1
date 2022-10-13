@@ -129,10 +129,12 @@
   <ItemGroup>
     <ClCompile Include="invent.cpp" />
     <ClCompile Include="Inventaire.cpp" />
+    <ClCompile Include="map.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="invent.h" />
+    <ClInclude Include="map.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

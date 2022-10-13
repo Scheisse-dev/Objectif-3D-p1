@@ -20,5 +20,5 @@ Player::~Player()
 
 Inventory* Player::GetInventory() const
 {
-    return nullptr;
+    return inventory;
 }

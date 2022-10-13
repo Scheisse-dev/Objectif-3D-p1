@@ -32,8 +32,9 @@ size_t Inventory::FindItem(const Item* _item)
 }
 void Inventory::UseItem(const int _index)
 {
-	if(_index < 0 || _index > items.size()) throw std::exception("use item invalid index !");
-	Item* _item = items[_index];
+	const int _currentIndex = _index - 1;
+	if(_currentIndex < 0 || _currentIndex > items.size()) throw std::exception("use item invalid index !");
+	Item* _item = items[_currentIndex];
 	if (_item == nullptr) return; 
 	_item->OneUse(owner);
 	if (_item->Stack() == 0)
@@ -73,6 +74,6 @@ void Inventory::DisplayInventory()
 }
 std::vector<Item*> Inventory::Items() const
 {
-	return std::vector<Item*>();
+	return items;
 }
 #pragma endregion constructor

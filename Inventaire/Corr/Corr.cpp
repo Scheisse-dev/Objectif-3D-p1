@@ -1,15 +1,23 @@
 #include <iostream>
+/*
+#include <string>
+#include "Utils.h"
 #include"Inventory.h"
 #include "Item.h"
 #include"Player.h"
 #include"PotionHealth.h"
 #include "Weapon.h"
-
+#include "Map.h"
+*/
 int main()
 {
-	std::cout << "Choose yout username: ";
-	std::string _name = "";
-	std::cin >> _name;
+
+
+	/*
+	Map map = Map();
+	map.FileReader();
+	std::cout << "Choose your username: ";
+	std::string _name = Utils::UserChoice <std::string>("Choose your username: ");
 	Player player = Player(_name);
 	player.GetInventory()->AddItem(new PotionHealth(50.0f)); 
 	player.GetInventory()->AddItem(new PotionHealth(50.0f));
@@ -30,5 +38,5 @@ int main()
 	system("cls");
 	std::cout << player.Name() << " is dead !";
 	return 0;
-
+	*/
 }

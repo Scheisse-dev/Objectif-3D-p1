@@ -11,13 +11,11 @@ Weapon::Weapon(const std::string& _name, const float _dmg) : Item(_name)
 
 Weapon::Weapon(const Weapon& _copy) : Item(_copy)
 {
-	damage = _copy.damage; 
+	damage = _copy.damage;
+}
 #pragma endregion constructor 
 #pragma region methods
 
-
-#pragma endregion methods
-}
 
 float Weapon::Damage() const
 {
@@ -26,7 +24,7 @@ float Weapon::Damage() const
 
 void Weapon::SetDamage(const float _dmg)
 {
-	damage = _dmg; 
+	damage = _dmg < 0 ? 0 : _dmg; 
 }
 
 std::string Weapon::ToString() const
@@ -40,3 +38,4 @@ void Weapon::OneUse(Entity* _entity)
 	std::cout << _entity->Name() + " receive: " + std::to_string(damage) + " damage !" << std::endl; 
 }
 
+#pragma endregion methods
