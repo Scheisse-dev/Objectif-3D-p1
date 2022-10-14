@@ -14,7 +14,7 @@ Map::Map(const std::string& _mapName)
 	mapName = _mapName; 
 	Init();
 	if (!IsValid())return; 
-	player = new Player(Utils::UserChoice<std::string>("enter your username: "), enter->Position());
+	player = new Player(Utils::UserChoice<std::string>("enter your username: "),this, enter->Position());
 	
 }
 

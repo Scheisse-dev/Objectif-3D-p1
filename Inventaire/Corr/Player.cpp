@@ -1,11 +1,13 @@
 #include <iostream>
 #include "Player.h"
 #include "Inventory.h"
+#include "Utils.h"
+#include "Vector2.h"
 
 
 #pragma region constructor/destructor
-Player::Player(const std::string& _name,Vector2* _position/*changement de cette donnée*/, const float _maxLife, const float _maxMana)
-    :Entity(_name,_position,  _maxLife, _maxMana)
+Player::Player(const std::string& _name, Map* _currentMap, Vector2* _position, const float _maxLife, const float _maxMana)
+    :Entity(_name,_currentMap, _position,  _maxLife, _maxMana)
 {
     inventory = new Inventory(_name + " Inventory", this);
 }
@@ -25,6 +27,30 @@ Inventory* Player::GetInventory() const
     return inventory;
 }
 
+void Player::Move()
+{
+	char _imput = Utils::UserChoice<char>("(z,q,s,d) for movement: ");
+	Vector2 _position = *Position(); 
+	switch (std::tolower(_imput))
+	{
+	case 'z': 
+		_position.Set(Vector2(_position.X(), _position.Y() - 1)); 
+		break;
+	case 'q': 
+		_position.Set(Vector2(_position.X()- 1, _position.Y()));
+		break;
+	case 's': 
+		_position.Set(Vector2(_position.X(), _position.Y() + 1));
+		break;
+	case 'd': 
+		_position.Set(Vector2(_position.X() + 1 , _position.Y()));
+		break;
+	default: 
+		break; 
+	}
+}
+#pragma endregion Methods
+/*
 //position ->  vector 2 
 void Player::Move(Vector2* _position, char _imput)
 {
@@ -34,7 +60,7 @@ void Player::Move(Vector2* _position, char _imput)
 	}
 	if (_imput == up)
 	{
-		position = _position;  // Y-1 
+		position = Vector2* _position(x, y);  // Y-1 
 	}
 	else if (_imput == down)
 	{
@@ -48,5 +74,5 @@ void Player::Move(Vector2* _position, char _imput)
 	{
 		_position; // X +1
 	}
-		
-}
+	position = _position; 
+}*/

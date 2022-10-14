@@ -21,5 +21,10 @@ public:
 	void Set(const Vector2& _other);
 	bool Equals(const Vector2* _other) const; 
 #pragma endregion methods
+#pragma region operator
+public: 
+	Vector2 operator+=(const Vector2& _other);
+	Vector2 operator-=(const Vector2& _other);
+#pragma endregion operator
 };
 

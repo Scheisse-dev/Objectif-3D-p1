@@ -10,24 +10,25 @@ class Player : public Entity
 #pragma region f/p
 private: 
 	Inventory* inventory = nullptr; 
-	int x; // position de l'entré -> case 
-	int y; // position de l'entré -> case 
-	char up = 'a';
-	char down = 's';
-	char left = 'q';
-	char right = 'd';
-	Vector2* position = new Vector2(); 
+	//int x; // position de l'entré -> case 
+	//int y; // position de l'entré -> case 
+	//char up = 'a';
+	//char down = 's';
+	//char left = 'q';
+	//char right = 'd';
+	//Vector2* position = new Vector2(); 
 #pragma endregion f/p
 #pragma region constructor/destructor
 public:
 	Player() = default; 
-	Player(const std::string& _name, Vector2* _position, const float _maxLife = 100.0f, const float _maxMana = 100.0f);
+	Player(const std::string& _name, Map* _currentMap, Vector2* _position, const float _maxLife = 100.0f, const float _maxMana = 100.0f);
 	Player(const Player& _copy);
 	~Player();
 #pragma endregion constructor/destructor
 #pragma region methods
+public: 
 	Inventory* GetInventory() const;
-	void Move(Vector2* _position, char _imput);
+	void Move() override;
 #pragma endregion methods
 };
 
