@@ -1,5 +1,7 @@
 #pragma once
 #include "Entity.h"
+#include "Vector2.h"
+#include "Case.h"
 
 class Inventory;
 
@@ -8,6 +10,13 @@ class Player : public Entity
 #pragma region f/p
 private: 
 	Inventory* inventory = nullptr; 
+	int x; // position de l'entré -> case 
+	int y; // position de l'entré -> case 
+	char up = 'a';
+	char down = 's';
+	char left = 'q';
+	char right = 'd';
+	Vector2* position = new Vector2(); 
 #pragma endregion f/p
 #pragma region constructor/destructor
 public:
@@ -18,6 +27,7 @@ public:
 #pragma endregion constructor/destructor
 #pragma region methods
 	Inventory* GetInventory() const;
+	void Move(Vector2* _position, char _imput);
 #pragma endregion methods
 };
 
