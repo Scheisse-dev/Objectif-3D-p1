@@ -3,6 +3,7 @@
 #include "Inventory.h"
 #include "Utils.h"
 #include "Vector2.h"
+#include "Map.h"
 
 
 #pragma region constructor/destructor
@@ -34,20 +35,27 @@ void Player::Move()
 	switch (std::tolower(_imput))
 	{
 	case 'z': 
-		_position.Set(Vector2(_position.X(), _position.Y() - 1)); 
+		//_position.Set(Vector2(_position.X(), _position.Y() - 1)); 
+		_position -= Vector2(0, 1); 
 		break;
 	case 'q': 
-		_position.Set(Vector2(_position.X()- 1, _position.Y()));
+		//_position.Set(Vector2(_position.X()- 1, _position.Y()));
+		_position -= Vector2(1, 0);
 		break;
 	case 's': 
-		_position.Set(Vector2(_position.X(), _position.Y() + 1));
+		//_position.Set(Vector2(_position.X(), _position.Y() + 1));
+		_position += Vector2(0, 1);
 		break;
 	case 'd': 
-		_position.Set(Vector2(_position.X() + 1 , _position.Y()));
+		//_position.Set(Vector2(_position.X() + 1 , _position.Y()));
+		_position += Vector2(1, 0);
 		break;
 	default: 
 		break; 
 	}
+	Case* _case = GetMap()->GetCaseAtPosition(_position); 
+	if (_case == nullptr || _case->IsWall()) return;
+	Position()->Set(_position); 
 }
 #pragma endregion Methods
 /*

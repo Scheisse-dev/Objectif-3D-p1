@@ -42,7 +42,7 @@ char Case::CaseValue() const
 
 Vector2* Case::Position() const
 {
-	return position;
+	return position; // nullptr...
 }
 
 

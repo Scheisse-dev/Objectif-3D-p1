@@ -69,4 +69,32 @@ bool Map::IsValid() const
 	return enter != nullptr && exit != nullptr; 
 }
 
+Case* Map::GetCaseAtPosition(const Vector2& _position)
+{
+	const size_t _size = cases.size(); 
+	for (size_t i = 0; i < _size; i++)
+	{
+		if (cases[i]->Position()->Equals(&_position))
+			return cases[i];
+	}
+	return nullptr;
+}
+
+Player* Map::GetPlayer() const
+{
+	return player;
+}
+
+Case* Map::Enter() const
+{
+	return enter;
+}
+
+Case* Map::Exit() const
+{
+	return exit;
+}
+
+
+
 #pragma endregion methods
