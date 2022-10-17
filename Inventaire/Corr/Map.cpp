@@ -84,6 +84,18 @@ void Map::SetPlayer(Player* _player)
 	player->SetMap(this); 
 }
 
+void Map::SetSkeleton(Mob* _mob)
+{
+//	skeleton = _mob;
+//	skeleton->Position()->Set(*mob->Position()); AHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHHA PKAOEMµGHJPEIZGF j'en peux plus 
+//	skeleton->SetMap(this); 
+}
+
+Mob* Map::GetMob() const
+{
+	return skeleton;
+}
+
 Player* Map::GetPlayer() const
 {
 	return player;

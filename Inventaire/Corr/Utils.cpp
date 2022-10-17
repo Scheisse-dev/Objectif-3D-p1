@@ -2,5 +2,5 @@
 
 void Utils::Log(const std::string& _msg)
 {
-	std::cout << "[Log] => " << std::endl;
+	std::cout << "[Log] => " << _msg << std::endl;
 }

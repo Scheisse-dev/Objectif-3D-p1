@@ -10,15 +10,16 @@
 
 int main()
 {
-	Player* _player = new Player(Utils::UserChoice<std::string>("enter your username")); 
+	Player* _player = new Player(Utils::UserChoice<std::string>("enter your username : ")); 
+	Mob* _smob = Mob(Utils::UserChoice<std::string>("enter your username : "));
 	MapLoader _loader = MapLoader(); 
 	_loader.Load(); 
 	if (_loader.IsEmpty()) return -5; 
-
 	_loader.DisplayMapName(); 
-
 	Map* map = _loader.GetMap(Utils::UserChoice<int>("Choose map : ")); 	
 	if (!map->IsValid()) return -4;
+	map->SetPlayer(_player);
+	map->SetSkeleton(_mob); 
 
 	while (!map->GetPlayer()->Position()->Equals(map->Exit()->Position()))
 	{

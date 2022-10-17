@@ -139,10 +139,12 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapChoice.cpp" />
     <ClCompile Include="MapLoader.cpp" />
+    <ClCompile Include="Mob.cpp" />
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Potion.cpp" />
     <ClCompile Include="PotionHealth.cpp" />
+    <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Vector2.cpp" />
@@ -159,10 +161,12 @@
     <ClInclude Include="MapChoice.h" />
     <ClInclude Include="MapDataBase.h" />
     <ClInclude Include="MapLoader.h" />
+    <ClInclude Include="Mob.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Potion.h" />
     <ClInclude Include="PotionHealth.h" />
+    <ClInclude Include="Skeleton.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Vector2.h" />

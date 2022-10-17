@@ -55,6 +55,12 @@
     <Filter Include="Utils\String">
       <UniqueIdentifier>{2bba62cd-da57-41be-8420-9095b9ced6be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Entity\Mob">
+      <UniqueIdentifier>{4b37bb50-77d6-4abf-8d0d-7654466902b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity\Mob\Skeleton">
+      <UniqueIdentifier>{1bb4cd4b-fcc0-46be-bd0a-52fa032296e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Corr.cpp">
@@ -105,11 +111,17 @@
     <ClCompile Include="Map.cpp">
       <Filter>Map</Filter>
     </ClCompile>
-    <ClCompile Include="MapChoice.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Mob.cpp">
+      <Filter>Entity\Mob</Filter>
     </ClCompile>
     <ClCompile Include="MapLoader.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapChoice.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Entity\Mob\Skeleton</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,11 +173,17 @@
     <ClInclude Include="Map.h">
       <Filter>Map</Filter>
     </ClInclude>
-    <ClInclude Include="MapChoice.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Mob.h">
+      <Filter>Entity\Mob</Filter>
     </ClInclude>
     <ClInclude Include="MapLoader.h">
-      <Filter>Header Files</Filter>
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapChoice.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.h">
+      <Filter>Entity\Mob\Skeleton</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

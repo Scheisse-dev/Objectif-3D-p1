@@ -18,7 +18,7 @@ std::string Path::GetFileNameWithoutExtension(const std::string& _path)
 {
     std::string _result = GetPath(_path); 
     _result = _result.substr(_result.find_last_of('/') + 1);
-    _result = _result.substr(_result.find_last_of('.')); 
+    _result = _result.substr(0, _result.find_last_of('.'));
     return _result; 
 }
 
