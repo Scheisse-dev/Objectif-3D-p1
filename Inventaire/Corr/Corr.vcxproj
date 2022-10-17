@@ -137,6 +137,8 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapChoice.cpp" />
+    <ClCompile Include="MapLoader.cpp" />
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Potion.cpp" />
@@ -154,7 +156,9 @@
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapChoice.h" />
     <ClInclude Include="MapDataBase.h" />
+    <ClInclude Include="MapLoader.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Potion.h" />
@@ -165,6 +169,9 @@
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Maps\map1.level" />
+    <None Include="..\Maps\map2.level" />
+    <None Include="..\Maps\map3.level" />
     <None Include="mapTest.Level" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

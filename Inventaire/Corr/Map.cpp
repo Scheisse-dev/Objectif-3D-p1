@@ -9,13 +9,11 @@
 #include <iostream>
 
 #pragma region constructor/destructor 
-Map::Map(const std::string& _mapName)
+Map::Map(const std::string& _mapPath)
 {
-	mapName = _mapName; 
+	mapPath = _mapPath; 
+	mapName = Path::GetFileNameWithoutExtension(mapPath); 
 	Init();
-	if (!IsValid())return; 
-	player = new Player(Utils::UserChoice<std::string>("enter your username: "),this, enter->Position());
-	
 }
 
 Map::Map(const Map& _copy)
@@ -33,8 +31,7 @@ Map::~Map()
 #pragma region methods
 void Map::Init()
 {
-	const std::string& _path = Path::Combine(Environment::CurrentDirectory(), "Maps", mapName + ".level");
-	std::vector<std::string> _lines = File::GetAllLines(_path); 
+	std::vector<std::string> _lines = File::GetAllLines(mapPath); 
 	const size_t _size = _lines.size(); 
 	for (size_t y = 0; y < _size; y++)
 	{
@@ -80,6 +77,13 @@ Case* Map::GetCaseAtPosition(const Vector2& _position)
 	return nullptr;
 }
 
+void Map::SetPlayer(Player* _player)
+{
+	player = _player; 
+	player->Position()->Set(*enter->Position()); 
+	player->SetMap(this); 
+}
+
 Player* Map::GetPlayer() const
 {
 	return player;
@@ -94,7 +98,10 @@ Case* Map::Exit() const
 {
 	return exit;
 }
-
+std::string Map::MapName() const
+{
+	return mapName;
+}
 
 
 #pragma endregion methods

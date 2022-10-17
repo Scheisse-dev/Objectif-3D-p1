@@ -10,8 +10,9 @@ class Map
 {
 #pragma region f/p
 private:
-	std::vector<Case*> cases = std::vector<Case*>(); 
-	std::string mapName = "default name"; 
+	std::vector<Case*> cases = std::vector<Case*>();  
+	std::string mapName = "default name";  //test 1 
+	std::string mapPath =  "";
 	Case* enter = nullptr;
 	Case* exit = nullptr; 
 	Player* player = nullptr; 
@@ -20,7 +21,7 @@ private:
 #pragma region constructor destructor
 public: 
 	Map() = default; 
-	Map(const std::string& _mapName);
+	Map(const std::string& _mapPath);
 	Map(const Map& _copy);
 	~Map(); 
 
@@ -32,9 +33,11 @@ public:
 	void Display(); 
 	bool IsValid() const;
 	Case* GetCaseAtPosition(const Vector2& _position);
+	void SetPlayer(Player* _player); 
 	Player* GetPlayer() const;
 	Case* Enter() const;
 	Case* Exit() const;
+	std::string MapName() const;
 #pragma endregion methods
 
 };

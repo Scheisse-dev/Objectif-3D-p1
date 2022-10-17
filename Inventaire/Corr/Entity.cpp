@@ -2,11 +2,10 @@
 #include "Utils.h"
 #include "Vector2.h"
 #pragma region constructor
-Entity::Entity(const std::string& _name,Map* _currentMap, Vector2* _position, const float _maxLife, const float _maxMana)
+Entity::Entity(const std::string& _name, Vector2* _position, const float _maxLife, const float _maxMana)
 {
 	name = _name;
 	position = _position; 
-	currentMap = _currentMap; 
 	life = maxLife = _maxLife; 
 	mana = maxMana = _maxMana;
 }
@@ -15,7 +14,6 @@ Entity::Entity(const Entity& _copy)
 {
 	name = _copy.name;
 	position = _copy.position; 
-	currentMap = _copy.currentMap; 
 	life = _copy.life;
 	maxLife = _copy.maxLife;
 	mana = _copy.mana;
@@ -106,5 +104,9 @@ void Entity::DecreaseMana(const float _value)
 Map* Entity::GetMap() const
 {
 	return currentMap;
+}
+void Entity::SetMap(Map* _map)
+{
+	currentMap = _map; 
 }
 #pragma endregion methods
