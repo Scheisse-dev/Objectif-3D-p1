@@ -92,7 +92,9 @@ inline Map<Tkey, Tvalue>::Map(const Map& _copy)
 template<typename Tkey, typename Tvalue>
 inline Map<Tkey, Tvalue>::~Map()
 {
-	Clear(); 
+	delete[] tab;
+	count = 0;
+	tab = new KeyValuePair<Tkey, Tvalue>[0];
 }
 
 #pragma endregion constructor/destructor
@@ -128,7 +130,9 @@ inline void Map<Tkey, Tvalue>::Insert(const KeyValuePair<Tkey, Tvalue>& _pair)
 template<typename Tkey, typename Tvalue>
 inline void Map<Tkey, Tvalue>::Clear()
 {
-	
+	delete[] tab;
+	count = 0; 
+	tab = new KeyValuePair<Tkey, Tvalue>[0]; 
 }
 template<typename Tkey, typename Tvalue>
 inline void Map<Tkey, Tvalue>::Remove(const Tkey& _key)
