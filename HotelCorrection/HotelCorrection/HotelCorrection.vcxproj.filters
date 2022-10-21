@@ -14,60 +14,66 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Utils">
-      <UniqueIdentifier>{13687b53-e6b9-4918-8186-ea19390c924c}</UniqueIdentifier>
+      <UniqueIdentifier>{899f78ce-a938-40de-b5e7-09a09dcd3b99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\String">
+      <UniqueIdentifier>{b16faaf4-eff5-484a-bf61-4d912bc87174}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object">
-      <UniqueIdentifier>{225f6bac-2cbc-4623-bfd7-4ff8c865d8d4}</UniqueIdentifier>
+      <UniqueIdentifier>{435296b3-afb6-4a7c-8612-7fd1dbfcbbe7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Singleton">
-      <UniqueIdentifier>{f6b1d312-6534-4cca-9db7-dd770ca881eb}</UniqueIdentifier>
+    <Filter Include="Utils\Singleton">
+      <UniqueIdentifier>{90175980-8f71-4f28-97d9-992a51defa11}</UniqueIdentifier>
     </Filter>
     <Filter Include="DateTime">
-      <UniqueIdentifier>{0af69f0b-1159-4249-a162-48595a6c88d6}</UniqueIdentifier>
+      <UniqueIdentifier>{cdbeb7f6-f03b-4494-9860-50da92967dcd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Menu">
-      <UniqueIdentifier>{de3d7114-711c-42a3-9b52-5b58af765fa6}</UniqueIdentifier>
+      <UniqueIdentifier>{dc963cd1-44b4-4d4f-9f66-ad99d7c07d6a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Menu\Item">
-      <UniqueIdentifier>{5527c54f-a6fe-4d1f-a9f3-3bd6ba78d642}</UniqueIdentifier>
+      <UniqueIdentifier>{7a2d7f38-1c0c-466e-9f40-0b39c7baacdf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Menu\HomeMenu">
-      <UniqueIdentifier>{a555f3eb-014f-4aff-9b77-af91226549c4}</UniqueIdentifier>
+    <Filter Include="Menu\Home">
+      <UniqueIdentifier>{628a25e4-c918-4ee2-bd27-7dfb3caf1b0f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Menu\Reservation">
-      <UniqueIdentifier>{0d71aa40-3d5d-41f2-8808-0cb59a42a6cc}</UniqueIdentifier>
+      <UniqueIdentifier>{b86dacc5-eb70-4ddd-aa45-2c90d26a2a44}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Menu\Client">
-      <UniqueIdentifier>{08060aae-6041-44ca-9bfa-7905de7c6bea}</UniqueIdentifier>
+    <Filter Include="Client">
+      <UniqueIdentifier>{e31fcae6-381f-4801-af1e-69176e36b66d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Booking">
-      <UniqueIdentifier>{4dc6d7c3-5805-42af-9f50-b3a25e8421a2}</UniqueIdentifier>
+      <UniqueIdentifier>{26f651ed-85b0-4ed7-a5cc-cdfee5863306}</UniqueIdentifier>
     </Filter>
     <Filter Include="Manager">
-      <UniqueIdentifier>{d649a14c-6a12-41c8-ba20-0b5c0cb3b997}</UniqueIdentifier>
+      <UniqueIdentifier>{fb4cee98-8b6e-4077-828a-37a784b20e0f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Menu\Reservation\Add">
-      <UniqueIdentifier>{8057734e-9743-4353-bcdb-980813c1b2e4}</UniqueIdentifier>
+      <UniqueIdentifier>{47b19052-7d21-48c2-933f-c291f705de01}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Display">
-      <UniqueIdentifier>{6ee3d42d-8b03-4ac8-8508-25a85f38cc5f}</UniqueIdentifier>
+    <Filter Include="Menu\Reservation\Display">
+      <UniqueIdentifier>{0377f6eb-66a4-4896-8cbc-465bc50b8c5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Reservation\Remove">
+      <UniqueIdentifier>{3d13530e-da6e-4c93-9cfc-1f649595a930}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HotelReservationCorr.cpp">
+    <ClCompile Include="HotelCorrection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Utils.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="StringUtils.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="DateTime.cpp">
-      <Filter>DateTime</Filter>
+      <Filter>Utils\String</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
+      <Filter>DateTime</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>Menu</Filter>
@@ -76,13 +82,13 @@
       <Filter>Menu\Item</Filter>
     </ClCompile>
     <ClCompile Include="HomeMenu.cpp">
-      <Filter>Menu\HomeMenu</Filter>
+      <Filter>Menu\Home</Filter>
     </ClCompile>
     <ClCompile Include="ReservationMenu.cpp">
       <Filter>Menu\Reservation</Filter>
     </ClCompile>
     <ClCompile Include="Client.cpp">
-      <Filter>Menu\Client</Filter>
+      <Filter>Client</Filter>
     </ClCompile>
     <ClCompile Include="Booking.cpp">
       <Filter>Booking</Filter>
@@ -94,7 +100,7 @@
       <Filter>Menu\Reservation\Add</Filter>
     </ClCompile>
     <ClCompile Include="ReservationDisplayMenu.cpp">
-      <Filter>Display</Filter>
+      <Filter>Menu\Reservation\Display</Filter>
     </ClCompile>
     <ClCompile Include="ReservationRemoveMenu.cpp">
       <Filter>Source Files</Filter>
@@ -105,16 +111,16 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="StringUtils.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Singleton</Filter>
-    </ClInclude>
-    <ClInclude Include="DateTime.h">
-      <Filter>DateTime</Filter>
+      <Filter>Utils\String</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Utils\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="DateTime.h">
+      <Filter>DateTime</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>Menu</Filter>
@@ -123,13 +129,13 @@
       <Filter>Menu\Item</Filter>
     </ClInclude>
     <ClInclude Include="HomeMenu.h">
-      <Filter>Menu\HomeMenu</Filter>
+      <Filter>Menu\Home</Filter>
     </ClInclude>
     <ClInclude Include="ReservationMenu.h">
       <Filter>Menu\Reservation</Filter>
     </ClInclude>
     <ClInclude Include="Client.h">
-      <Filter>Menu\Client</Filter>
+      <Filter>Client</Filter>
     </ClInclude>
     <ClInclude Include="Booking.h">
       <Filter>Booking</Filter>
@@ -141,7 +147,7 @@
       <Filter>Menu\Reservation\Add</Filter>
     </ClInclude>
     <ClInclude Include="ReservationDisplayMenu.h">
-      <Filter>Display</Filter>
+      <Filter>Menu\Reservation\Display</Filter>
     </ClInclude>
     <ClInclude Include="ReservationRemoveMenu.h">
       <Filter>Header Files</Filter>

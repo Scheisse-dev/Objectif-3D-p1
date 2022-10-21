@@ -24,6 +24,7 @@ public:
 public: 
 	virtual void Open();
 	void Close(); 
+	virtual void Update(); 
 	void OpenOlMenu(); 
 	void DisplayItems(); 
 	std::vector<MenuItem*> Items() const; 

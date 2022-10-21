@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2022d2c0-571c-43c7-a15e-d99fd7cb9025}</ProjectGuid>
-    <RootNamespace>HotelReservationCorr</RootNamespace>
+    <ProjectGuid>{8b0b088b-0c50-4202-873b-e29fd0b8c9ca}</ProjectGuid>
+    <RootNamespace>HotelCorrection</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -105,7 +105,6 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,7 +133,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="HomeMenu.cpp" />
-    <ClCompile Include="HotelReservationCorr.cpp" />
+    <ClCompile Include="HotelCorrection.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="Object.cpp" />
