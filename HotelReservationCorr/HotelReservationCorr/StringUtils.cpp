@@ -11,6 +11,7 @@ std::vector<std::string> StringUtils::Split(const std::string& _str, const char 
     _result.push_back(_string.substr(0, _pos)); 
     _string = _string.erase(0, _pos + 1); 
     }
+    _result.push_back(_string.substr(0, _pos)); 
     return _result;
 }
 

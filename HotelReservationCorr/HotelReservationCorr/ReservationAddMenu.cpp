@@ -31,6 +31,7 @@ void ReservationAddMenu::Open()
 	catch (const std::exception& _exception)
 	{
 		Utils::LogError(_exception.what()); 
+		Utils::Pause(); 
 	}
 
 	Utils::ClearConsole(); 
