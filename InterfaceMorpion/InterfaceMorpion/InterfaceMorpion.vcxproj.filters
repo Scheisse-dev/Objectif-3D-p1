@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{ecbc1e95-bd08-4cc3-a5ae-cdcdcb8390a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Abstract">
+      <UniqueIdentifier>{92ad9f35-0517-4d51-8f92-f2b4b8cd3693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\MenuStart">
+      <UniqueIdentifier>{9f6e465e-7205-4658-8d77-3bfeb788cae4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\MenuBattle">
+      <UniqueIdentifier>{66789bdb-aa53-4ca5-9db9-ed843077ffa2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="InterfaceMorpion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StartMenu.cpp">
+      <Filter>Menu\MenuStart</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleMenu.cpp">
+      <Filter>Menu\MenuBattle</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="MorpionGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Abstract.h">
+      <Filter>Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="StartMenu.h">
+      <Filter>Menu\MenuStart</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleMenu.h">
+      <Filter>Menu\MenuBattle</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="MorpionGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
