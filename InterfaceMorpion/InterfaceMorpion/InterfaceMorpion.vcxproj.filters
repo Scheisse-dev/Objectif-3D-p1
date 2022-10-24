@@ -25,6 +25,9 @@
     <Filter Include="Menu\MenuBattle">
       <UniqueIdentifier>{66789bdb-aa53-4ca5-9db9-ed843077ffa2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{8bd32453-c2b2-4cd1-b404-cde2650b6511}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InterfaceMorpion.cpp">
@@ -40,7 +43,7 @@
       <Filter>Menu</Filter>
     </ClCompile>
     <ClCompile Include="MorpionGame.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,7 +60,7 @@
       <Filter>Menu</Filter>
     </ClInclude>
     <ClInclude Include="MorpionGame.h">
-      <Filter>Header Files</Filter>
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

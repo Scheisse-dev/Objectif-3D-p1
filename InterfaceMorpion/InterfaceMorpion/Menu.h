@@ -1,6 +1,7 @@
 #pragma once
 #include "BattleMenu.h"
 #include "StartMenu.h"
+#include "MorpionGame.h"
 
 class Menu
 {
@@ -9,6 +10,7 @@ private :
 	int playerChoice = 0;
 	StartMenu Smenu = StartMenu();
 	BattleMenu Bmenu = BattleMenu();
+	MorpionGame Morpion = MorpionGame(); 
 #pragma endregion f/p 
 #pragma region constructor
 public:

@@ -31,7 +31,7 @@ void Menu::StartBattleM()
 	}
 	if (playerChoice == 1) // remplacer la valeur 1 par un vecteur de la taille de game ?
 	{
-		// call game
+		Morpion.Game(); 
 	}
 	else
 		Smenu.Menu("Start");
