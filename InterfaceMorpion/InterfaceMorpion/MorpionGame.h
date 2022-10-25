@@ -17,13 +17,14 @@ private:
 	//std::map<int, std::string> map = std::map<int,std::string>();
 	bool win = false;
 	bool player = true; 
-	std::string tab[9] = { "   ", "   " , "   ", "   ", "   ", "   ","   ", "   ", "   " };
+	std::string tab[9] = { " ", " " , " ", " ", " ", " "," ", " ", " " };
 	std::vector<int> command = std::vector<int>(); 
 #pragma endregion f/p
 #pragma region methods
 public: 
 	void Display();
 	void Game(); 
+	bool Win(); 
 #pragma endregion methods
 };
 

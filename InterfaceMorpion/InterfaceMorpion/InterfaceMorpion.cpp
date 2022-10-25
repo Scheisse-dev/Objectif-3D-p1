@@ -9,9 +9,7 @@
 int main()
 {
 	Menu menu = Menu(); 
-	MorpionGame game = MorpionGame(); 
-	//menu.Navigation(); 
-	game.Display(); 
+	menu.Navigation(); 
 
 }
 
