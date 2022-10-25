@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{3ddde0ae-0e15-4037-806d-db77d57cfb03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{abd0aa52-3ac6-40cc-9709-4fa342fe74c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{a991b4c0-9ed0-4d19-98b9-70e73f51a534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Launcher">
+      <UniqueIdentifier>{d307bd11-57d7-4dfa-a1df-2ccab8c7ed23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Launcher\Item">
+      <UniqueIdentifier>{f6bb071f-6993-455d-8be7-3809296479e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games">
+      <UniqueIdentifier>{439825d1-bc87-4b73-a8b0-e60c8c032e1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Morpion">
+      <UniqueIdentifier>{92f8c781-fc95-4539-b542-847dca2579d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Morpion\Board">
+      <UniqueIdentifier>{0ba679f1-0790-4b22-8806-92d089e068f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\Morpion\AI">
+      <UniqueIdentifier>{0717208a-8f12-417a-946c-8ce57d50489e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameLauncher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Launcher.cpp">
+      <Filter>Launcher</Filter>
+    </ClCompile>
+    <ClCompile Include="LauncherItem.cpp">
+      <Filter>Launcher\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="MorpionGame.cpp">
+      <Filter>Games\Morpion</Filter>
+    </ClCompile>
+    <ClCompile Include="MorpionBoard.cpp">
+      <Filter>Games\Morpion\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="MorpionAI.cpp">
+      <Filter>Games\Morpion\AI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="IGame.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Launcher.h">
+      <Filter>Launcher</Filter>
+    </ClInclude>
+    <ClInclude Include="LauncherItem.h">
+      <Filter>Launcher\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="MorpionGame.h">
+      <Filter>Games\Morpion</Filter>
+    </ClInclude>
+    <ClInclude Include="MorpionBoard.h">
+      <Filter>Games\Morpion\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="MorpionAI.h">
+      <Filter>Games\Morpion\AI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
