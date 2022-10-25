@@ -1,0 +1,39 @@
+class Menu ( cin )
+
+class Display (random pour hauteur tuyaux ( min/max 2 *; épaisseur 3*) 
+
+piaf pos - 1 for defil +1 
+
+class entity () => bird + wall; {position + collision) 
+bird (position sur une ligne) 
+
+loose condition = collision (wall || bords)
+
+scene = ±
+
+
+pos = vecteur; bird = vecteur == loose if toHight || tLow; wall = vecteur hori == no loose mais last vect + * with loop ( créa pipe with loop ( 3 L; random H;)
+
+deplacement bird
+/\
+T						***
+T						***
+T						***
+T						***
+T						***
+T
+T
+T						rand pos but fix length 			tab[][]
+T
+T
+T						***
+T						***
+T						***
+T						***
+T						***
+T						*** 
+T						***
+T						***
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT> déplacement pipe
+						pipe vector string 
+						Hight = random << space 5 << (length-5) - rand *
