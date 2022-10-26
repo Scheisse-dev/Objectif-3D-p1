@@ -1,5 +1,6 @@
 #pragma once
 #include "IGame.h"
+#include "Pipe.h"
 #include <string>
 
 #pragma warning(disable:4996)
@@ -13,24 +14,23 @@
 class Game
 {
 #pragma region f/p
-	int _rand = Random(3, SCREEN_HEIGHT - 7);
-	int wallPos = WIN_WIDTH - 3;
-	int h = SCREEN_HEIGHT / 2;
+
+	bool isDeath = false; 
 	char bird[2][6] = { '/','-','-','o','\\',' ',
 					'|','_','_','_',' ','>' };
 	std::string clear = "        ";
+	int h = SCREEN_HEIGHT / 2;
+	Pipe pipe = Pipe();
 #pragma endregion f/p
 #pragma region methods
 public:
 	
-	int Random(int _min, int _max);
+	
 	void DrawBorder();
 	void DrawBird();
 	void OneUpdate();
 	void EraseBird(int _h);
-	void ErasePipe();
-	void GeneratePipe(int _index);
-	void PositionPipe(); 
+
 
 #pragma endregion methods
 };
