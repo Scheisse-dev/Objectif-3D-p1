@@ -33,8 +33,6 @@ void Game::DrawBird()
 {
 	
 	pipe.PositionPipe();
-	//Sleep(1000);
-	//pipe.PositionPipe();
 	Utils::SetCursorPosition(2, h);
 	for (int i = 0; i < 2; i++)
 	{
@@ -61,7 +59,7 @@ void Game::OneUpdate()
 			h--;
 			Game::EraseBird(h + 3);
 			Game::EraseBird(h);
-			if (h == SCREEN_HEIGHT -1)
+			if (h == 0)
 			{
 				isDeath == true;
 			}
