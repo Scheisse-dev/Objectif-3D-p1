@@ -18,6 +18,7 @@ class Game
 	bool isDeath = false; 
 	char bird[2][6] = { '/','-','-','o','\\',' ',
 					'|','_','_','_',' ','>' };
+
 	std::string clear = "        ";
 	int h = SCREEN_HEIGHT / 2;
 	Pipe pipe = Pipe();

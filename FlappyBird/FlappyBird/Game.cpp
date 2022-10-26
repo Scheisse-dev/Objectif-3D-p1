@@ -59,16 +59,20 @@ void Game::OneUpdate()
 			h--;
 			Game::EraseBird(h + 3);
 			Game::EraseBird(h);
-			if (Utils::cursorPosition() == SCREEN_HEIGHT || 0)
-				isDeath = true;
+			if (h == 0 || SCREEN_HEIGHT)
+			{
+				isDeath == true;
+			}
 		}
 		else
 		{
 			h++;
 			Game::EraseBird(h - 2);
 			Game::EraseBird(h + 1);
-			if (Utils::cursorPosition() == SCREEN_HEIGHT || 0)
-				isDeath = true;
+			if (h == 0 || SCREEN_HEIGHT)
+			{
+				isDeath == true;
+			}
 		}
 	}
 	else
