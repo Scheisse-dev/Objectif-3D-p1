@@ -16,7 +16,7 @@ public:
 #pragma endregion Log
 #pragma region Utils
 public:
-	int CinNoBlock();
+	static int CinNoBlock();
 	void LoadingBar(const std::string& _msg);
 	static void SetCursorPosition(const int _x, const int _y);
 	static std::string Underline(const std::string& _str);
