@@ -13,6 +13,7 @@
 class Game
 {
 #pragma region f/p
+	int _rand = Random(3, SCREEN_HEIGHT - 7);
 	int wallPos = WIN_WIDTH - 3;
 	int h = SCREEN_HEIGHT / 2;
 	char bird[2][6] = { '/','-','-','o','\\',' ',
@@ -21,12 +22,15 @@ class Game
 #pragma endregion f/p
 #pragma region methods
 public:
+	
 	int Random(int _min, int _max);
 	void DrawBorder();
 	void DrawBird();
 	void OneUpdate();
 	void EraseBird(int _h);
+	void ErasePipe();
 	void GeneratePipe(int _index);
+	void PositionPipe(); 
 
 #pragma endregion methods
 };

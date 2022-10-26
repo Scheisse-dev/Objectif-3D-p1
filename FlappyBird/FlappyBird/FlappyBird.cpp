@@ -16,6 +16,7 @@ int main()
         {
             game.DrawBird();
             Sleep(200);
+            
         }
 }
 

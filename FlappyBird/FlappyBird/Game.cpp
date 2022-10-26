@@ -31,7 +31,7 @@ void Game::DrawBorder()
 
 void Game::DrawBird()
 {
-
+	PositionPipe();
 	Utils::SetCursorPosition(2, h);
 	for (int i = 0; i < 2; i++)
 	{
@@ -47,6 +47,7 @@ void Game::DrawBird()
 
 void Game::OneUpdate()
 {
+	
 	char uc = Utils::CinNoBlock();
 	if (uc == SPACE) 
 	{
@@ -60,8 +61,8 @@ void Game::OneUpdate()
 		h++;
 		Game::EraseBird(h - 2);
 		Game::EraseBird(h + 1);
-	}
-	GeneratePipe(5);
+	} 
+	
 }
 
 void Game::EraseBird(int _h)
@@ -69,6 +70,18 @@ void Game::EraseBird(int _h)
 	Utils::SetCursorPosition(2, _h);
 	std::cout << clear << std::endl;
 
+}
+
+void Game::ErasePipe()
+{
+	int _tmp = wallPos;
+
+		for (int x = 1; x < SCREEN_HEIGHT; x++) //TODO 
+		{
+			Utils::SetCursorPosition(_tmp + 4, x);
+			std::cout << ' ';
+		}
+		_tmp++;
 }
 
 int Game::Random(int _min, int _max)
@@ -85,30 +98,41 @@ void Game::GeneratePipe(int _index)
 	
 	int _tmp = wallPos;
 	
-	 
-	int _rand = Random(3, SCREEN_HEIGHT -7);
-	for (int g = 0; g < 3 ; g++)
-	{
-		
-		for (int x = 1; x < SCREEN_HEIGHT; x++)
+
+		for (int g = 0; g < 3; g++)
 		{
-			Utils::SetCursorPosition(_tmp, x);
-			std::cout << '*';
+
+			for (int x = 1; x < SCREEN_HEIGHT; x++)
+			{
+				Utils::SetCursorPosition(_tmp, x);
+				if (wallPos > 1)
+					std::cout << '*';
+			}
+			_tmp++;
 		}
-		_tmp++;
-	}
-	_tmp = wallPos;
-	for (int p = 0; p < 3; p++)
-	{
-		for (int i = 0; i < BETWEEN; i++)
+		_tmp = wallPos;
+		if (wallPos+3 > 1)
 		{
-			Utils::SetCursorPosition(_tmp, _rand);
-			std::cout << ' ';
-			_rand++;
+			for (int p = 0; p < 3; p++)
+			{
+				for (int i = 0; i < BETWEEN; i++)
+				{
+					Utils::SetCursorPosition(_tmp, _index);
+					std::cout << ' ';
+					_index++;
+				}
+				_index -= BETWEEN;
+				_tmp++;
+
+			}
+			wallPos--;
 		}
-		_rand = _rand -BETWEEN;
-		_tmp++;
-		
-	}
-	wallPos--; 
+}
+
+void Game::PositionPipe() //TODO 
+{
+	
+		GeneratePipe(_rand); 
+		ErasePipe(); 
+	
 }
