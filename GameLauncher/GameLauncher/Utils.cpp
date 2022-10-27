@@ -2,6 +2,15 @@
 #include "Object.h"
 #include <windows.h>
 
+void Utils::LogWithEffect(const std::string& _msg, const int _time)
+{
+    for (char _c : _msg)
+    {
+        std::cout << _c;
+        ::Sleep(_time);
+    }
+}
+
 void Utils::Log(const std::string& _msg)
 {
     std::cout << _msg << std::endl;
@@ -66,6 +75,37 @@ void Utils::LoadingBar(const std::string& _msg)
         std::cout.flush();
         _progress += 0.001f;
     }
+}
+
+void Utils::Sleep(const int _milliSeconds)
+{
+    ::Sleep(_milliSeconds); 
+}
+
+int Utils::CinNoBlock()
+{
+    if (_kbhit())
+    {
+        return _getch();
+    }
+    return -1;
+}
+
+void Utils::SetCursor(const bool _visible, const int _size)
+{
+    int _currentSize = _size; 
+    if (_currentSize == 0) _currentSize = 20;
+    CONSOLE_CURSOR_INFO _cursorInfo = {};
+    _cursorInfo.bVisible = _visible;
+    _cursorInfo.dwSize = _currentSize;
+    SetConsoleCursorInfo(console, &_cursorInfo); 
+}
+
+void Utils::SetCursorPosition(const int _x, const int _y)
+{
+    cursorPosition.X = _x;
+    cursorPosition.Y = _y;
+    SetConsoleCursorPosition(console, cursorPosition);
 }
 
 std::string Utils::Underline(const std::string& _str)

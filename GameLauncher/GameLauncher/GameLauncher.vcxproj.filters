@@ -40,6 +40,24 @@
     <Filter Include="Games\Morpion\AI">
       <UniqueIdentifier>{0717208a-8f12-417a-946c-8ce57d50489e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Games\FlappyBird">
+      <UniqueIdentifier>{d247c337-668c-43e1-85eb-295fd7d3bc89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\Player">
+      <UniqueIdentifier>{3569ae22-3e85-443d-9607-811989d22371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\Interface">
+      <UniqueIdentifier>{cf1e1ef1-0230-4d97-9ab5-7c4c837a7b63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\Map">
+      <UniqueIdentifier>{1b84e60d-717c-4ca2-9191-0bb99985a682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\pipe">
+      <UniqueIdentifier>{ace84fb0-9464-41c4-b727-2a81136709ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\Score">
+      <UniqueIdentifier>{44d4fe87-5c11-458f-ab69-6c6a34046ffe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameLauncher.cpp">
@@ -66,6 +84,21 @@
     <ClCompile Include="MorpionAI.cpp">
       <Filter>Games\Morpion\AI</Filter>
     </ClCompile>
+    <ClCompile Include="FlappyBird.cpp">
+      <Filter>Games\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyMap.cpp">
+      <Filter>Games\FlappyBird\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyPlayer.cpp">
+      <Filter>Games\FlappyBird\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyPipe.cpp">
+      <Filter>Games\FlappyBird\pipe</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyScore.cpp">
+      <Filter>Games\FlappyBird\Score</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -91,6 +124,24 @@
     </ClInclude>
     <ClInclude Include="MorpionAI.h">
       <Filter>Games\Morpion\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird.h">
+      <Filter>Games\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyMap.h">
+      <Filter>Games\FlappyBird\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyPlayer.h">
+      <Filter>Games\FlappyBird\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="IDrawable.h">
+      <Filter>Games\FlappyBird\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyPipe.h">
+      <Filter>Games\FlappyBird\pipe</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyScore.h">
+      <Filter>Games\FlappyBird\Score</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -14,7 +14,7 @@ void Pipe::ErasePipe()
 	}
 	_tmp++;
 }
-/*
+
 int Pipe::Random(int _min, int _max)
 {
 	std::random_device _rd = std::random_device();
@@ -23,7 +23,7 @@ int Pipe::Random(int _min, int _max)
 	const int _result = _distr(_gen);
 	return _result;
 
-}*/
+}
 void Pipe::GeneratePipe(int _index)
 {
 
@@ -63,7 +63,7 @@ void Pipe::GeneratePipe(int _index)
 void Pipe::PositionPipe() //TODO 
 {
 
-	//GeneratePipe(_rand);
+	GeneratePipe(_rand);
 	ErasePipe();
 
 }

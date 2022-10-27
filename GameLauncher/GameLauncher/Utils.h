@@ -1,15 +1,25 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <Windows.h>
+#include <conio.h>
 class Object;
+
+#pragma warning (disable 4996)
 
 #define color_white 15
 #define color_red 4
+
+#define SPACE 32
+#define ESCAPE 27
 
 class Utils
 {
 #pragma region Log
 public:
+	static void LogWithEffect(const std::string& _msg, const int _time = 20); 
+	static inline HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+	static inline COORD cursorPosition = {};
 	static void Log(const std::string& _msg);
 	static void Log(const Object& _obj);
 	static void Log(const Object* _obj);
@@ -21,6 +31,10 @@ public:
 #pragma endregion Log
 #pragma region Utils
 public:
+	static void Sleep(const int _milliSeconds);
+	static int CinNoBlock();
+	static void SetCursor(const bool _visible, const int _size); 
+	static void SetCursorPosition(const int _x, const int _y);
 	static std::string Underline(const std::string& _str);
 	static void ClearConsole();
 	static void Pause();

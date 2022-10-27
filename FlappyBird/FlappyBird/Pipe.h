@@ -9,7 +9,7 @@
 class Pipe
 {
 private : 
-	//int _rand = Random(3, SCREEN_HEIGHT - 7);
+	int _rand = Random(3, SCREEN_HEIGHT - 7);
 	int wallPos = WIN_WIDTH - 3;
 	
 

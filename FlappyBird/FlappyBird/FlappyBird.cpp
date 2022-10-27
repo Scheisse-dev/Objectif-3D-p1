@@ -15,7 +15,7 @@ int main()
         while (t)
         {
             game.DrawBird();
-            Sleep(200);
+            Sleep(100);
             
         }
 }
