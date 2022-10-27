@@ -70,19 +70,20 @@ void FlappyBird::UpdatePipe()
     {
         pipeTwo->SetCanDraw(true);
         pipeTwo->SetPosition(4);
-        pipeTwo->SetGapPosition(2 + rand() % 14); //TODO change rand
+        pipeTwo->SetGapPosition( Utils::Random(3,14)); 
     }
 }
 void FlappyBird::Init()
 {
     isQuitting = false; 
+    score = 0;
     player->SetDead(false); 
     player->SetPosition(6); 
     pipeOne->SetCanDraw(true); 
     pipeTwo->SetCanDraw(false); 
     pipeOne->SetPosition(4);
     pipeTwo->SetPosition(4);
-    pipeOne->SetGapPosition(3 + rand() % 14); 
+    pipeOne->SetGapPosition(Utils::Random(3, 14));
 }
 void FlappyBird::UpdateScore()
 {
@@ -98,6 +99,7 @@ void FlappyBird::UpdateScore()
 #pragma region override
 void FlappyBird::OnStart()
 {
+    Utils::SetWindowSize(SCREEN_WIDTH * 10, SCREEN_HEIGHT*20 );
     Utils::ClearConsole();
     Utils::SetCursor(false, 0);
     sleepTime = SLEEP_DEFAULT; 
@@ -141,12 +143,24 @@ void FlappyBird::OnUpdate()
 
 void FlappyBird::OnEnd()
 {
+    player->Draw();
+    Utils::SetCursorPosition(15, 5);
+    std::cout << "SCORE: " << score;
+    Utils::SetCursorPosition(15, 6);
+    std::cout << PRESS_ANY_KEY;
+    _getch(); 
     Utils::SetCursor(true, 20);
 }
 
 void FlappyBird::DisplayMenu()
 {
     DisplayConstrols();
+    score.Draw();
+    Utils::SetCursorPosition(10, 5);
+    std::cout << PRESS_ANY_KEY;
+    _getch(); // _ if not pragma warnin
+    Utils::SetCursorPosition(10, 5);
+    std::cout << Utils::Separator(strlen(PRESS_ANY_KEY), ' ');
 }
 
 std::string FlappyBird::GameName() const

@@ -8,6 +8,7 @@
 #define WIN_WIDTH 70
 #define SLEEP_DEFAULT 100
 #define GAP_SIZE 7
+#define PRESS_ANY_KEY "Press any key..."
 
 class FlappyMap;
 class FlappyPlayer; 

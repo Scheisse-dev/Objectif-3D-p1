@@ -17,6 +17,7 @@ class Utils
 {
 #pragma region Log
 public:
+	
 	static void LogWithEffect(const std::string& _msg, const int _time = 20); 
 	static inline HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
 	static inline COORD cursorPosition = {};
@@ -31,6 +32,8 @@ public:
 #pragma endregion Log
 #pragma region Utils
 public:
+	static int Random(const int _min, const int _max);
+	static void SetWindowSize(const int _width, const int _height);
 	static void Sleep(const int _milliSeconds);
 	static int CinNoBlock();
 	static void SetCursor(const bool _visible, const int _size); 
