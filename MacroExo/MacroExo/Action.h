@@ -30,66 +30,68 @@
 class Object; 
 
 
-template<typename T>
+
+
+template<typename... Args>
 class Action
 {
 #pragma region f/p
 private: 
-	typedef void(Object::* Function)(T);
+	typedef void(Object::* Function)(Args...);
 	std::vector<Function> functions = std::vector<Function>(); 
 #pragma endregion f/p
 #pragma region constructor/destructor
 public: 
 	Action(nullptr_t);
 	template<typename Class>
-	Action(void(Class::*_ptr)(T));
+	Action(void(Class::*_ptr)(Args...));
 	~Action(); 
 #pragma endregion constructor/destructor
 #pragma region methods
 public: 
-	void Invoke(Object* _instance, T _value);
+	void Invoke(Object* _instance, Args... _value);
 
 #pragma endregion methods 
 #pragma region operator
 public:
 	template<typename Class>
-	void operator+=(void(Class::* _ptr)(T));
+	void operator+=(void(Class::* _ptr)(Args...));
 	template<typename Class>
-	void operator-=(void(Class::* _ptr)(T));
+	void operator-=(void(Class::* _ptr)(Args...));
 	template<typename Class>
-	void operator=(void(Class::* _ptr)(T));
+	void operator=(void(Class::* _ptr)(Args...));
 	void operator=(nullptr_t);
 #pragma endregion operator
 };
 
 #pragma region constructor/destructor
 
-template<typename T>
-Action<T>::Action(nullptr_t)
+template<typename... Args>
+Action<Args...>::Action(nullptr_t)
 {
 	functions.clear(); 
 }
-template<typename T>
+template<typename... Args>
 template<typename Class>
-Action<T>::Action(void(Class::* _ptr)(T))
+Action<Args...>::Action(void(Class::* _ptr)(Args...))
 {
 	functions.push_back(reinterpret_cast<Function>(_ptr)); 
 }
 
 
-template<typename T>
-inline Action<T>::~Action()
+template<typename... Args>
+inline Action<Args...>::~Action()
 {
 	functions.clear(); 
 }
 #pragma endregion constructor/destructor
 #pragma region methods
-template<typename T>
-inline void Action<T>::Invoke(Object* _instance, T _value)
+template<typename... Args>
+inline void Action<Args...>::Invoke(Object* _instance, Args... _value)
 {
 	for (size_t i = 0; i < functions.size(); i++)
 	{
-		(_instance->*functions[i])(_value); 
+		(_instance->*functions[i])(_value...); 
 	}
 }
 
@@ -97,16 +99,16 @@ inline void Action<T>::Invoke(Object* _instance, T _value)
 
 #pragma region operator
 
-template<typename T>
+template<typename... Args>
 template<typename Class>
-inline void Action<T>::operator+=(void(Class::* _ptr)(T))
+inline void Action<Args...>::operator+=(void(Class::* _ptr)(Args...))
 {
 	functions.push_back(reinterpret_cast<Function>(_ptr));
 }
 
-template<typename T>
+template<typename... Args>
 template<typename Class>
-inline void Action<T>::operator-=(void(Class::* _ptr)(T))
+inline void Action<Args...>::operator-=(void(Class::* _ptr)(Args...))
 {
 	Function _function = reinterpret_cast<Function>(_ptr);
 	for (size_t i = 0; i < functions.size(); i++)
@@ -119,16 +121,16 @@ inline void Action<T>::operator-=(void(Class::* _ptr)(T))
 	}
 }
 
-template<typename T>
+template<typename... Args>
 template<typename Class>
-inline void Action<T>::operator=(void(Class::* _ptr)(T))
+inline void Action<Args...>::operator=(void(Class::* _ptr)(Args...))
 {
 	functions.clear();
 	functions.push_back(reinterpret_cast<Function>(_ptr));
 }
 
-template<typename T>
-inline void Action<T>::operator=(nullptr_t)
+template<typename... Args>
+inline void Action<Args...>::operator=(nullptr_t)
 {
 	functions.clear();
 }
