@@ -22,6 +22,9 @@
     <Filter Include="Menu">
       <UniqueIdentifier>{7fb7e144-9fc2-4d67-a570-f0343712fef9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Echo">
+      <UniqueIdentifier>{203732d0-ea08-4229-ac84-885a8546270d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandCons.cpp">
@@ -36,6 +39,12 @@
     <ClCompile Include="MenuItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Echo.cpp">
+      <Filter>Echo</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -48,6 +57,12 @@
       <Filter>Menu</Filter>
     </ClInclude>
     <ClInclude Include="MenuItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Echo.h">
+      <Filter>Echo</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

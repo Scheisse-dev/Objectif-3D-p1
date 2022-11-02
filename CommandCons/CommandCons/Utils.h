@@ -83,4 +83,5 @@ inline void Utils::ClearConsole()
 {
 	system("cls"); 
 }
+
 #pragma endregion Utils

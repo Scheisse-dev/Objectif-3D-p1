@@ -16,7 +16,7 @@ std::string MenuItem::Name()
 }
 void MenuItem::OnClick(Menu* _currentMenu)
 {
-    if (NextMenu == nullptr)
+    if (nextMenu == nullptr)
         throw std::exception("Wrong command"); 
     if (!nextMenu -> Equals(_currentMenu))
         nextMenu->SetOldMenu(_currentMenu);
