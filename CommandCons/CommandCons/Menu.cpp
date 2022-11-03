@@ -5,9 +5,10 @@
 #pragma endregion commentZone
 
 #include "Menu.h"
-#include <filesystem>
+#include "Time.h"
 #include "Echo.h"
 #include "Task.h"
+#include <filesystem>
 
 #pragma region constructor/destructor
 
@@ -52,6 +53,11 @@ void Menu::FonctionMix() //TODO replace if by map
 		isInLoop = false;
 	else if (_userChoice == "cls")
 		system("cls");
+	else if (_userChoice == "time")
+	{
+		Time time;
+		time.NowInternal();
+	}
 
 	
 }

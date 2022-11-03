@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -137,6 +137,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="SettingManager.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Echo.h" />
@@ -147,6 +148,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="SettingManager.h" />
     <ClInclude Include="Task.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
