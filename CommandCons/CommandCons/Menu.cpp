@@ -6,8 +6,8 @@
 
 #include "Menu.h"
 #include <filesystem>
-
-#pragma comment(lib, "version.lib")
+#include "Echo.h"
+#include "Task.h"
 
 #pragma region constructor/destructor
 
@@ -31,13 +31,38 @@ Menu::~Menu()
 
 #pragma region methods
 
+void Menu::FonctionMix() //TODO replace if by map
+{
+	std::string _userChoice = Utils::UserChoice();
+	//for (int i = 0; i < _userChoice.size(); i++)
+	//{
+	//	_userChoice = tolower(_userChoice[i]); 
+	//}
+	if (_userChoice == "echo")
+	{
+		Echo echo;
+		echo.Out();
+	}
+	else if (_userChoice == "tasklist")
+	{
+		Task task;
+		task.TaskList();
+	}
+	else if (_userChoice == "exit")
+		isInLoop = false;
+	else if (_userChoice == "cls")
+		system("cls");
+
+	
+}
+
 void Menu::Choose(const std::string _index)
 {
-	try //class name 
+	try //TODO try 
 	{
 
 	}
-	catch (const std::exception& _exception) // exception error log 
+	catch (const std::exception& _exception) 
 	{
 		Utils::LogError(_exception.what());
 	}
@@ -48,43 +73,17 @@ void Menu::DisplayItems()
 
 	std::string _test;
 	Utils::GetWindowsVersion();
-	while (true) {
+	while (isInLoop) {						//TODO cancel this shit 
 		std::string _path = std::filesystem::current_path().string();
 		Utils::Replace(_path, '\\', '/');
 		std::cout << _path << '>';
-		//choose
-		Utils::UserChoice();
-		std::cout << std::endl;
+		Menu::FonctionMix();
 	}
 
 }
 std::vector<MenuItem*> Menu::Item() const
 {
 	return items;
-}
-bool Menu::Equals(const Menu* _name)
-{
-	return title == _name->title;
-}
-
-void Menu::SetOldMenu(Menu* _old)
-{
-	oldMenu = _old;
-}
-
-Menu* Menu::OldMenu()
-{
-	return oldMenu;
-}
-
-void Menu::Close()
-{
-	isOpen = false;
-}
-
-void Menu::Open()
-{
-	isOpen = true;
 }
 
 

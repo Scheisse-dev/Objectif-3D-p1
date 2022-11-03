@@ -5,12 +5,6 @@
 
 #pragma region commentZone
 /*
-
-* add owner
-* SetOldMenu
-* test EqualMenu to dont display if same
-* Close to... close... stupid
-* Open same boy 
 * throw the exception, dont crash please
 * use fonction name Utils toString to choose 
 */ 
@@ -20,8 +14,7 @@ class Menu : public Object
 #pragma region f/p
 protected:
 	std::string title = "";
-	Menu* oldMenu = nullptr; 
-	bool isOpen = false; 
+	bool isInLoop = true;
 	std::vector<MenuItem*> items = std::vector<MenuItem*>(); 
 #pragma endregion f/p 
 #pragma region constructor/destructor
@@ -33,14 +26,11 @@ public:
 #pragma endregion constructor/destructor
 #pragma region methods
 public:
+	void FonctionMix();
 	void Choose(const std::string _index);
 	void DisplayItems();
 	std::vector<MenuItem*> Item() const;
-	bool Equals(const Menu* _name);
-	void SetOldMenu(Menu* _old);
-	Menu* OldMenu();
-	void Close();
-	void Open();
+
 #pragma endregion methods 
 };
 

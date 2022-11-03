@@ -4,10 +4,8 @@
 
 class Echo : public Object
 {
-	Echo() = default;
-	Echo(const Echo& _copy) = default; 
-
-	bool Jecho(); 
-	std::string Cecho(); 
+public:
+	bool isOn(); 
+	void Out(); 
 };
 

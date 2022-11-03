@@ -131,18 +131,22 @@
     <ClCompile Include="CommandCons.cpp" />
     <ClCompile Include="Echo.cpp" />
     <ClCompile Include="GetPath.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="SettingManager.cpp" />
+    <ClCompile Include="Task.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Echo.h" />
     <ClInclude Include="GetPath.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="SettingManager.h" />
+    <ClInclude Include="Task.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

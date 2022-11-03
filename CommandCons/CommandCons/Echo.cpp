@@ -1,8 +1,10 @@
 #include "Echo.h"
 
-std::string Echo::Cecho()
+
+void Echo::Out()
 {
-	std::string _in;
-	std::cin >> _in; 
-	return _in; 
+	std::string _str = Utils::UserChoice(); 
+	Utils::Split(_str, ' ');
+	
+
 }

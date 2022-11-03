@@ -1,8 +1,10 @@
 #pragma once
 #include <string> 
+#include <vector>
 #include <algorithm>
 #include <iostream>
 #include <windows.h>
+#include <format>
 #include <stdio.h>
 #include "Object.h"
 
@@ -23,6 +25,7 @@ public:
 
 #pragma region Utils
 public: 
+	static std::vector<std::string> Split(const std::string& _str, const char _c);
 	static void GetWindowsVersion(); 
 	static std::string UserChoice();
 	static void ClearConsole();
@@ -92,12 +95,8 @@ inline void Utils::GetWindowsVersion()
 
 	NOT_BUILD_WINDOWS_DEPRECATE DWORD GetVersion();
 
-	// Get the Windows version.
-
 	dwMajorVersion = (DWORD)(LOBYTE(LOWORD(dwVersion)));
 	dwMinorVersion = (DWORD)(HIBYTE(LOWORD(dwVersion)));
-
-	// Get the build number.
 
 	if (dwVersion < 0x80000000)
 		dwBuild = (DWORD)(HIWORD(dwVersion));
@@ -120,5 +119,18 @@ inline void Utils::Replace(std::string& _str, const char& _old, const char& _new
 	std::ranges::replace(_str, _old, _new); 
 
 }
+inline std::vector<std::string> Utils::Split(const std::string& _str, const char _c)
+{
+	std::vector<std::string> _result = std::vector<std::string>();
+	std::string _string = _str;
+	size_t _pos = 0;
 
+	while ((_pos = _string.find(_c)) != std::string::npos)
+	{
+		_result.push_back(_string.substr(0, _pos));
+		_string = _string.erase(0, _pos + 1);
+	}
+	_result.push_back(_string.substr(0, _pos));
+	return _result;
+}
 #pragma endregion Utils

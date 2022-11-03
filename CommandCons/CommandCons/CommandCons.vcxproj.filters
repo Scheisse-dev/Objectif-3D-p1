@@ -25,6 +25,15 @@
     <Filter Include="Echo">
       <UniqueIdentifier>{203732d0-ea08-4229-ac84-885a8546270d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GetPath">
+      <UniqueIdentifier>{62df7cc9-4d4f-433d-8368-c412efdf84fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MenuItem">
+      <UniqueIdentifier>{f7d344f5-8155-4a0d-9961-e0639ecb7d0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SettingManager">
+      <UniqueIdentifier>{1c24674a-d46d-40b9-8632-d9d205244942}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandCons.cpp">
@@ -36,16 +45,22 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Menu</Filter>
     </ClCompile>
-    <ClCompile Include="MenuItem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Echo.cpp">
       <Filter>Echo</Filter>
     </ClCompile>
+    <ClCompile Include="GetPath.cpp">
+      <Filter>GetPath</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuItem.cpp">
+      <Filter>MenuItem</Filter>
+    </ClCompile>
     <ClCompile Include="SettingManager.cpp">
+      <Filter>SettingManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GetPath.cpp">
+    <ClCompile Include="Task.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,16 +74,22 @@
     <ClInclude Include="Menu.h">
       <Filter>Menu</Filter>
     </ClInclude>
-    <ClInclude Include="MenuItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Echo.h">
       <Filter>Echo</Filter>
     </ClInclude>
+    <ClInclude Include="GetPath.h">
+      <Filter>GetPath</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuItem.h">
+      <Filter>MenuItem</Filter>
+    </ClInclude>
     <ClInclude Include="SettingManager.h">
+      <Filter>SettingManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GetPath.h">
+    <ClInclude Include="Task.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
