@@ -5,6 +5,7 @@
 
 #pragma region commentZone
 /*
+
 * add owner
 * SetOldMenu
 * test EqualMenu to dont display if same
@@ -34,12 +35,12 @@ public:
 public:
 	void Choose(const std::string _index);
 	void DisplayItems();
-	std::vector<MenuItem*> Item() const; 
+	std::vector<MenuItem*> Item() const;
 	bool Equals(const Menu* _name);
 	void SetOldMenu(Menu* _old);
 	Menu* OldMenu();
 	void Close();
-	void Open(); 
+	void Open();
 #pragma endregion methods 
 };
 

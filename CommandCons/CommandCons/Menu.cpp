@@ -1,4 +1,14 @@
+#pragma region commentZone
+/*
+* créer une map avec vecteur class name; et si map échoue throw exception
+*/ 
+#pragma endregion commentZone
+
 #include "Menu.h"
+#include <filesystem>
+
+#pragma comment(lib, "version.lib")
+
 #pragma region constructor/destructor
 
 Menu::Menu(const std::string _title, std::initializer_list<MenuItem*> _item)
@@ -25,36 +35,41 @@ void Menu::Choose(const std::string _index)
 {
 	try //class name 
 	{
-		
+
 	}
-	catch(const std::exception& _exception) // exception error log 
+	catch (const std::exception& _exception) // exception error log 
 	{
-		Utils::LogError(_exception.what()); 
+		Utils::LogError(_exception.what());
 	}
 }
 
 void Menu::DisplayItems()
 {
-	Utils::ClearConsole(); 
-	Utils::LogTitle(title); 
-	const size_t _size = items.size(); 
-	for (size_t i = 0; i < _size; i++)
-		Utils::Log(std::to_string(i + 1) + ": " + items[i]->ToString());
-	Utils::Log(std::to_string(_size + 1) + ": return"); 
+
+	std::string _test;
+	Utils::GetWindowsVersion();
+	while (true) {
+		std::string _path = std::filesystem::current_path().string();
+		Utils::Replace(_path, '\\', '/');
+		std::cout << _path << '>';
+		//choose
+		Utils::UserChoice();
+		std::cout << std::endl;
+	}
 
 }
 std::vector<MenuItem*> Menu::Item() const
 {
-	return items; 
+	return items;
 }
 bool Menu::Equals(const Menu* _name)
 {
-	return title == _name->title; 
+	return title == _name->title;
 }
 
 void Menu::SetOldMenu(Menu* _old)
 {
-	oldMenu = _old; 
+	oldMenu = _old;
 }
 
 Menu* Menu::OldMenu()
@@ -64,7 +79,7 @@ Menu* Menu::OldMenu()
 
 void Menu::Close()
 {
-	isOpen = false; 
+	isOpen = false;
 }
 
 void Menu::Open()

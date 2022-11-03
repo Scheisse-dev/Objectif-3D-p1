@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="CommandCons.cpp" />
     <ClCompile Include="Echo.cpp" />
+    <ClCompile Include="GetPath.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="Object.cpp" />
@@ -136,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Echo.h" />
+    <ClInclude Include="GetPath.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="Object.h" />
