@@ -30,7 +30,7 @@ std::vector<std::string> Utils::GetArguments(const std::string& _command, std::s
 	std::vector<std::string> _result = std::vector<std::string>();
 	_commandLabel = _parsed[0];
 	const size_t _size = _parsed.size();
-	for (size_t i = 0; i < _size; i++)
+	for (size_t i = 1; i < _size; i++)
 		_result.push_back(_parsed[i]);
 
 

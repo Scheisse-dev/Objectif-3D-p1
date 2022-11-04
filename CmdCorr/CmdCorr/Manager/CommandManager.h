@@ -18,8 +18,13 @@ public:
 #pragma endregion constructor/destructor
 #pragma region methods
 public: 
+	void DisplayAllHelp() const; 
+	void DisplayHelp(const std::string& _label);
 	void Register(ICommand* _command); 
-	void ExecuteCommand(const std::string& _label, const std::vector<std::string>& _args); 
+	void Register(const std::initializer_list<ICommand*>& _commands);
+	void ExecuteCommand(const std::string& _label, const std::vector<std::string>& _args);
+	void DisplayNotRecognized(const std::string& _label);
+
 #pragma endregion methods
 };
 

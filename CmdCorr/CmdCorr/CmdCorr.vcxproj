@@ -129,17 +129,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Command\CD\CdCommand.cpp" />
+    <ClCompile Include="Command\Echo\EchoCommand.cpp" />
+    <ClCompile Include="Command\Exit\ExitCommand.cpp" />
+    <ClCompile Include="Command\Drives\DrivesCommand.cpp" />
+    <ClCompile Include="Command\Help\HelpCommand.cpp" />
+    <ClCompile Include="IO\File\File.cpp" />
     <ClCompile Include="IO\Directory\Directory.cpp" />
     <ClCompile Include="Manager\CommandManager.cpp" />
     <ClCompile Include="Command\CLS\ClsCommand.cpp" />
     <ClCompile Include="CmdCorr.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="Path\Path.cpp" />
+    <ClCompile Include="Command\TaskList\TaskListCommand.cpp" />
+    <ClCompile Include="Command\Tree\TreeCommand.cpp" />
+    <ClCompile Include="Command\Time\TimeCommand.cpp" />
+    <ClCompile Include="Command\Type\TypeCommand.cpp" />
     <ClCompile Include="Utils\Utils.cpp" />
     <ClCompile Include="Utils\String\StringUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Command\CD\CdCommand.h" />
+    <ClInclude Include="Command\Echo\EchoCommand.h" />
+    <ClInclude Include="Command\Exit\ExitCommand.h" />
+    <ClInclude Include="Command\Drives\DrivesCommand.h" />
+    <ClInclude Include="Command\Help\HelpCommand.h" />
+    <ClInclude Include="IO\File\File.h" />
     <ClInclude Include="IO\Directory\Directory.h" />
     <ClInclude Include="Manager\CommandManager.h" />
     <ClInclude Include="Command\CLS\ClsCommand.h" />
@@ -147,6 +161,10 @@
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Path\Path.h" />
+    <ClInclude Include="Command\TaskList\TaskListCommand.h" />
+    <ClInclude Include="Command\Tree\TreeCommand.h" />
+    <ClInclude Include="Command\Time\TimeCommand.h" />
+    <ClInclude Include="Command\Type\TypeCommand.h" />
     <ClInclude Include="Utils\Utils.h" />
     <ClInclude Include="Utils\String\StringUtils.h" />
   </ItemGroup>
