@@ -34,6 +34,15 @@
     <Filter Include="SettingManager">
       <UniqueIdentifier>{1c24674a-d46d-40b9-8632-d9d205244942}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{17ee0c04-98c6-4581-a358-7c04aeb54e48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{78d21329-5dba-4bbb-b866-b55efabcc2d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task">
+      <UniqueIdentifier>{c6d6a5f4-6ede-45e7-aa8b-fc80b969e459}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandCons.cpp">
@@ -57,11 +66,14 @@
     <ClCompile Include="SettingManager.cpp">
       <Filter>SettingManager</Filter>
     </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="Task.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Task</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,11 +98,14 @@
     <ClInclude Include="SettingManager.h">
       <Filter>SettingManager</Filter>
     </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Time</Filter>
+    </ClInclude>
     <ClInclude Include="Map.h">
-      <Filter>Header Files</Filter>
+      <Filter>Map</Filter>
     </ClInclude>
     <ClInclude Include="Task.h">
-      <Filter>Header Files</Filter>
+      <Filter>Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
