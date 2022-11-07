@@ -22,7 +22,7 @@ public:
 	Vector4 Add(float _a);
 	Vector4 Clamp(const Vector4& _other);
 	Vector4 Min(const Vector4& _vector);
-	Vector4 Max(Vector4* _vector);
+	Vector4 Max(const Vector4& _vector);
 	Vector4 Lerp(const Vector4& _a, const Vector4& _b, float t); // t = 0 / 1 
 	Vector4 LerpUnclamp(const Vector4& _a, const Vector4& _b, float t); // t no clamp 
 	#pragma region get
@@ -43,13 +43,13 @@ public:
 #pragma region operator
 public: 
 	bool operator==(const Vector4& _other);
-	float operator/=(const Vector4& _other);
 	bool operator>=(const Vector4& _other);
-	float operator*=(const Vector4& _other);
 	bool operator<=(const Vector4& _other);
-	float operator+=(const Vector4& _other); 
 	bool operator<(const Vector4& _other);
 	bool operator>(const Vector4& _other);
+	Vector4 operator/=(const Vector4& _other);
+	Vector4 operator*=(const Vector4& _other);
+	Vector4 operator+=(const Vector4& _other);
 	float operator+(const Vector4& _other);
 	float operator*(const Vector4& _other);
 	float operator/(const Vector4& _other);

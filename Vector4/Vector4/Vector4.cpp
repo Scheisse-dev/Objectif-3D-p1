@@ -1,5 +1,6 @@
 #include "Vector4.h"
 #include <algorithm>
+#include <typeinfo>
 
 #pragma region constructor/destructor
 Vector4::Vector4(const float _x, const float _y, const float _z, const float _w)
@@ -23,13 +24,25 @@ Vector4::Vector4(const Vector4& _copy)
 Vector4 Vector4::Min(const Vector4& _vector)
 {
 
-    //const Vector4& _result = std::min({ _vector });
-    //return _result;
+    const Vector4& _result = std::min({ _vector });
+    return _result;
    
 }
 
+Vector4 Vector4::Max(const Vector4& _vector)
+{
+    const Vector4& _result = std::min({ _vector });
+    return _result;
+}
 
-#pragma region get
+void Vector4::Set(const float _newX, const float _newY, const float _newZ, const float _newW)
+{
+    x = _newX;
+    y = _newY;
+    z = _newZ;
+    w = _newW;
+}
+
 float Vector4::X()
 {
     return x;
@@ -49,45 +62,62 @@ float Vector4::W()
 {
     return w;
 }
-#pragma endregion get
 
 #pragma endregion methods
 #pragma region operator
 
 
 
-float Vector4::operator/=(const Vector4& _other)
+
+bool Vector4::operator==(const Vector4& _other)
 {
-    return 0.0f;
+    if (typeid(*this) != typeid(_other))
+        return false;
+    return true; 
 }
 
 bool Vector4::operator>=(const Vector4& _other)
 {
-    return false;
-}
+    return !(*this < _other); 
 
-float Vector4::operator*=(const Vector4& _other)
-{
-    return 0.0f;
 }
 
 bool Vector4::operator<=(const Vector4& _other)
 {
-    return false;
+    return !(*this > _other);
 }
 
-float Vector4::operator+=(const Vector4& _other)
+bool Vector4::operator<(const Vector4& _other)
+{
+    return *this < _other;
+}
+
+bool Vector4::operator>(const Vector4& _other)
+{
+    return *this > _other;
+}
+
+Vector4 Vector4::operator/=(const Vector4& _other)
+{
+    x /= _other.x;
+    y /= _other.y;
+    return *this;
+}
+
+Vector4 Vector4::operator*=(const Vector4& _other)
+{
+    x *= _other.x;
+    y *= _other.y;
+    return *this;
+}
+
+
+Vector4 Vector4::operator+=(const Vector4& _other)
 {
     x += _other.x;
     y += _other.y;
-    return *this;
+    return *this; 
 }
 #pragma endregion operator
 
-void Vector4::Set(const float _newX, const float _newY, const float _newZ, const float _newW)
-{
-    x = _newX;
-    y = _newY;
-    z = _newZ;
-    w = _newW;
-}
+
