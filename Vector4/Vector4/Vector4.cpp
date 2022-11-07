@@ -63,6 +63,11 @@ float Vector4::W()
     return w;
 }
 
+float Vector4::Magnitude(const Vector4& _vector)
+{
+    //return _vector.lenght();
+}
+
 #pragma endregion methods
 #pragma region operator
 
