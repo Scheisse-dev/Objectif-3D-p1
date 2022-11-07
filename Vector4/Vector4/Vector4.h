@@ -20,7 +20,7 @@ public:
 public:
 	Vector4 Abs(const Vector4& _other); 
 	Vector4 Add(float _a);
-	Vector4 Clamp(const Vector4& _other);
+	Vector4 Clamp(Vector4& _vector, const float _a, const float _b);
 	Vector4 Min(const Vector4& _vector);
 	Vector4 Max(const Vector4& _vector);
 	Vector4 Lerp(const Vector4& _a, const Vector4& _b, float t); // t = 0 / 1 
@@ -31,13 +31,13 @@ public:
 		float Z();
 		float W();
 	#pragma endregion get
-	float Dot();
+	float Dot(Vector4 _a, Vector4 _b);
 	float Magnitude(const Vector4& _vector);
 	float Distance();
-	float Length();
+	float Length(); // same as Magnitude
 	float LengthSquared();
 	void Set(const float _newX, const float _newY, const float _newZ, const float _newW);
-	void normalize(); 
+	void Normalize(); 
 
 #pragma endregion methods 
 #pragma region operator
