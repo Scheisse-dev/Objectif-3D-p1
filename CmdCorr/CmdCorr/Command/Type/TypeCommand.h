@@ -1,6 +1,7 @@
 #pragma once
 #include "../ICommand.h"
 
+UCLASS()
 class TypeCommand : public ICommand
 {
 public:

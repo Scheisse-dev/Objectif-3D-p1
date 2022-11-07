@@ -1,6 +1,7 @@
 #pragma once
 #include "../ICommand.h"
 
+UCLASS()
 class TimeCommand : public ICommand
 {
 #pragma region override

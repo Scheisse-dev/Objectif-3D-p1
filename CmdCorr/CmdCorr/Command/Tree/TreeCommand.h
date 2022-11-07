@@ -1,6 +1,7 @@
 #pragma once
 #include "../ICommand.h"
 
+UCLASS()
 class TreeCommand : public ICommand
 {
 #pragma region methods 

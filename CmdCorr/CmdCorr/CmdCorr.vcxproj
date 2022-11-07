@@ -110,6 +110,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -File $(ProjectDir)\Assembly.ps1 -path $(ProjectDir)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -128,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Domain\AppDomain.cpp" />
     <ClCompile Include="Command\CD\CdCommand.cpp" />
     <ClCompile Include="Command\Echo\EchoCommand.cpp" />
     <ClCompile Include="Command\Exit\ExitCommand.cpp" />
@@ -148,6 +152,8 @@
     <ClCompile Include="Utils\String\StringUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Assembly.h" />
+    <ClInclude Include="Domain\AppDomain.h" />
     <ClInclude Include="Command\CD\CdCommand.h" />
     <ClInclude Include="Command\Echo\EchoCommand.h" />
     <ClInclude Include="Command\Exit\ExitCommand.h" />
@@ -167,6 +173,9 @@
     <ClInclude Include="Command\Type\TypeCommand.h" />
     <ClInclude Include="Utils\Utils.h" />
     <ClInclude Include="Utils\String\StringUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assembly.ps1" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

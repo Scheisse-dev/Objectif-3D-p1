@@ -1,6 +1,7 @@
 #pragma once
 #include "../ICommand.h"
 
+UCLASS()
 class ExitCommand : public ICommand
 {
 #pragma region constructor/destructor

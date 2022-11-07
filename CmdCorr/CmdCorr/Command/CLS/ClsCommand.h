@@ -1,6 +1,7 @@
 #pragma once
 #include "../ICommand.h"
 
+UCLASS()
 class ClsCommand : public ICommand
 {
 #pragma region constructor/destructor

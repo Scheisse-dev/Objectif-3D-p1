@@ -69,6 +69,9 @@
     <ClCompile Include="Command\Help\HelpCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Domain\AppDomain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object\Object.h">
@@ -128,5 +131,14 @@
     <ClInclude Include="Command\Help\HelpCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Domain\AppDomain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Assembly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assembly.ps1" />
   </ItemGroup>
 </Project>

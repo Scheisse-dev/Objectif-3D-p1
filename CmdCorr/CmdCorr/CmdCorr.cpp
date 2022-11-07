@@ -1,33 +1,17 @@
-#include <iostream>
 #include "Manager/CommandManager.h"
-#include "Command/CLS/ClsCommand.h"
-#include "Command/CD/CdCommand.h"
-#include "Command/Echo/EchoCommand.h"
-#include "Command/Exit/ExitCommand.h"
-#include "Command/TaskList/TaskListCommand.h"
-#include "Command/Tree/TreeCommand.h"
-#include "Command/Drives/DrivesCommand.h"
-#include "Command/Type/TypeCommand.h"
-#include "Command/Time/TimeCommand.h"
-#include "Command/Help/HelpCommand.h"
 #include "Utils/Utils.h"
+#include "Assembly.h"
 #include <windows.h>
+#include <iostream>
 
 int main()
 {
     SetConsoleTitle(L"Command Prompt"); 
-    CommandManager::Instance()->Register({
-        new ClsCommand(),
-        new CdCommand(),
-        new EchoCommand(),
-        new ExitCommand(),
-        new TaskListCommand(),
-        new TreeCommand(),
-        new DrivesCommand(),
-        new TimeCommand(),
-        new TypeCommand(),
-        new HelpCommand()
-        });
+
+    for (ICommand* _command : AppDomain::GetAssembliesOf<ICommand>())
+    {
+        CommandManager::Instance()->Register(_command); 
+    }
    
     std::string _command = "", _label = "";;
     std::cout << "Microsoft Windows [version" + Utils::GetWindowsVersion() + "]" << std::endl; 

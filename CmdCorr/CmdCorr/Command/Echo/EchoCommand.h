@@ -1,6 +1,7 @@
 #pragma once
 #include "../ICommand.h"
 
+UCLASS()
 class EchoCommand : public ICommand
 {
 #pragma region f/p
