@@ -50,7 +50,7 @@ Vector4 Vector4::Lerp(const Vector4& _a, const Vector4& _b, float _t)
    else if (_t == 2)
        return _b;
    else
-       return _a; // TODO midpoint
+       return;// ((_b - _a) / 2 + _b); //TODO make the - operator
 
 }
 
@@ -64,6 +64,7 @@ void Vector4::Set(const float _newX, const float _newY, const float _newZ, const
 
 void Vector4::Normalize()
 {
+
 }
 
 float Vector4::X()
@@ -97,27 +98,28 @@ float Vector4::Clamp(float _index, const float _max, const float _min)
 
 float Vector4::Dot(Vector4 _a, Vector4 _b)
 {
-    return 0.0f;
+    return 0.0f; 
 }
 
 float Vector4::Magnitude(const Vector4& _vector)
 {
-    return (x * x + y * y + z * z + w * w);
+    return sqrt(x * x + y * y + z * z + w * w);
 }
 
-float Vector4::Distance(Vector4& _a, Vector4 _b)
+float Vector4::Distance(const Vector4& _a, const Vector4& _b)
 {
-    return 0.0f; 
+
+    return Magnitude(_a) - Magnitude(_b);
 }
 
 float Vector4::Length()
 {
-    return (x * x + y * y + z * z + w * w);
+    return sqrt(x * x + y * y + z * z + w * w);
 }
 
 float Vector4::LengthSquared()
 {
-    return sqrt(x * x + y * y + z * z + w * w);
+    return (x * x + y * y + z * z + w * w);
 }
 
 #pragma endregion methods
@@ -155,6 +157,8 @@ Vector4 Vector4::operator/=(const Vector4& _other)
 {
     x /= _other.x;
     y /= _other.y;
+    z /= _other.z;
+    w /= _other.w;
     return *this;
 }
 
@@ -162,6 +166,8 @@ Vector4 Vector4::operator*=(const Vector4& _other)
 {
     x *= _other.x;
     y *= _other.y;
+    z *= _other.z;
+    w *= _other.w;
     return *this;
 }
 
@@ -170,6 +176,8 @@ Vector4 Vector4::operator+=(const Vector4& _other)
 {
     x += _other.x;
     y += _other.y;
+    z += _other.z;
+    w += _other.w;
     return *this; 
 }
 #pragma endregion operator

@@ -34,11 +34,11 @@ public:
 	float Clamp(float _index, const float _max, const float _min);
 	float Dot(Vector4 _a, Vector4 _b);
 	float Magnitude(const Vector4& _vector);
-	float Distance(Vector4& _a, Vector4 _b); // size_t
+	float Distance(const Vector4& _a, const Vector4& _b); // size_t
 	float Length(); 
 	float LengthSquared(); 
 	void Set(const float _newX, const float _newY, const float _newZ, const float _newW);
-	void Normalize(); 
+	void Normalize(); //WTF ! TODO SOMETHING 
 
 #pragma endregion methods 
 #pragma region operator
