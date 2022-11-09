@@ -17,5 +17,8 @@ int main()
     std::cout << IsPointer<int*>::Value << std::endl;
     std::cout << IsPointer<const int*>::Value << std::endl;
     std::cout << IsPointer<const int>::Value << std::endl;
+
+    RemoveConst<int> = > int;
+    RemoveConst<const int = > int;
 }
 
