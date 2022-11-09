@@ -23,6 +23,11 @@ float Mathf::Abs(const float _value)
     return std::abs(_value);
 }
 
+float Mathf::Acos(const float _value)
+{
+    return std::acos(_value);
+}
+
 float Mathf::Clamp01(const float _value)
 {
     if (_value < 0) return 0;

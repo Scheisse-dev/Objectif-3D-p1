@@ -24,6 +24,12 @@ public:
 #pragma region methods
 public:
 	/// <summary>
+	/// identify the default position
+	/// </summary>
+	/// <param name="_value">Quaternion</param>
+	/// <returns>Quaternion</returns>
+	static Quaternion Identify(const Quaternion& _value);
+	/// <summary>
 	/// Normalize vector between 0 and 1 
 	/// </summary>
 	static Quaternion Normalize(Quaternion& _value);
@@ -47,7 +53,6 @@ public:
 	/// <param name="_t">time</param>
 	/// <returns>Vector4</returns>
 	static Quaternion Lerp(const Quaternion& _a, const Quaternion& _b, const float _t);
-	// Identify
 	static float Dot(const Quaternion& _a, const Quaternion& _b);
 	/// <summary>
 	/// Retrun the Angle Degree
@@ -77,6 +82,7 @@ public:
 	/// </summary>
 	/// <returns>String</returns>
 	std::string ToString() const;
+	 
 #pragma endregion methods
 #pragma region operator
 public:

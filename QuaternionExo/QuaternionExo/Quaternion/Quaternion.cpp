@@ -1,5 +1,6 @@
 #include "Quaternion.h"
 #include <format>
+#include <cmath>
 
 
 #pragma region constructor 
@@ -29,13 +30,19 @@ Quaternion::Quaternion(const Quaternion& _copy)
 
 #pragma region methods
 
+Quaternion Quaternion::Identify(const Quaternion& _value)
+{
+	return Quaternion(_value);
+}
+
 Quaternion Quaternion::Normalize(Quaternion& _value)
 {
+	Quaternion _quat = Quaternion(0,0,0,0);
 	float _length = Mathf::Sqrt(Dot(_value, _value));
 	if (_length > Epsilon)
-		_value = _value / _length;
-	else _value = Quaternion(0);
-	return _value;
+		_quat = _value / _length;
+	else _quat = Quaternion(0);
+	return _quat;
 }
 Quaternion Quaternion::Negate(const Quaternion& _value)
 {
@@ -49,7 +56,18 @@ Quaternion Quaternion::Inverse(const Quaternion& _value)
 }
 Quaternion Quaternion::Lerp(const Quaternion& _a, const Quaternion& _b, const float _t)
 {
-	return _a;
+	float _time;
+	if (_t > 1) _time = 1;
+	if (_t < 0) _time = 0;
+	else _time = _t;
+
+	 Quaternion _result (_a.x + (_b.x - _a.x) * _time,
+		_a.y + (_b.y - _a.y) * _time,
+		_a.z + (_b.z - _a.z) * _time,
+		_a.w + (_b.w - _a.w) * _time);
+
+	 return Normalize(_result);
+
 }
 /// <summary>
 /// return the dot between two Quaternion
@@ -64,6 +82,8 @@ float Quaternion::Dot(const Quaternion& _a, const Quaternion& _b)
 
 float Quaternion::Angle(const Quaternion& _a, const Quaternion& _b)
 {
+	_dot = Mathf::Min(Mathf::Abs(_a.x * _b.x + _a.y * _b.y + _a.z * _b.z + _a.w * _b.w), 1f);
+	float A = (Dot > 1 - EPSILON)
 	return 0.0f;
 }
 
@@ -124,10 +144,5 @@ bool Quaternion::operator!=(const Quaternion& _other)
 {
 	return x != _other.x && y != _other.y && z != _other.z && w != _other.w;
 }
-
-
-
-
-
 #pragma endregion operator
 

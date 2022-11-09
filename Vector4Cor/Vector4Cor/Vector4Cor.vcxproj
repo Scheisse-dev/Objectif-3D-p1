@@ -24,6 +24,7 @@
     <ProjectGuid>{93d42d75-3624-4b7b-801c-52a1aa6aff16}</ProjectGuid>
     <RootNamespace>Vector4Cor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Vector4QuaternionCor</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -129,12 +130,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Mathf.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="Vector4.cpp" />
     <ClCompile Include="Vector4Cor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssertMacro.h" />
     <ClInclude Include="Mathf.h" />
+    <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Vector4.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
