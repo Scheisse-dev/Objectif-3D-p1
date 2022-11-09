@@ -17,6 +17,8 @@ public:
 	static float Max(const float _a, const float _b);
 	static float Abs(const float _value);
 	static float Acos(const float _value);
+	static float Cos(const float _value);
+	static float Sin(const float _value);
 #pragma endregion methods
 };
 

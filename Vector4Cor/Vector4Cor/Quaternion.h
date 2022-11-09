@@ -23,10 +23,23 @@ public:
 	static float Angle(const Quaternion& _a, const Quaternion& _b);
 	static Quaternion Normalize(const Quaternion& _value);
 	static Quaternion Conjugate(const Quaternion& _value);
+	static Quaternion Negate(const Quaternion& _value);
+	static Quaternion Inverse(const Quaternion& _value); 
+	static Quaternion Lerp(const Quaternion& _a, const Quaternion& _b, const float _time);
+	static Quaternion CreateFromYawPitchRoll(const float _yaw, const float _pitch, const float _roll); 
+	float Length() const;
+	float LengthSquared() const;
+
 #pragma endregion methods
 #pragma region operator
 public:
-
+	Quaternion operator+(const Quaternion& _other) const;
+	Quaternion operator-(const Quaternion& _other) const;
+	Quaternion operator*(const Quaternion& _other) const;
+	Quaternion operator/(const Quaternion& _other) const;
+	bool operator==(const Quaternion& _other) const;
+	bool operator!=(const Quaternion& _other) const;
+	float& operator[](const int _index); 
 #pragma endregion operator
 };
 

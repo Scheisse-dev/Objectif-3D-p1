@@ -28,6 +28,16 @@ float Mathf::Acos(const float _value)
     return std::acos(_value);
 }
 
+float Mathf::Cos(const float _value)
+{
+    return std::cos(_value); 
+}
+
+float Mathf::Sin(const float _value)
+{
+    return std::sin(_value);
+}
+
 float Mathf::Clamp01(const float _value)
 {
     if (_value < 0) return 0;
