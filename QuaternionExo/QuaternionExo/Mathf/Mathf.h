@@ -1,6 +1,8 @@
 #pragma once
 class Mathf
 {
-	//sqrd
+public: 
+
+	static float Sqrt(const float _value);
 };
 
