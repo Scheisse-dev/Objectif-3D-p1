@@ -2,8 +2,8 @@
 #include <exception>
 #include <format>
 #include <string>
-#include "Mathf.h"
-#include "AssertMacro.h"
+#include "../Math/Mathf.h"
+#include "../AssertMacro/AssertMacro.h"
 
 #pragma region f/p
 Vector4 const Vector4::Zero = Vector4(0);
