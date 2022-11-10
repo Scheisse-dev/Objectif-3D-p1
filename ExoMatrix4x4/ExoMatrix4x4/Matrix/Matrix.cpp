@@ -27,11 +27,19 @@ Matrix::Matrix(const Matrix& _copy)
 
 #pragma endregion constructor
 #pragma region methods
+Matrix Matrix::CreateTranslation(Matrix& _mat, const float _xw, const float _yw, const float _zw)
+{
+	// modifier w 
+	_mat.xw += _xw; 
+	_mat.yw += _yw;
+	_mat.zw += _zw;
 
+}
 
 
 #pragma endregion methods
 #pragma region operator
+
 Matrix Matrix::operator* (Matrix& _other)
 {
 		xx * _other.xx, xy * _other.xy, xz * _other.xz, xw * _other.xw,

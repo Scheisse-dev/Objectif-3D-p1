@@ -3,10 +3,10 @@ class Matrix
 {
 #pragma region f/p
 private:
-	float xx , xy , xz , xw , 
-		  yx , yy , yz , yw , 
-		  zx , zy , zz , zw , 
-		  wx , wy , wz , ww = 0; 
+	float xx, xy, xz, xw,
+		yx, yy, yz, yw,
+		zx, zy, zz, zw,
+		wx, wy, wz, ww = 0;
 public: 
 	static const Matrix Identity;
 #pragma endregion f/p
@@ -21,7 +21,7 @@ public:
 #pragma endregion constructor
 #pragma region methods
 public:
-	static Matrix CreateTranslation(const float _x, const float _y, const float _z);
+	static Matrix CreateTranslation(Matrix& _mat, const float _xw, const float _yw, const float _zw);
 	static Matrix CreateScale(const float _x, const float _y, const float _z);
 	static Matrix CreateRotationX(const float _rad);
 	static Matrix CreateRotationY(const float _rad);
