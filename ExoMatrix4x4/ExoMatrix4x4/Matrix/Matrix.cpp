@@ -79,6 +79,16 @@ Matrix Matrix::CreateRotationZ(Matrix& _mat, const float _rad)
 				  _mat.wx, _mat.wy, _mat.wz, _mat.ww);
 }
 
+Matrix Matrix::CreateOrthographic( const float _width, const float height, const float nearllane, const float favllane)
+{
+	return Matrix(2, 0, 0, 0,
+				  0, 2, 0, 0,
+				  0, 0, 2, 0,
+				  2, 2, 2, 1
+	);
+	
+}
+
 Matrix Matrix::CreatefromQuaternion(Quaternion& _quat)
 {
 	
@@ -91,7 +101,42 @@ Matrix Matrix::CreatefromQuaternion(Quaternion& _quat)
 }
 float Matrix::GetDeterminant(const Matrix& _mat)
 {
-	return _mat.xx*((_mat.yy * _mat.zz * _mat.ww) - (_mat.yy);
+	float a = _mat.xx, b = _mat.xy, c = _mat.xz, d = _mat.xw,
+		e = _mat.yx, f = _mat.yy, g = _mat.yz, h = _mat.yw,
+		i = _mat.zx, j = _mat.zy, k = _mat.zz, l = _mat.zw,
+		m = _mat.wx, n = _mat.wy, o = _mat.wz, p = _mat.ww;
+	
+	return 
+		a * (f * k * p - f * l * o - g * j * p + g * l * n + h * j * o - h * k * n)
+		- b * (e * k * p - e * l * o - g * i * p + g * l * m + h * i * o - h * k * m)
+		+ c * (e * j * p - e * l * n - f * i * p + f * l * m + h * i * n - h * j * m)
+		- d * (e * j * o - e * k * n - f * i * o + f * k * m + g * i * n + g * j * m)
+		;
+}
+Matrix Matrix::Lerp(const Matrix& _a, const Matrix& _b, const float _t)
+{
+	const float _time = Mathf::Clamp01(_t);
+	return Matrix(_a.xx + (_b.xx - _a.xx) * _time,
+		_a.xy + (_b.xy - _a.xy) * _time,
+		_a.xz + (_b.xz - _a.xz) * _time,
+		_a.xw + (_b.xw - _a.xw) * _time,
+
+		_a.yx + (_b.yx - _a.yx) * _time,
+		_a.yy + (_b.yy - _a.yy) * _time,
+		_a.yz + (_b.yz - _a.yz) * _time,
+		_a.yw + (_b.yw - _a.yw) * _time,
+
+		_a.zx + (_b.zx - _a.zx) * _time,
+		_a.zy + (_b.zy - _a.zy) * _time,
+		_a.zz + (_b.zz - _a.zz) * _time,
+		_a.zw + (_b.zw - _a.zw) * _time,
+
+		_a.wx + (_b.wx - _a.wx) * _time,
+		_a.wy + (_b.wy - _a.wy) * _time,
+		_a.wz + (_b.wz - _a.wz) * _time,
+		_a.ww + (_b.ww - _a.ww) * _time
+		);
+
 }
 
 #pragma endregion methods
