@@ -16,11 +16,10 @@ int main()
     //std::cout << "Lerp => 1" + Matrix::Lerp(Matrix::CreateTranslation(mat, 10, 25, 45), Matrix::CreateScale(mat, 5.0f, 5.0f, 5.0f), 1.0f).ToString() << "\n" << "=====================" << std::endl;
     //std::cout << "Lerp => 0.5" + Matrix::Lerp(Matrix::CreateTranslation(mat, 10, 25, 45), Matrix::CreateScale(mat, 5.0f, 5.0f, 5.0f), 0.5f).ToString() << "\n" << "=====================" << std::endl;
     //std::cout << "Lerp => 0" + Matrix::Lerp(Matrix::CreateTranslation(mat, 10, 25, 45), Matrix::CreateScale(mat, 5.0f, 5.0f, 5.0f), 0.0f).ToString() << "\n" << "=====================" << std::endl;
-    //std::cout << "CreateOrthogaphic => (100, 80, 250, 150)" + Matrix::CreateOrthographic(100, 80, 250, 150).ToString() << "\n" << "=====================" << std::endl;
+    std::cout << "CreateOrthogaphic => (100, 80, 250, 150)" + Matrix::CreateOrthographic(100, 80, 250, 150).ToString() << "\n" << "=====================" << std::endl;
     //std::cout << "-Translation" << (-Matrix::CreateTranslation(mat, 10, 25, 45)).ToString() << "\n" << "=====================" << std::endl;
-
-
-    std::cout << "Translation * Scale" << (Matrix::CreateTranslation(mat, 10, 25, 45) * Matrix::CreateScale(mat, 5.0f, 5.0f, 5.0f)).ToString() << "\n" << "=====================" << std::endl;
-    std::cout << "Translation + Scale" << (Matrix::CreateTranslation(mat, 10, 25, 45) + Matrix::CreateScale(mat, 5.0f, 5.0f, 5.0f)).ToString() << "\n" << "=====================" << std::endl;
-    std::cout << "Translation - Scale" << (Matrix::CreateTranslation(mat, 10, 25, 45) - Matrix::CreateScale(mat, 5.0f, 5.0f, 5.0f)).ToString() << "\n" << "=====================" << std::endl;
+    //std::cout << "Translation * Scale" << (Matrix::CreateTranslation(mat, 10, 25, 45) * Matrix::CreateScale(mat, 5.0f, 5.0f, 5.0f)).ToString() << "\n" << "=====================" << std::endl;
+    //std::cout << "Translation + Scale" << (Matrix::CreateTranslation(mat, 10, 25, 45) + Matrix::CreateScale(mat, 5.0f, 5.0f, 5.0f)).ToString() << "\n" << "=====================" << std::endl;
+    //std::cout << "Translation - Scale" << (Matrix::CreateTranslation(mat, 10, 25, 45) - Matrix::CreateScale(mat, 5.0f, 5.0f, 5.0f)).ToString() << "\n" << "=====================" << std::endl;
+    std::cout << mat[0];
 }

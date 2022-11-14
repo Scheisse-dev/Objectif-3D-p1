@@ -26,7 +26,7 @@ public:
 #pragma region methods
 public:
 	std::string ToString();
-	static Matrix CreateTranslation(Matrix& _mat, const float _xw, const float _yw, const float _zw); // good
+	static Matrix CreateTranslation(const Matrix& _mat, const float _xw, const float _yw, const float _zw); // good
 	static Matrix CreateScale(Matrix& _mat, const float _x, const float _y, const float _z); //good
 	static Matrix CreateRotationX(Matrix& _mat, const float _rad); // good
 	static Matrix CreateRotationY(Matrix& _mat , const float _rad); // good
@@ -39,11 +39,11 @@ public:
 #pragma endregion methods
 #pragma region operator
 public:
-	Matrix operator*(const Matrix& _other); //done
-	Matrix operator+(const Matrix& _other);//done
-	Matrix operator-(const Matrix& _other);//done
+	Matrix operator*(const Matrix& _other); //good
+	Matrix operator+(const Matrix& _other);//good
+	Matrix operator-(const Matrix& _other);//good
 	Matrix operator-(); //good
-	float& operator[](const int _index);
+	float& operator[](const int _index); // done
 #pragma endregion operator
 };
 

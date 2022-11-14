@@ -32,10 +32,10 @@ Matrix::Matrix(const Matrix& _copy)
 #pragma region methods
 std::string Matrix::ToString()
 {
-	return std::format("\n\n[M11:{},M12:{},M13:{},M14:{}]\n\n[M21:{},M22:{},M23:{},M24:{}]\n\n[M31:{},M32:{},M33:{},M34:{}]\n\n[M41:{},M42:{},M43{},M44:{}]", xx, xy, xz, xw , yx, yy, yz, yw, zx, zy, zz , zw, wx , wy ,wz , ww);
+	return std::format("\n\n[M11:{},M12:{},M13:{},M14:{}]\n\n[M21:{},M22:{},M23:{},M24:{}]\n\n[M31:{},M32:{},M33:{},M34:{}]\n\n[M41:{},M42:{},M43:{},M44:{}]", xx, xy, xz, xw , yx, yy, yz, yw, zx, zy, zz , zw, wx , wy ,wz , ww);
 }
 
-Matrix Matrix::CreateTranslation(Matrix& _mat, const float _xw, const float _yw, const float _zw)
+Matrix Matrix::CreateTranslation(const Matrix& _mat, const float _xw, const float _yw, const float _zw)
 {
 	
 	return Matrix(_mat.xx, _mat.xy, _mat.xz, _mat.xw + _xw,
@@ -84,8 +84,8 @@ Matrix Matrix::CreateOrthographic( const float _width, const float _height, cons
 {
 	return Matrix(2/ _width, 0.0f, 0.0f,0.0f,
 				  0.0f, 2/_height, 0.0f, 0.0f,
-				  0.0f, 0.0f, 2/_favllane- _nearllane, 0.0f,
-				  0.0f, 0.0f, 0.0f, 1.0f
+				  0.0f, 0.0f, -(1/(_favllane - _nearllane)), 0.0f,
+				  0.0f, 0.0f, _nearllane/(_nearllane - _favllane), 1.0f
 	);
 	
 }
@@ -173,7 +173,7 @@ Matrix Matrix::operator-()
 
 float& Matrix::operator[](const int _index)
 {
-	check(_index > 0 && _index < 15);
+	check(_index >= 0 && _index < 15);
 	switch (_index)
 	{
 	case 0: return xx;
