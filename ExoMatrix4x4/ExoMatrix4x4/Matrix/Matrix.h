@@ -1,4 +1,5 @@
 #pragma once
+#include "string"
 
 class Quaternion;
 
@@ -24,16 +25,16 @@ public:
 #pragma endregion constructor
 #pragma region methods
 public:
-
-	static Matrix CreateTranslation(Matrix& _mat, const float _xw, const float _yw, const float _zw); // done 
-	static Matrix CreateScale(Matrix& _mat, const float _x, const float _y, const float _z); //done
-	static Matrix CreateRotationX(Matrix& _mat, const float _rad); // done 
-	static Matrix CreateRotationY(Matrix& _mat , const float _rad); // done 
-	static Matrix CreateRotationZ(Matrix& _mat, const float _rad); //done
+	std::string ToString();
+	static Matrix CreateTranslation(Matrix& _mat, const float _xw, const float _yw, const float _zw); // good
+	static Matrix CreateScale(Matrix& _mat, const float _x, const float _y, const float _z); //good
+	static Matrix CreateRotationX(Matrix& _mat, const float _rad); // good
+	static Matrix CreateRotationY(Matrix& _mat , const float _rad); // good
+	static Matrix CreateRotationZ(Matrix& _mat, const float _rad); //good
 	static Matrix CreateOrthographic(const float _width, const float height, const float nearllane, const float favllane);
-	static Matrix CreatefromQuaternion(const Quaternion& _quat);
+	static Matrix CreatefromQuaternion( Quaternion& _quat); //good
 	static Matrix Lerp(const Matrix& _a, const Matrix& _b, const float _t);
-	static Matrix GetDeterminant(const Matrix& _mat);
+	static float GetDeterminant(const Matrix& _mat);
 	
 #pragma endregion methods
 #pragma region operator
@@ -41,7 +42,7 @@ public:
 	Matrix operator*(Matrix& _other); //done
 	Matrix operator+(Matrix& _other);//done
 	Matrix operator-(Matrix& _other);//done
-	Matrix operator-(); 
+	Matrix operator-(); //done
 	// operator[];
 #pragma endregion operator
 };

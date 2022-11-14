@@ -1,6 +1,7 @@
 #include "Matrix.h"
 #include "../Math/Mathf.h"
 #include "../Quaternion/Quaternion.h"
+#include <format>
 
 #pragma region f/p
 Matrix const Matrix::Identity = Matrix( 1, 0, 0, 0,
@@ -28,11 +29,18 @@ Matrix::Matrix(const Matrix& _copy)
 
 #pragma endregion constructor
 #pragma region methods
+std::string Matrix::ToString()
+{
+	return std::format("\n\n[M11:{},M12:{},M13:{},M14:{}]\n\n[M21:{},M22:{},M23:{},M24:{}]\n\n[M31:{},M32:{},M33:{},M34:{}]\n\n[M41:{},M42:{},M43{},M44:{}]", xx, xy, xz, xw , yx, yy, yz, yw, zx, zy, zz , zw, wx , wy ,wz , ww);
+}
+
 Matrix Matrix::CreateTranslation(Matrix& _mat, const float _xw, const float _yw, const float _zw)
 {
 	
-	return Matrix(_mat.xx, _mat.xy, _mat.xz, _mat.xw += _xw, _mat.yx, _mat.yy, _mat.yz, _mat.yw += _yw, _mat.zx, _mat.zy, _mat.zz,
-		_mat.zw += _zw, _mat.wx, _mat.wy, _mat.wz, _mat.ww
+	return Matrix(_mat.xx, _mat.xy, _mat.xz, _mat.xw + _xw,
+				  _mat.yx, _mat.yy, _mat.yz, _mat.yw + _yw, 
+				  _mat.zx, _mat.zy, _mat.zz, _mat.zw + _zw, 
+				  _mat.wx, _mat.wy, _mat.wz, _mat.ww
 	);
 	
 }
@@ -71,12 +79,19 @@ Matrix Matrix::CreateRotationZ(Matrix& _mat, const float _rad)
 				  _mat.wx, _mat.wy, _mat.wz, _mat.ww);
 }
 
-Matrix Matrix::CreatefromQuaternion(const Quaternion& _quat)
+Matrix Matrix::CreatefromQuaternion(Quaternion& _quat)
 {
-	return Matrix(2 * ((_quat.x * _quat.x) + (_quat.y * _quat.y)) -1 , 2 * ((_quat.y * _quat.z) - (_quat.x * _quat.w))	   , 2 * ((_quat.z * _quat.w) + (_quat.x * _quat.z))	, 0.0f,
-				  2 * ((_quat.y * _quat.z) + (_quat.x * _quat.w))    , 2 * ((_quat.x * _quat.x) + (_quat.z * _quat.z)) - 1 , 2 * ((_quat.z * _quat.w) - (_quat.x * _quat.y))	, 0.0f,
-				  2 * ((_quat.y * _quat.w) - (_quat.x * _quat.z))    , 2 * ((_quat.z * _quat.w) + (_quat.x* _quat.y))	   , 2 * ((_quat.x * _quat.x) + (_quat.z * _quat.z)) -1 , 0.0f,
-				  0.0f ,											   0.0f ,												 0.0f ,												  1.0f);
+	
+	return Matrix(1 - (2 * ((_quat.y * _quat.y) + (_quat.z * _quat.z))), 2 * ((_quat.x * _quat.y) + (_quat.z * _quat.w)), 2 * ((_quat.x * _quat.z) - (_quat.y * _quat.w)), 0.0f,
+		2 * ((_quat.x * _quat.y) - (_quat.z * _quat.w)), 1 - (2 * ((_quat.x * _quat.x) + (_quat.z * _quat.z))), 2 * ((_quat.y * _quat.z) + (_quat.x * _quat.w)), 0.0f,
+		2 * ((_quat.x * _quat.z) + (_quat.y * _quat.w)), 2 * ((_quat.y * _quat.z) - (_quat.x * _quat.w)), 1 - (2 * ((_quat.x * _quat.x) + (_quat.y * _quat.y))), 0.0f,
+		0.0f,											 0.0f,											 0.0f,													1.0f);
+
+
+}
+float Matrix::GetDeterminant(const Matrix& _mat)
+{
+	return _mat.xx*((_mat.yy * _mat.zz * _mat.ww) - (_mat.yy);
 }
 
 #pragma endregion methods
