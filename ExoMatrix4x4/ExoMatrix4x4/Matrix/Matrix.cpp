@@ -1,6 +1,7 @@
 #include "Matrix.h"
 #include "../Math/Mathf.h"
 #include "../Quaternion/Quaternion.h"
+#include "../AssertMacro/AssertMacro.h"
 #include <format>
 
 #pragma region f/p
@@ -79,12 +80,12 @@ Matrix Matrix::CreateRotationZ(Matrix& _mat, const float _rad)
 				  _mat.wx, _mat.wy, _mat.wz, _mat.ww);
 }
 
-Matrix Matrix::CreateOrthographic( const float _width, const float height, const float nearllane, const float favllane)
+Matrix Matrix::CreateOrthographic( const float _width, const float _height, const float _nearllane, const float _favllane)
 {
-	return Matrix(2, 0, 0, 0,
-				  0, 2, 0, 0,
-				  0, 0, 2, 0,
-				  2, 2, 2, 1
+	return Matrix(2/ _width, 0.0f, 0.0f,0.0f,
+				  0.0f, 2/_height, 0.0f, 0.0f,
+				  0.0f, 0.0f, 2/_favllane- _nearllane, 0.0f,
+				  0.0f, 0.0f, 0.0f, 1.0f
 	);
 	
 }
@@ -142,34 +143,59 @@ Matrix Matrix::Lerp(const Matrix& _a, const Matrix& _b, const float _t)
 #pragma endregion methods
 #pragma region operator
 
-Matrix Matrix::operator* (Matrix& _other)
+Matrix Matrix::operator* (const Matrix& _other)
 {
-		xx * _other.xx, xy * _other.xy, xz * _other.xz, xw * _other.xw,
-		yx * _other.yx, yy * _other.yy, yz * _other.yz, yw * _other.yw,
-		zx * _other.zx, zy * _other.zy, zz * _other.zz, zw * _other.zw,
-		wx * _other.wx, wy * _other.wy, wz * _other.wz, ww * _other.ww;
-		return *this;
+	return Matrix(  (xx * _other.xx) + (xy * _other.xy) + (xz * _other.xz), (xx * _other.xy) + (xy * _other.yy) + (xz * _other.zy), (xx * _other.xz) + (xy * _other.yz) + (xz * _other.zz), 0.0f,
+					(yx * _other.xx) + (yy * _other.xy) + (yz * _other.xz), (yx * _other.xy) + (yy * _other.yy) + (yz * _other.zy), (xy * _other.xz) + (yy * _other.yz) + (yz * _other.zz), 0.0f,
+					(zx * _other.xx) + (zy * _other.xy) + (zz * _other.xz), (zx * _other.xy) + (zy * _other.yy) + (zz * _other.zy), (zx * _other.xz) + (zy * _other.yz) + (zz * _other.zz), 0.0f,
+					0.0f												  , 0.0f												  , 0.0f												  , 1.0f);
 }
-Matrix Matrix::operator + (Matrix& _other)
+Matrix Matrix::operator + (const Matrix& _other)
 {
-		xx+ _other.xx, xy+ _other.xy, xz+ _other.xz, xw+ _other.xw,
+		return Matrix(xx+ _other.xx, xy+ _other.xy, xz+ _other.xz, xw+ _other.xw,
 		yx+ _other.yx, yy+ _other.yy, yz+ _other.yz, yw+ _other.yw,
 		zx+ _other.zx, zy+ _other.zy, zz+ _other.zz, zw+ _other.zw,
-		wx+ _other.wx, wy+ _other.wy, wz+ _other.wz, ww+ _other.ww;
-	return *this;
+		wx+ _other.wx, wy+ _other.wy, wz+ _other.wz, ww+ _other.ww)
+	;
 }
-Matrix Matrix::operator - (Matrix & _other)
+Matrix Matrix::operator - (const Matrix & _other)
 {
-		xx - _other.xx, xy - _other.xy, xz - _other.xz, xw - _other.xw,
+		return Matrix(xx - _other.xx, xy - _other.xy, xz - _other.xz, xw - _other.xw,
 		yx - _other.yx, yy - _other.yy, yz - _other.yz, yw - _other.yw,
 		zx - _other.zx, zy - _other.zy, zz - _other.zz, zw - _other.zw,
-		wx - _other.wx, wy - _other.wy, wz - _other.wz, ww - _other.ww;
-	return *this;
+		wx - _other.wx, wy - _other.wy, wz - _other.wz, ww - _other.ww);
+
 }
 Matrix Matrix::operator-()
 {
-	return -*this;
+	return Matrix(-xx, -xy, -xz, -xw, -yx, -yy, -yz, -yw, -zx, -zy, -zz, -zw, -wx, -wy, -wz, -ww);
 }
+
+float& Matrix::operator[](const int _index)
+{
+	check(_index > 0 && _index < 15);
+	switch (_index)
+	{
+	case 0: return xx;
+	case 1: return xy;
+	case 2: return xz;
+	case 3: return xw;
+	case 4: return yx;
+	case 5: return yy;
+	case 6: return yz;
+	case 7: return yw;
+	case 8: return zx;
+	case 9: return zy;
+	case 10: return zz;
+	case 11: return zw;
+	case 12: return wx;
+	case 13: return wy; 
+	case 14: return wz;
+	case 15: return ww;
+
+	}
+}
+
 
 #pragma endregion operator
 

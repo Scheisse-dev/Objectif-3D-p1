@@ -31,7 +31,7 @@ public:
 	static Matrix CreateRotationX(Matrix& _mat, const float _rad); // good
 	static Matrix CreateRotationY(Matrix& _mat , const float _rad); // good
 	static Matrix CreateRotationZ(Matrix& _mat, const float _rad); //good
-	static Matrix CreateOrthographic( const float _width, const float height, const float nearllane, const float favllane);
+	static Matrix CreateOrthographic( const float _width, const float _height, const float _nearllane, const float _favllane);
 	static Matrix CreatefromQuaternion( Quaternion& _quat); //good
 	static Matrix Lerp(const Matrix& _a, const Matrix& _b,const float _t); //good
 	static float GetDeterminant(const Matrix& _mat); // good 
@@ -39,11 +39,11 @@ public:
 #pragma endregion methods
 #pragma region operator
 public:
-	Matrix operator*(Matrix& _other); //done
-	Matrix operator+(Matrix& _other);//done
-	Matrix operator-(Matrix& _other);//done
-	Matrix operator-(); //done
-	// operator[];
+	Matrix operator*(const Matrix& _other); //done
+	Matrix operator+(const Matrix& _other);//done
+	Matrix operator-(const Matrix& _other);//done
+	Matrix operator-(); //good
+	float& operator[](const int _index);
 #pragma endregion operator
 };
 
