@@ -1,4 +1,5 @@
 #include "Matrix.h"
+#include "../Math/Mathf.h"
 #include "../Quaternion/Quaternion.h"
 
 #pragma region f/p
@@ -29,13 +30,54 @@ Matrix::Matrix(const Matrix& _copy)
 #pragma region methods
 Matrix Matrix::CreateTranslation(Matrix& _mat, const float _xw, const float _yw, const float _zw)
 {
-	// modifier w 
-	_mat.xw += _xw; 
-	_mat.yw += _yw;
-	_mat.zw += _zw;
-
+	
+	return Matrix(_mat.xx, _mat.xy, _mat.xz, _mat.xw += _xw, _mat.yx, _mat.yy, _mat.yz, _mat.yw += _yw, _mat.zx, _mat.zy, _mat.zz,
+		_mat.zw += _zw, _mat.wx, _mat.wy, _mat.wz, _mat.ww
+	);
+	
 }
 
+Matrix Matrix::CreateScale(Matrix& _mat, const float _x, const float _y, const float _z)
+{
+	return Matrix(_mat.xx * _x, _mat.xy * _y, _mat.xz * _z, _mat.xw,
+				  _mat.yx * _x, _mat.yy * _y, _mat.yz * _z, _mat.yw,
+				  _mat.zx * _x, _mat.zy * _y, _mat.zz * _z, _mat.zw,
+				  _mat.wx, _mat.wy, _mat.wz, _mat.ww);
+}
+
+
+Matrix Matrix::CreateRotationX(Matrix& _mat, const float _rad)
+{
+	return Matrix(_mat.xx, _mat.xy, _mat.xz, _mat.xw, 
+				  _mat.yx, _mat.yy = Mathf::Cos(_rad), _mat.yz= Mathf::Sin(_rad), _mat.yw, 
+				  _mat.zx, _mat.zy = -Mathf::Sin(_rad), _mat.zz = Mathf::Cos(_rad),_mat.zw, 
+				  _mat.wx, _mat.wy, _mat.wz, _mat.ww);
+	
+}
+Matrix Matrix::CreateRotationY(Matrix& _mat, const float _rad)
+{
+	return Matrix(_mat.xx = Mathf::Cos(_rad), _mat.xy, _mat.xz = Mathf::Sin(_rad), _mat.xw, 
+				  _mat.yx, _mat.yy, _mat.yz, _mat.yw, 
+				  _mat.zx = Mathf::Sin(_rad), _mat.zy, _mat.zz = Mathf::Cos(_rad), _mat.zw,
+				  _mat.wx, _mat.wy, _mat.wz, _mat.ww);
+}
+
+
+Matrix Matrix::CreateRotationZ(Matrix& _mat, const float _rad)
+{
+	return Matrix(_mat.xx = Mathf::Cos(_rad), _mat.xy = Mathf::Sin(_rad), _mat.xz, _mat.xw , 
+				  _mat.yx = -Mathf::Sin(_rad), _mat.yy = Mathf::Cos(_rad), _mat.yz, _mat.yw, 
+				  _mat.zx, _mat.zy, _mat.zz, _mat.zw, 
+				  _mat.wx, _mat.wy, _mat.wz, _mat.ww);
+}
+
+Matrix Matrix::CreatefromQuaternion(const Quaternion& _quat)
+{
+	return Matrix(2 * ((_quat.x * _quat.x) + (_quat.y * _quat.y)) -1 , 2 * ((_quat.y * _quat.z) - (_quat.x * _quat.w))	   , 2 * ((_quat.z * _quat.w) + (_quat.x * _quat.z))	, 0.0f,
+				  2 * ((_quat.y * _quat.z) + (_quat.x * _quat.w))    , 2 * ((_quat.x * _quat.x) + (_quat.z * _quat.z)) - 1 , 2 * ((_quat.z * _quat.w) - (_quat.x * _quat.y))	, 0.0f,
+				  2 * ((_quat.y * _quat.w) - (_quat.x * _quat.z))    , 2 * ((_quat.z * _quat.w) + (_quat.x* _quat.y))	   , 2 * ((_quat.x * _quat.x) + (_quat.z * _quat.z)) -1 , 0.0f,
+				  0.0f ,											   0.0f ,												 0.0f ,												  1.0f);
+}
 
 #pragma endregion methods
 #pragma region operator
