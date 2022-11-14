@@ -31,7 +31,7 @@ public:
 	static Matrix CreateRotationX(Matrix& _mat, const float _rad); // good
 	static Matrix CreateRotationY(Matrix& _mat , const float _rad); // good
 	static Matrix CreateRotationZ(Matrix& _mat, const float _rad); //good
-	static Matrix CreateOrthographic( const float _width, const float _height, const float _nearllane, const float _favllane);
+	static Matrix CreateOrthographic( const float _width, const float _height, const float _favllane, const float _nearllane);
 	static Matrix CreatefromQuaternion( Quaternion& _quat); //good
 	static Matrix Lerp(const Matrix& _a, const Matrix& _b,const float _t); //good
 	static float GetDeterminant(const Matrix& _mat); // good 

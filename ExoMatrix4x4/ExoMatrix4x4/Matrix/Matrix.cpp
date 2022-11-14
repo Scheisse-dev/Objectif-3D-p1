@@ -80,12 +80,12 @@ Matrix Matrix::CreateRotationZ(Matrix& _mat, const float _rad)
 				  _mat.wx, _mat.wy, _mat.wz, _mat.ww);
 }
 
-Matrix Matrix::CreateOrthographic( const float _width, const float _height, const float _nearllane, const float _favllane)
+Matrix Matrix::CreateOrthographic( const float _width, const float _height, const float _favllane, const float _nearllane)
 {
 	return Matrix(2/ _width, 0.0f, 0.0f,0.0f,
 				  0.0f, 2/_height, 0.0f, 0.0f,
-				  0.0f, 0.0f, -(1/(_favllane - _nearllane)), 0.0f,
-				  0.0f, 0.0f, _nearllane/(_nearllane - _favllane), 1.0f
+				  0.0f, 0.0f, 1/(_favllane - _nearllane), 0.0f,
+				  0.0f, 0.0f, -(_nearllane/(_nearllane - _favllane)), 1.0f
 	);
 	
 }
