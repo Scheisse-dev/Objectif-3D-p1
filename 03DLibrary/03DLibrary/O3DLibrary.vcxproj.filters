@@ -13,39 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{b752bb0b-5211-4e7b-8f6b-4c2bb338abc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Object">
+      <UniqueIdentifier>{20b0a64a-72a3-40f4-8cdb-aa7ac28c2f45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimaryType">
+      <UniqueIdentifier>{cdf7ae1a-9774-4c3d-baf0-8f89578951de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ExoMatrixQVCorr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Math\Mathf.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector4\Vector4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Quaternion\Quaternion.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matrix4x4\Matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Core\PrimaryType</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Math\Mathf.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector4\Vector4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AssertMacro\AssertMacro.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Quaternion\Quaternion.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix4x4\Matrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>Core\PrimaryType</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

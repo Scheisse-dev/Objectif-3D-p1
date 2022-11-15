@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{b752bb0b-5211-4e7b-8f6b-4c2bb338abc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Object">
+      <UniqueIdentifier>{20b0a64a-72a3-40f4-8cdb-aa7ac28c2f45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimaryType">
+      <UniqueIdentifier>{cdf7ae1a-9774-4c3d-baf0-8f89578951de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="String">
+      <UniqueIdentifier>{063522de-5da8-4467-876b-3d2b233c831d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{884bdcd4-0842-49eb-8c5d-ab5bf1ca37ac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Core\PrimaryType</Filter>
+    </ClInclude>
+    <ClInclude Include="O3DLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>Core\PrimaryType</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
