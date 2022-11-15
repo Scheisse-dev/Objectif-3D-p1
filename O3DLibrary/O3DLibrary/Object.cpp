@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "Object.h"
-#include "String.h"
+#include "FString.h"
 
-Core::PrimitiveType::String Core::Object::ToString() const
+O3DLIBRARY_API Core::PrimitiveType::FString Core::Object::ToString() const
 {
 	return "";
 }

@@ -16,8 +16,14 @@
     <Filter Include="Object">
       <UniqueIdentifier>{0b40c60a-efc4-45a3-8201-5b1d7aa3f840}</UniqueIdentifier>
     </Filter>
-    <Filter Include="String">
+    <Filter Include="PrimitiveType">
+      <UniqueIdentifier>{282457df-8676-4f50-8768-113a8748c466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PrimitiveType\String">
       <UniqueIdentifier>{070d4e8e-9d33-41c7-b930-ddd4b60d6eb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PrimitiveType\Boolean">
+      <UniqueIdentifier>{2334b814-c2ce-4530-a8ee-8d11c26c1566}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,11 +36,14 @@
     <ClInclude Include="O3DLibrary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="String.h">
-      <Filter>String</Filter>
-    </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="FString.h">
+      <Filter>PrimitiveType\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Boolean.h">
+      <Filter>PrimitiveType\Boolean</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +53,17 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="String.cpp">
-      <Filter>String</Filter>
-    </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="O3DLibrary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FString.cpp">
+      <Filter>PrimitiveType\String</Filter>
+    </ClCompile>
+    <ClCompile Include="Boolean.cpp">
+      <Filter>PrimitiveType\Boolean</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

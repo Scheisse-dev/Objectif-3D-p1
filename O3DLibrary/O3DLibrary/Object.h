@@ -1,10 +1,12 @@
 #pragma once
+#include <iostream>
+#include "O3DLibrary.h"
 
 namespace Core
 {
 	namespace PrimitiveType
 	{
-		class String;
+		class FString;
 	}
 	class Object
 	{
@@ -15,12 +17,12 @@ namespace Core
 #pragma endregion constructor/destructor
 #pragma region methods
 	public:
-		virtual Core::PrimitiveType::String ToString() const;
-#pragma region methods
+		O3DLIBRARY_API virtual Core::PrimitiveType::FString ToString() const;
+
+
+#pragma region methods 
+		
 	};
 
 }
 
-class Object
-{
-};
