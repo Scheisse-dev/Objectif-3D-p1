@@ -13,17 +13,44 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Object">
+    <Filter Include="Core">
+      <UniqueIdentifier>{6d143ee1-0adc-43cd-8ffa-1b771516ab87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Object">
       <UniqueIdentifier>{0b40c60a-efc4-45a3-8201-5b1d7aa3f840}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PrimitiveType">
+    <Filter Include="Core\PrimitiveType">
       <UniqueIdentifier>{282457df-8676-4f50-8768-113a8748c466}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PrimitiveType\String">
+    <Filter Include="Core\PrimitiveType\String">
       <UniqueIdentifier>{070d4e8e-9d33-41c7-b930-ddd4b60d6eb6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PrimitiveType\Boolean">
+    <Filter Include="Core\PrimitiveType\Boolean">
       <UniqueIdentifier>{2334b814-c2ce-4530-a8ee-8d11c26c1566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Exception">
+      <UniqueIdentifier>{c2643dd6-ff09-40d2-be34-7828b43cf996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimitiveType\Integer">
+      <UniqueIdentifier>{8ff061bf-b50c-4a35-88f6-b22b0109a29e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Environnement">
+      <UniqueIdentifier>{503f304f-019c-4336-9da1-f6a8c9af191b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Diagnostics">
+      <UniqueIdentifier>{ea4077a1-8098-4397-b535-fbe57a66cd0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO">
+      <UniqueIdentifier>{bd08837a-5c97-4a7d-a3df-3486f4a89e21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream">
+      <UniqueIdentifier>{53f42ffe-eb50-48ba-aa8d-a7eb9b075d5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream\TextWritter">
+      <UniqueIdentifier>{b27dbeed-f8d3-4c43-bf31-ed5ca7e83192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream\TextReader">
+      <UniqueIdentifier>{986f8c7c-c04c-4af3-aaea-1fae20e67690}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -37,13 +64,31 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
-      <Filter>Object</Filter>
+      <Filter>Core\Object</Filter>
     </ClInclude>
     <ClInclude Include="FString.h">
-      <Filter>PrimitiveType\String</Filter>
+      <Filter>Core\PrimitiveType\String</Filter>
     </ClInclude>
     <ClInclude Include="Boolean.h">
-      <Filter>PrimitiveType\Boolean</Filter>
+      <Filter>Core\PrimitiveType\Boolean</Filter>
+    </ClInclude>
+    <ClInclude Include="Integer.h">
+      <Filter>Core\PrimitiveType\Integer</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Core\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="Environnement.h">
+      <Filter>Core\Environnement</Filter>
+    </ClInclude>
+    <ClInclude Include="Process.h">
+      <Filter>Core\Diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="TextWritter.h">
+      <Filter>Core\IO\Stream\TextWritter</Filter>
+    </ClInclude>
+    <ClInclude Include="TextReader.h">
+      <Filter>Core\IO\Stream\TextReader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -54,16 +99,31 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
-      <Filter>Object</Filter>
-    </ClCompile>
-    <ClCompile Include="O3DLibrary.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Core\Object</Filter>
     </ClCompile>
     <ClCompile Include="FString.cpp">
-      <Filter>PrimitiveType\String</Filter>
+      <Filter>Core\PrimitiveType\String</Filter>
     </ClCompile>
     <ClCompile Include="Boolean.cpp">
-      <Filter>PrimitiveType\Boolean</Filter>
+      <Filter>Core\PrimitiveType\Boolean</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Core\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="Integer.cpp">
+      <Filter>Core\PrimitiveType\Integer</Filter>
+    </ClCompile>
+    <ClCompile Include="Environnement.cpp">
+      <Filter>Core\Environnement</Filter>
+    </ClCompile>
+    <ClCompile Include="Process.cpp">
+      <Filter>Core\Diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="TextWritter.cpp">
+      <Filter>Core\IO\Stream\TextWritter</Filter>
+    </ClCompile>
+    <ClCompile Include="TextReader.cpp">
+      <Filter>Core\IO\Stream\TextReader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
