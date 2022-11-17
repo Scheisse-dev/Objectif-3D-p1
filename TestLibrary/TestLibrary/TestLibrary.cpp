@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <Environnement.h>
 #include <Integer.h>
+#include <Console.h>
 
 
 using namespace Core;
@@ -13,7 +14,6 @@ using namespace PrimitiveType;
 
 int main()
 {
-	const FString _path = "C:\\Users\\GAUT2905\\AppData\\Local\\Programs\\Opera GX\\launcher.exe";
-	Core::Diagnostics::Process::Start(_path, "https://facebook.com"); 
+	Console::WriterLine(FString("Hello")); 
 	return 0;
 }

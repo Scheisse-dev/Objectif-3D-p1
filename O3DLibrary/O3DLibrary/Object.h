@@ -9,8 +9,8 @@ namespace Core
 	{
 		class FString;
 		class Boolean;
-	}
 
+	}
 		class Object
 		{
 #pragma region constructor/destructor

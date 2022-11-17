@@ -144,13 +144,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Boolean.h" />
+    <ClInclude Include="Console.h" />
+    <ClInclude Include="CoreIO.h" />
+    <ClInclude Include="Directory.h" />
+    <ClInclude Include="EConsoleColor.h" />
     <ClInclude Include="Environnement.h" />
     <ClInclude Include="Exception.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="FileStream.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="FString.h" />
     <ClInclude Include="Integer.h" />
     <ClInclude Include="O3DLibrary.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Path.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Process.h" />
     <ClInclude Include="TextReader.h" />
@@ -158,12 +165,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Boolean.cpp" />
+    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="Directory.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Environnement.cpp" />
     <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="FileStream.cpp" />
     <ClCompile Include="FString.cpp" />
     <ClCompile Include="Integer.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Path.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

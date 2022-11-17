@@ -52,6 +52,24 @@
     <Filter Include="Core\IO\Stream\TextReader">
       <UniqueIdentifier>{986f8c7c-c04c-4af3-aaea-1fae20e67690}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\IO\File">
+      <UniqueIdentifier>{6813df57-2b57-4028-9a8a-5f6adc654234}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\File\FileStream">
+      <UniqueIdentifier>{a689897f-092a-4d43-9872-586c4deea1df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Console">
+      <UniqueIdentifier>{898eabdb-c86e-4e7d-b64d-e2a04b98d318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Console\Enum">
+      <UniqueIdentifier>{05c86650-3717-45ef-87d9-39722bf027a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Path">
+      <UniqueIdentifier>{10e8aa0e-3675-4d67-b183-5d908e83b57e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Directory">
+      <UniqueIdentifier>{01016b92-fdba-483e-8a8f-3c7e548075eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -90,6 +108,27 @@
     <ClInclude Include="TextReader.h">
       <Filter>Core\IO\Stream\TextReader</Filter>
     </ClInclude>
+    <ClInclude Include="FileStream.h">
+      <Filter>Core\IO\File\FileStream</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreIO.h">
+      <Filter>Core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="EConsoleColor.h">
+      <Filter>Core\Console\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Core\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Core\IO\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>Core\IO\File</Filter>
+    </ClInclude>
+    <ClInclude Include="Directory.h">
+      <Filter>Core\IO\Directory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -124,6 +163,21 @@
     </ClCompile>
     <ClCompile Include="TextReader.cpp">
       <Filter>Core\IO\Stream\TextReader</Filter>
+    </ClCompile>
+    <ClCompile Include="FileStream.cpp">
+      <Filter>Core\IO\File\FileStream</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Core\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Core\IO\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Core\IO\File</Filter>
+    </ClCompile>
+    <ClCompile Include="Directory.cpp">
+      <Filter>Core\IO\Directory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

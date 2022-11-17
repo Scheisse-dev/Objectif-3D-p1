@@ -77,8 +77,8 @@ namespace Core
 				value = _array;
 				length += 1;
 			}
-			O3DLIBRARY_API FString SubString(const int _begin, const int _end);
-			O3DLIBRARY_API FString SubString(const int _begin);
+			O3DLIBRARY_API FString SubString(const int _begin, const int _end) const ;
+			O3DLIBRARY_API FString SubString(const int _begin) const ;
 			O3DLIBRARY_API FString Replace(const char _old, const char _new) const;
 			O3DLIBRARY_API FString Replace(const FString& _old, const FString& _new) const;
 			O3DLIBRARY_API FString Trim() const;

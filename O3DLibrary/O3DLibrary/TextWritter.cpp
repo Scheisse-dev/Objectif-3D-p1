@@ -59,10 +59,6 @@ O3DLIBRARY_API Core::PrimitiveType::Boolean Core::IO::TextWritter::Equals(const 
 {
 	return path == _obj.path;
 }
-O3DLIBRARY_API Core::PrimitiveType::Boolean Core::IO::TextWritter::Equals(const TextWritter& _obj) const
-{
-	return path == _obj.path;
-}
 
 #pragma endregion methods 
 #pragma region override
