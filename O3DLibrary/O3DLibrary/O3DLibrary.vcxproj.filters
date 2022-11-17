@@ -70,6 +70,12 @@
     <Filter Include="Core\IO\Directory">
       <UniqueIdentifier>{01016b92-fdba-483e-8a8f-3c7e548075eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\DateTime">
+      <UniqueIdentifier>{0f7582a0-58b4-4f94-8989-d3d2f466ccaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\DateTime\EDayOfWeek">
+      <UniqueIdentifier>{8b0dccf4-9a5a-4b92-aff5-78e216f1af30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -129,6 +135,12 @@
     <ClInclude Include="Directory.h">
       <Filter>Core\IO\Directory</Filter>
     </ClInclude>
+    <ClInclude Include="DateTime.h">
+      <Filter>Core\DateTime</Filter>
+    </ClInclude>
+    <ClInclude Include="EDayOfWeek.h">
+      <Filter>Core\DateTime\EDayOfWeek</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -178,6 +190,9 @@
     </ClCompile>
     <ClCompile Include="Directory.cpp">
       <Filter>Core\IO\Directory</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
+      <Filter>Core\DateTime</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

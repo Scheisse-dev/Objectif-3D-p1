@@ -62,7 +62,7 @@ namespace Core
 			{
 				const int _newLength = length + _str.length;
 				char* _array = new char[_newLength + 1];
-				strcpy(_array, _str.value);
+				strcpy(_array, value);
 				strcat(_array, _str.value);
 				value = _array;
 				length = _newLength;

@@ -146,8 +146,10 @@
     <ClInclude Include="Boolean.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="CoreIO.h" />
+    <ClInclude Include="DateTime.h" />
     <ClInclude Include="Directory.h" />
     <ClInclude Include="EConsoleColor.h" />
+    <ClInclude Include="EDayOfWeek.h" />
     <ClInclude Include="Environnement.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="File.h" />
@@ -166,6 +168,7 @@
   <ItemGroup>
     <ClCompile Include="Boolean.cpp" />
     <ClCompile Include="Console.cpp" />
+    <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="Directory.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Environnement.cpp" />
