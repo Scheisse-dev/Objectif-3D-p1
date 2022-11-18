@@ -12,20 +12,47 @@
 
 using namespace Core::PrimitiveType;
 using namespace Core::IO;
+using namespace Core;
 
- 
+template<typename Base, typename Derived>
+static bool InstanceOf(const Derived*)
+{
+    return std::is_same<Base, Derived>::value;
+}
+
+#define instanceof(a,b) InstanceOf<a>(b)
+
 int main()
 {
 	//Core::BoxFile box = Core::BoxFile("Test");
 	//box.Open();
 	//LOG(box.Result()); 
-	
-    int msgboxID = MessageBox(
-        NULL,
-        (LPCWSTR)L"enfin j'ai réussi",
-        (LPCWSTR)L"Yolo",
-        MB_ICONASTERISK |MB_DEFBUTTON2
-    );
+    Object* o = new Object(); 
+    DateTime* time = new DateTime(0, 0, 0);
 
-	return msgboxID;
+    if (instanceof(Object, o))
+    {
+        std::cout << "o is an object" << std::endl; 
+    }
+    if (instanceof(Object, time))
+    {
+        std::cout << "time is object" << std::endl;
+    }
+    if (instanceof(DateTime, time))
+    {
+        std::cout << "time is DateTime" << std::endl;
+    }
+
+    return 0; 
+
+ 
+
+ //   int msgboxID = MessageBox(
+ //       NULL,
+ //       (LPCWSTR)L"enfin j'ai réussi",
+ //       (LPCWSTR)L"Yolo",
+ //       MB_ICONASTERISK |MB_DEFBUTTON2
+ //   );
+
+	//return msgboxID;
 }

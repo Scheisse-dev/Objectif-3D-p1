@@ -50,6 +50,7 @@ public:
 	static Matrix4x4 CreateFromYawPitchRoll(const float _yaw, const float _pitch, const float _roll); 
 	static Matrix4x4 Lerp(const Matrix4x4& _a, const Matrix4x4& _b, const float _t);
 	float Determinant() const; 
+	bool IsIdentity(const Matrix4x4& _other);
 #pragma endregion Methods
 
 #pragma region operator
@@ -60,7 +61,6 @@ public:
 	Matrix4x4 operator*(const Matrix4x4& _other);
 	bool operator==(const Matrix4x4& _other);
 	bool operator!=(const Matrix4x4& _other);
-	bool IsIdentity(const Matrix4x4& _other);
 #pragma endregion operator
 };
 

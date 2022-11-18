@@ -213,6 +213,26 @@ float Matrix4x4::Determinant() const
 
 }
 
+bool Matrix4x4::IsIdentity(const Matrix4x4& _other)
+{
+	return
+		Identity.m11 == _other.m11 &&
+		Identity.m12 == _other.m12 &&
+		Identity.m13 == _other.m13 &&
+		Identity.m14 == _other.m14 &&
+		Identity.m21 == _other.m21 &&
+		Identity.m22 == _other.m22 &&
+		Identity.m23 == _other.m23 &&
+		Identity.m24 == _other.m24 &&
+		Identity.m31 == _other.m31 &&
+		Identity.m32 == _other.m32 &&
+		Identity.m33 == _other.m33 &&
+		Identity.m34 == _other.m34 &&
+		Identity.m41 == _other.m41 &&
+		Identity.m42 == _other.m42 &&
+		Identity.m43 == _other.m43;
+}
+
 #pragma endregion Methods
 
 #pragma region operator
@@ -339,18 +359,13 @@ bool Matrix4x4::operator==(const Matrix4x4& _other)
 		m41 == _other.m41 &&
 		m42 == _other.m42 &&
 		m43 == _other.m43;
-
-
 }
 
 bool Matrix4x4::operator!=(const Matrix4x4& _other)
 {
-	return !this->operator*(_other); 
+	return !this->operator==(_other); 
 }
 
-bool Matrix4x4::IsIdentity(const Matrix4x4& _other)
-{
-	return _other == Identity; 
-}
+
 
 #pragma endregion operator
