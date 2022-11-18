@@ -1,4 +1,4 @@
-#include "Object.h"
+#include <Object.h>
 #include <iostream>
 #include <FString.h>
 #include <Process.h>
@@ -8,16 +8,24 @@
 #include <Console.h>
 #include <DateTime.h>
 #include <EDayOfWeek.h>
+#include <BoxFile.h>
 
-
-using namespace Core;
-using namespace PrimitiveType;
+using namespace Core::PrimitiveType;
 using namespace Core::IO;
+
  
 int main()
 {
-	DateTime date = DateTime(17, 11, 2022);
-	date.AddYears(1000);
-	Console::WriterLine(*date.DayOfWeek());
-	return 0;
+	//Core::BoxFile box = Core::BoxFile("Test");
+	//box.Open();
+	//LOG(box.Result()); 
+	
+    int msgboxID = MessageBox(
+        NULL,
+        (LPCWSTR)L"enfin j'ai réussi",
+        (LPCWSTR)L"Yolo",
+        MB_ICONASTERISK |MB_DEFBUTTON2
+    );
+
+	return msgboxID;
 }
