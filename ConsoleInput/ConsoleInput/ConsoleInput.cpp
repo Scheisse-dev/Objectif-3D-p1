@@ -7,7 +7,7 @@
 
 int main()
 {
-    Button* butt = new Button("My Big Butt", new Rect(11,1,10,15));
+    Button* butt = new Button("Clickez !", new Rect(11,1,10,15));
     EventSystem::Instance()->Register(butt);
     App app;
     app.Open();

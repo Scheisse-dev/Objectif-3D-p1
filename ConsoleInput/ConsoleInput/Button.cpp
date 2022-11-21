@@ -22,7 +22,7 @@ Button::Button(const Button& _copy)
 void Button::OnClick()
 {
 	std::cout << std::endl;
-	std::cout << content << " on click !" ;
+	std::cout << content << " Bande de Salope" ;
 }
 Rect* Button::GetRect() const
 {
