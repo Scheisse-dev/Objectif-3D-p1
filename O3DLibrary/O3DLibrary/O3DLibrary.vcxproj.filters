@@ -82,6 +82,9 @@
     <Filter Include="Core\Box\BoxFile">
       <UniqueIdentifier>{d1f2e444-7317-4551-a9f3-de0098482361}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Window">
+      <UniqueIdentifier>{07f458af-bd5c-42c6-b197-9a03c188fb6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -150,6 +153,9 @@
     <ClInclude Include="BoxFile.h">
       <Filter>Core\Box\BoxFile</Filter>
     </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Core\Window</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -205,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="BoxFile.cpp">
       <Filter>Core\Box\BoxFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Core\Window</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

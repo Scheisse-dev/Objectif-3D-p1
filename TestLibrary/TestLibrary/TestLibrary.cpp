@@ -9,6 +9,7 @@
 #include <DateTime.h>
 #include <EDayOfWeek.h>
 #include <BoxFile.h>
+#include <Window.h>
 
 using namespace Core::PrimitiveType;
 using namespace Core::IO;
@@ -27,23 +28,23 @@ int main()
 	//Core::BoxFile box = Core::BoxFile("Test");
 	//box.Open();
 	//LOG(box.Result()); 
-    Object* o = new Object(); 
-    DateTime* time = new DateTime(0, 0, 0);
+    //Object* o = new Object(); 
+    //DateTime* time = new DateTime(0, 0, 0);
 
-    if (instanceof(Object, o))
-    {
-        std::cout << "o is an object" << std::endl; 
-    }
-    if (instanceof(Object, time))
-    {
-        std::cout << "time is object" << std::endl;
-    }
-    if (instanceof(DateTime, time))
-    {
-        std::cout << "time is DateTime" << std::endl;
-    }
+    //if (instanceof(Object, o))
+    //{
+    //    std::cout << "o is an object" << std::endl; 
+    //}
+    //if (instanceof(Object, time))
+    //{
+    //    std::cout << "time is object" << std::endl;
+    //}
+    //if (instanceof(DateTime, time))
+    //{
+    //    std::cout << "time is DateTime" << std::endl;
+    //}
 
-    return 0; 
+    //return 0; 
 
  
 
@@ -55,4 +56,9 @@ int main()
  //   );
 
 	//return msgboxID;
+
+    Window window = Window(PrimitiveType::FString("Test"), 900, 800);
+    window.Open(); 
+    return 0; 
+
 }
