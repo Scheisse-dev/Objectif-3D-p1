@@ -28,7 +28,7 @@ LRESULT WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 int main()
 {
-   
+    HMENU hmenu = HMENU(0);
     const wchar_t CLASS_NAME[] = L"Sample Window Class";
 
     WNDCLASS wc = {0, 0, 0 , 0 , 0, 0 , 0, 0 ,0 , 0};
@@ -48,7 +48,7 @@ int main()
         CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, // taille 
 
         NULL,       // Parent window    
-        NULL,       // Menu
+        hmenu,       // Menu
         hInstance,  // Instance handle
         NULL        // Additional application data
     );
@@ -60,6 +60,6 @@ int main()
     while (GetMessage(&msg, NULL, 0, 0) > 0)
     {
         TranslateMessage(&msg);
-        DispatchMessage(&msg);
+        DispatchMessage(&msg); //jeziopqçhge<pdg
     }
 }
