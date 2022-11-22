@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "WindowMenu.h"
 
 
 #pragma region constructor
@@ -26,6 +27,12 @@ Core::Window::Window(const PrimitiveType::FString& _name, const int _width, cons
 	HWND textField = CreateWindowEx(WS_EX_CLIENTEDGE, L"EDIT", L"TEST", WS_CHILD | WS_VISIBLE | WS_BORDER, 100, 20, 140, 20, windowInstance, nullptr, _instance, nullptr); 
 }
 
+Core::Window::~Window()
+{
+	for (std::pair<const char*, WindowMenu*> _p : menus)
+		delete _p.second;
+	menus.clear(); 
+}
 #pragma endregion constructor
 #pragma region methods
 LRESULT _stdcall Core::Window::WindowProc(HWND _hWindow, UINT _msg, WPARAM _wp, LPARAM _lp)
@@ -71,10 +78,37 @@ O3DLIBRARY_API void Core::Window::Update()
 }
 O3DLIBRARY_API void Core::Window::AddMenus(HWND _hwnd)
 {
-	HMENU _menu = CreateMenu(); 
-	AppendMenu(_menu, MF_STRING, 0, L"File" );
-	SetMenu(_hwnd, _menu); 
+	const WindowMenu* _menu = CreateWindowMenu(""); 
+	WindowMenu* _fileMenu = CreateWindowMenu("File"); 
+	WindowMenu* _newMenu = CreateWindowMenu("New");
+	WindowMenu* _editMenu = CreateWindowMenu("Edit");
+	_editMenu->CreateButtonMenu("Copy"); 
+	_newMenu->CreateButtonMenu("Project");
+	_fileMenu->CreatePopUpMenu(_newMenu); 
+	_fileMenu->CreateButtonMenu("Close"); 
+	_menu->CreatePopUpMenu(_fileMenu);
+	_menu->CreatePopUpMenu(_fileMenu);
+	SetMenu(_hwnd, *_menu); 
+
 }
+
+O3DLIBRARY_API Core::WindowMenu* Core::Window::CreateWindowMenu(const char* _name)
+{
+	WindowMenu* _menu = new WindowMenu(this, _name); 
+	menus.insert(std::pair<const char*, WindowMenu*>(_name, _menu));
+	return _menu; 
+}
+
+O3DLIBRARY_API int Core::Window::MenusCount() const
+{
+	return menus.size();
+}
+
+O3DLIBRARY_API void Core::Window::RegisterMenu(WindowMenu* _menu)
+{
+	menus.insert(std::pair<const char*, WindowMenu*>(_menu->Name(), _menu)); 
+}
+
 void Core::Window::Open()
 {
 	if (windowInstance == nullptr) return;
