@@ -2,6 +2,7 @@
 #include <iostream>
 #include <FString.h>
 #include <Process.h>
+#include <Windows.h>
 #include <iomanip>
 #include <Environnement.h>
 #include <Integer.h>
@@ -10,6 +11,8 @@
 #include <EDayOfWeek.h>
 #include <BoxFile.h>
 #include <Window.h>
+
+
 
 using namespace Core::PrimitiveType;
 using namespace Core::IO;
@@ -22,6 +25,10 @@ static bool InstanceOf(const Derived*)
 }
 
 #define instanceof(a,b) InstanceOf<a>(b)
+
+
+
+
 
 int main()
 {
@@ -59,6 +66,8 @@ int main()
 
     Window window = Window(PrimitiveType::FString("Test"), 900, 800);
     window.Open(); 
-    return 0; 
 
+
+
+    
 }

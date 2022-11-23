@@ -3,6 +3,9 @@
 #include <map>
 #include "FString.h"
 #include "Object.h"
+#include <gdiplus.h>
+
+#pragma comment(lib, "Gdiplus.lib")
 
 namespace Core
 {
@@ -18,6 +21,11 @@ namespace Core
 		int height = 1080;
 		bool isOpen = true; 
 		std::map<const char*, WindowMenu*> menus = std::map<const char*, WindowMenu*>();
+
+		HDC hdc = HDC();
+		PAINTSTRUCT paintStruct = PAINTSTRUCT(); 
+		Gdiplus::GdiplusStartupInput gdiplusStartupInput = Gdiplus::GdiplusStartupInput();
+		ULONG_PTR gdiplusToken = 0;
 #pragma endregion f/p
 #pragma region constructor
 	public: 

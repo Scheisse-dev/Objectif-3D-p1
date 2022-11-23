@@ -1,6 +1,9 @@
 #include "Window.h"
 #include "WindowMenu.h"
 
+#define IDM_ELLIPSE    1100
+#define IDM_RECTANGLE  1200
+#define IDM_ROUNDRECT  1300
 
 #pragma region constructor
 Core::Window::Window(const PrimitiveType::FString& _name, const int _width, const int _height)
@@ -9,13 +12,16 @@ Core::Window::Window(const PrimitiveType::FString& _name, const int _width, cons
 	width = _width;
 	height = _height; 
 
+	Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr);
+
 	const LPCWSTR _className = L"Default Window"; 
 	HINSTANCE _instance = HINSTANCE(); 
 	WNDCLASS _wndClass = {};
 	_wndClass.lpszClassName = _className; 
 	_wndClass.hInstance = _instance; 
+	_wndClass.style = CS_HREDRAW | CS_VREDRAW; 
 	_wndClass.lpfnWndProc = WindowProc_Internal; 
-	_wndClass.hbrBackground = CreateSolidBrush(RGB(0, 0, 0));
+	_wndClass.hbrBackground = CreateSolidBrush(RGB(150, 150, 150));
 	_wndClass.hCursor = LoadCursor(_instance, IDC_HAND); 
 	RegisterClass(&_wndClass); 
 
@@ -37,12 +43,26 @@ Core::Window::~Window()
 #pragma region methods
 LRESULT _stdcall Core::Window::WindowProc(HWND _hWindow, UINT _msg, WPARAM _wp, LPARAM _lp)
 {
+
 	if (_hWindow == nullptr) return 0;
 	switch (_msg)
 	{
 	case WM_CREATE:
 		AddMenus(_hWindow); 
 		break;
+	case WM_PAINT:
+	{
+		hdc = BeginPaint(_hWindow, &paintStruct);
+		//paint
+		Gdiplus::Graphics _graphics(hdc);
+		Gdiplus::Color _color(Gdiplus::Color(255, 255, 0, 0));
+		Gdiplus::Pen _pen(Gdiplus::Color::White);
+		Gdiplus::Rect _rect = Gdiplus::Rect(10, 10, 100, 100);
+		_graphics.DrawRectangle(&_pen, Gdiplus::Rect(10, 10, 100, 100));
+		_graphics.FillRectangle(new Gdiplus::SolidBrush(_color), _rect);
+		EndPaint(_hWindow, &paintStruct);
+		break;
+	}
 	case WM_DESTROY:
 	{
 		Close();
@@ -51,7 +71,8 @@ LRESULT _stdcall Core::Window::WindowProc(HWND _hWindow, UINT _msg, WPARAM _wp, 
 	default:
 		return DefWindowProcW(_hWindow, _msg, _wp, _lp);
 	}
-}
+ }
+
 LRESULT _stdcall Core::Window::WindowProc_Internal(HWND _hWindow, UINT _msg, WPARAM _wp, LPARAM _lp)
 {
 	if (_msg == WM_NCCREATE)
@@ -75,13 +96,14 @@ O3DLIBRARY_API void Core::Window::Update()
 			}
 		}
 	}
+	Gdiplus::GdiplusShutdown(gdiplusToken); 
 }
 O3DLIBRARY_API void Core::Window::AddMenus(HWND _hwnd)
 {
 	const WindowMenu* _menu = CreateWindowMenu(""); 
-	WindowMenu* _fileMenu = CreateWindowMenu("File"); 
-	WindowMenu* _newMenu = CreateWindowMenu("New");
-	WindowMenu* _editMenu = CreateWindowMenu("Edit");
+	WindowMenu* _fileMenu = CreateWindowMenu("&Ellipse");
+	WindowMenu* _newMenu = CreateWindowMenu("&Rectangle");
+	WindowMenu* _editMenu = CreateWindowMenu("&RoundRect");
 	_editMenu->CreateButtonMenu("Copy"); 
 	_newMenu->CreateButtonMenu("Project");
 	_fileMenu->CreatePopUpMenu(_newMenu); 
@@ -89,6 +111,8 @@ O3DLIBRARY_API void Core::Window::AddMenus(HWND _hwnd)
 	_menu->CreatePopUpMenu(_fileMenu);
 	_menu->CreatePopUpMenu(_fileMenu);
 	SetMenu(_hwnd, *_menu); 
+
+
 
 }
 
