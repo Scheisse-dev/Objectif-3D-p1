@@ -64,7 +64,9 @@ int main()
 
 	//return msgboxID;
 
+    
     Window window = Window(PrimitiveType::FString("Test"), 900, 800);
+    window.RegisterMenu(new RectangleShape({ 10,10 });
     window.Open(); 
 
 
