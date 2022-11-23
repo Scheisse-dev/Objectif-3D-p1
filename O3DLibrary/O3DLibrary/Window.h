@@ -1,9 +1,11 @@
 #pragma once
 #include <Windows.h>
 #include <map>
-#include "FString.h"
-#include "Object.h"
 #include <gdiplus.h>
+#include <vector>
+#include "FString.h"
+#include "Shape.h"
+#include "Object.h"
 
 #pragma comment(lib, "Gdiplus.lib")
 
@@ -14,7 +16,11 @@ namespace Core
 	class Window : public Object
 	{
 #pragma region f/p
+	public:
+		Gdiplus::Color color = Gdiplus::Color(255, 255, 0, 0);
+		Gdiplus::Rect pos = Gdiplus::Rect(10, 10, 100, 100);
 	private:
+		std::vector<class Shape*> shapes = std::vector<Shape*>(); 
 		HWND windowInstance = nullptr; 
 		PrimitiveType::FString name = "";
 		int width = 1920;
@@ -41,6 +47,7 @@ namespace Core
 		O3DLIBRARY_API virtual void Update();
 		O3DLIBRARY_API virtual void AddMenus(HWND _hwnd);
 		O3DLIBRARY_API WindowMenu* CreateWindowMenu(const char* _name);
+		O3DLIBRARY_API void Register(Shape* _shape); 
 	public: 
 		O3DLIBRARY_API int MenusCount() const;
 		O3DLIBRARY_API void RegisterMenu(WindowMenu* _menu);

@@ -30,7 +30,7 @@ Core::Window::Window(const PrimitiveType::FString& _name, const int _width, cons
 		WS_OVERLAPPEDWINDOW | WS_VISIBLE | WS_SYSMENU | WS_MINIMIZE , CW_USEDEFAULT, CW_USEDEFAULT,
 		width, height, nullptr, nullptr, _instance, this);
 
-	HWND textField = CreateWindowEx(WS_EX_CLIENTEDGE, L"EDIT", L"TEST", WS_CHILD | WS_VISIBLE | WS_BORDER, 100, 20, 140, 20, windowInstance, nullptr, _instance, nullptr); 
+	//HWND textField = CreateWindowEx(WS_EX_CLIENTEDGE, L"EDIT", L"TEST", WS_CHILD | WS_VISIBLE | WS_BORDER, 100, 20, 140, 20, windowInstance, nullptr, _instance, nullptr); 
 }
 
 Core::Window::~Window()
@@ -53,15 +53,13 @@ LRESULT _stdcall Core::Window::WindowProc(HWND _hWindow, UINT _msg, WPARAM _wp, 
 	case WM_PAINT:
 	{
 		hdc = BeginPaint(_hWindow, &paintStruct);
-		//paint
-		Gdiplus::Graphics _graphics(hdc);
-		Gdiplus::Color _color(Gdiplus::Color(255, 255, 0, 0));
-		Gdiplus::Pen _pen(Gdiplus::Color::White);
-		Gdiplus::Rect _rect = Gdiplus::Rect(10, 10, 100, 100);
-		_graphics.DrawRectangle(&_pen, Gdiplus::Rect(10, 10, 100, 100));
-		_graphics.FillRectangle(new Gdiplus::SolidBrush(_color), _rect);
-		EndPaint(_hWindow, &paintStruct);
+
+		for (Shape* _shape : shapes)
+			_shape->Draw(hdc); 
+
+		EndPaint(_hWindow, &paintStruct); 
 		break;
+
 	}
 	case WM_DESTROY:
 	{
@@ -101,19 +99,11 @@ O3DLIBRARY_API void Core::Window::Update()
 O3DLIBRARY_API void Core::Window::AddMenus(HWND _hwnd)
 {
 	const WindowMenu* _menu = CreateWindowMenu(""); 
-	WindowMenu* _fileMenu = CreateWindowMenu("&Ellipse");
-	WindowMenu* _newMenu = CreateWindowMenu("&Rectangle");
-	WindowMenu* _editMenu = CreateWindowMenu("&RoundRect");
-	_editMenu->CreateButtonMenu("Copy"); 
-	_newMenu->CreateButtonMenu("Project");
-	_fileMenu->CreatePopUpMenu(_newMenu); 
-	_fileMenu->CreateButtonMenu("Close"); 
-	_menu->CreatePopUpMenu(_fileMenu);
-	_menu->CreatePopUpMenu(_fileMenu);
+	WindowMenu* _Elip = CreateWindowMenu("Elipse");
+	WindowMenu* _rect = CreateWindowMenu("Rectangle"); 
+	_menu->CreatePopUpMenu(_Elip);
+	_menu->CreatePopUpMenu(_rect);
 	SetMenu(_hwnd, *_menu); 
-
-
-
 }
 
 O3DLIBRARY_API Core::WindowMenu* Core::Window::CreateWindowMenu(const char* _name)
@@ -121,6 +111,11 @@ O3DLIBRARY_API Core::WindowMenu* Core::Window::CreateWindowMenu(const char* _nam
 	WindowMenu* _menu = new WindowMenu(this, _name); 
 	menus.insert(std::pair<const char*, WindowMenu*>(_name, _menu));
 	return _menu; 
+}
+
+O3DLIBRARY_API void Core::Window::Register(Shape* _shape)
+{
+	shapes.push_back(_shape); 
 }
 
 O3DLIBRARY_API int Core::Window::MenusCount() const

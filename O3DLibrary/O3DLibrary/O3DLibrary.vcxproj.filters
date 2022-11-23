@@ -88,6 +88,12 @@
     <Filter Include="Core\Window\Menu">
       <UniqueIdentifier>{c56db2af-fe33-4998-8f19-4b369bc6d454}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Window\Shape">
+      <UniqueIdentifier>{ea843efe-8128-4fed-90d5-36217269ef48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Shape\RectangleShape">
+      <UniqueIdentifier>{b8ac1cef-edff-4dd0-92a5-6fabbad596bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -162,6 +168,12 @@
     <ClInclude Include="WindowMenu.h">
       <Filter>Core\Window\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Core\Window\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangleShape.h">
+      <Filter>Core\Window\Shape\RectangleShape</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -223,6 +235,12 @@
     </ClCompile>
     <ClCompile Include="WindowMenu.cpp">
       <Filter>Core\Window\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Core\Window\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleShape.cpp">
+      <Filter>Core\Window\Shape\RectangleShape</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
