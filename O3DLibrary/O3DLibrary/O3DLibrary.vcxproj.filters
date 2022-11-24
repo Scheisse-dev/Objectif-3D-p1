@@ -94,6 +94,12 @@
     <Filter Include="Core\Window\Shape\RectangleShape">
       <UniqueIdentifier>{b8ac1cef-edff-4dd0-92a5-6fabbad596bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Window\Shape\CircleShape">
+      <UniqueIdentifier>{a9c3c4c5-8289-41f3-9d19-1e88f5622750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Shape\ComplexShape">
+      <UniqueIdentifier>{85914c1b-f276-438d-af58-85f0b05b9f32}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -174,6 +180,12 @@
     <ClInclude Include="RectangleShape.h">
       <Filter>Core\Window\Shape\RectangleShape</Filter>
     </ClInclude>
+    <ClInclude Include="CircleShape.h">
+      <Filter>Core\Window\Shape\CircleShape</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexShape.h">
+      <Filter>Core\Window\Shape\ComplexShape</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -241,6 +253,12 @@
     </ClCompile>
     <ClCompile Include="RectangleShape.cpp">
       <Filter>Core\Window\Shape\RectangleShape</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleShape.cpp">
+      <Filter>Core\Window\Shape\CircleShape</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexShape.cpp">
+      <Filter>Core\Window\Shape\ComplexShape</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

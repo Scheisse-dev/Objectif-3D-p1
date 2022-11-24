@@ -145,6 +145,8 @@
   <ItemGroup>
     <ClInclude Include="Boolean.h" />
     <ClInclude Include="BoxFile.h" />
+    <ClInclude Include="CircleShape.h" />
+    <ClInclude Include="ComplexShape.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="CoreIO.h" />
     <ClInclude Include="DateTime.h" />
@@ -173,6 +175,8 @@
   <ItemGroup>
     <ClCompile Include="Boolean.cpp" />
     <ClCompile Include="BoxFile.cpp" />
+    <ClCompile Include="CircleShape.cpp" />
+    <ClCompile Include="ComplexShape.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="Directory.cpp" />

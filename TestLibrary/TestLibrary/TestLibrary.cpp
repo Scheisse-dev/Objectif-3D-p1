@@ -11,6 +11,10 @@
 #include <EDayOfWeek.h>
 #include <BoxFile.h>
 #include <Window.h>
+#include <RectangleShape.h>
+#include <CircleShape.h>
+#include <ComplexShape.h>
+#include <vector>
 
 
 
@@ -25,7 +29,6 @@ static bool InstanceOf(const Derived*)
 }
 
 #define instanceof(a,b) InstanceOf<a>(b)
-
 
 
 
@@ -65,9 +68,14 @@ int main()
 	//return msgboxID;
 
     
+    std::vector<Gdiplus::PointF> _points = std::vector<Gdiplus::PointF>(120);
     Window window = Window(PrimitiveType::FString("Test"), 900, 800);
-    window.RegisterMenu(new RectangleShape({ 10,10 });
+    //window.Register(new RectangleShape({ 10,10 }, 200, 100));
+    //window.Register(new CircleShape({ 10,120 }, 100));
+    window.Register(new ComplexShape(_points));
     window.Open(); 
+
+    return 0;
 
 
 

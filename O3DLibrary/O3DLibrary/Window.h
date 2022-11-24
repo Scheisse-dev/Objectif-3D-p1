@@ -47,8 +47,8 @@ namespace Core
 		O3DLIBRARY_API virtual void Update();
 		O3DLIBRARY_API virtual void AddMenus(HWND _hwnd);
 		O3DLIBRARY_API WindowMenu* CreateWindowMenu(const char* _name);
-		O3DLIBRARY_API void Register(Shape* _shape); 
 	public: 
+		O3DLIBRARY_API void Register(Shape* _shape); 
 		O3DLIBRARY_API int MenusCount() const;
 		O3DLIBRARY_API void RegisterMenu(WindowMenu* _menu);
 		O3DLIBRARY_API void Open();
