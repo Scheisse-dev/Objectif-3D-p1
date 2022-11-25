@@ -16,8 +16,6 @@
 #include <ComplexShape.h>
 #include <vector>
 
-
-
 using namespace Core::PrimitiveType;
 using namespace Core::IO;
 using namespace Core;
@@ -68,13 +66,14 @@ int main()
 	//return msgboxID;
 
     
-    std::vector<Gdiplus::PointF> _points = std::vector<Gdiplus::PointF>(120);
-    Window window = Window(PrimitiveType::FString("Test"), 900, 800);
+    //std::vector<Gdiplus::PointF> _points = std::vector<Gdiplus::PointF>(120);
+    //Window window = Window(PrimitiveType::FString("Test"), 900, 800);
     //window.Register(new RectangleShape({ 10,10 }, 200, 100));
     //window.Register(new CircleShape({ 10,120 }, 100));
-    window.Register(new ComplexShape(_points));
-    window.Open(); 
-
+    //window.Register(new ComplexShape(_points));
+    //window.Open(); 
+    Object o = Object();
+    o.Register("name", 1, 1);
     return 0;
 
 
