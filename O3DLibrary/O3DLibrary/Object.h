@@ -1,105 +1,70 @@
 #pragma once
 #include <iostream>
+#include <map>
 #include <string>
-#include <vector> 
-#include <map> 
-#include <tuple>
+#include <vector>
 #include "O3DLibrary.h"
 
-// fail count = 9
+#pragma warning(disable : 4251) 
 
-//namespace Core
-//{
-//
-//
-//	namespace PrimitiveType
-//	{
-//		class FString;
-//		class Boolean;
-//	}
-//	template<typename Var>
-//	class O3DLIBRARY_API FieldInfo
-//	{
-//	private:
-//		Core::PrimitiveType::FString name;
-//		Var variable;
-//	public:
-//		FieldInfo(Core::PrimitiveType::FString _name, Var _variable)
-//		{
-//			name = _name;
-//			variable = _variable;
-//			std::map< _name, _variable> map; 
-//		}
-//
-//	};
-//}
+
+#define REGISTER_FIELD(X,Y,Z) RegisterField(X,Y,Z)
 
 namespace Core
 {
-	template<typename T>
-	struct FileInfo
-	{
-		std::string _name = "";
-		//todo enum 
-		T value = nullptr; 
 
-	};
+    namespace PrimitiveType
+    {
+        class FString;
+        class Boolean;
 
-	enum variable
-	{
-		name,
-		Public, 
-		Private, 
-		Protected, 
-		variable
-
-	};
-
-	
-
-	 
-	namespace PrimitiveType
-	{
-		class FString;
-		class Boolean;
-		
-	}
-	
-	class O3DLIBRARY_API Object
-	{
+    }
+    enum class BindingFlags; 
+    class FieldInfo;
+    class O3DLIBRARY_API Object
+    {
 #pragma region f/p
-	public:
-		template<typename T, typename Name, typename Value>
-		static std::tuple<Name&, T&, Value&> Mytuple;
-#pragma endregion f/p
+    private: 
+        std::map<const char*, FieldInfo*> fields = std::map<const char*, FieldInfo*>(); 
+#pragma endregion f/p 
 #pragma region constructor/destructor
-	public:
-		Object() = default;
-		virtual ~Object() = default;
+    public:
+        Object() = default;
+        virtual ~Object() = default;
 #pragma endregion constructor/destructor
 #pragma region methods
-	public:
-		virtual Core::PrimitiveType::Boolean Equals(const Object* _obj) const;
-		virtual Core::PrimitiveType::FString ToString() const; 
-		template<typename T, typename Name, typename Value>
-		static void Register(Name& _name, T& _public, Value& _value);
-		template<typename T, typename Name, typename Value>
-		static void GetField(std::string _name)
-		{
-			std::cout << std::get<_name>(Mytuple<Name&,T&, Value&>);
-
-		}
-
-
+    protected: 
+        int RegisterField(const char* _name, Object* _obj, int _mask);
+    public:
+        virtual Core::PrimitiveType::Boolean Equals(const Object* _obj) const;
+        virtual Core::PrimitiveType::FString ToString() const;
+        std::vector<FieldInfo*> GetFields() const;
+        std::vector<FieldInfo*> GetFields(BindingFlags _flags) const;
+        FieldInfo* GetField(const char* _name) ; 
+        template<typename T>
+        void SetValue(Object* obj);
+        template<typename T>
+        void SetFieldValue(const char* _name, T* _value);
 #pragma endregion methods 
+#pragma region operator
+    public: 
+        virtual Object& operator=(const Object* obj);
+#pragma endregion operator
+    };
+    typedef Object* object;
 
-		};
-		typedef Object* object;
-	
+
+    template<typename T>
+    void Object::SetValue(Object* obj)
+    {
+        *((T)this) = obj;
+    }
+
+    template<typename T>
+    inline void Object::SetFieldValue(const char* _name, T* _value)
+    {
+        if (!fields.contains(_name)) return;
+        *fields[_name]= _value; 
+    }
+
 }
-
-template<typename T, typename Name, typename Value>
-void Core::Object::Register(Name& _name, T& _public, Value& _value)
-{
-	std::tie(Name& _name)(Mytuple<Name&,T&, Value&>);
-} 

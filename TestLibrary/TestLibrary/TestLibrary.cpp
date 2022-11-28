@@ -15,6 +15,10 @@
 #include <CircleShape.h>
 #include <ComplexShape.h>
 #include <vector>
+#include <FieldInfo.h>
+
+
+
 
 using namespace Core::PrimitiveType;
 using namespace Core::IO;
@@ -29,9 +33,23 @@ static bool InstanceOf(const Derived*)
 #define instanceof(a,b) InstanceOf<a>(b)
 
 
+class A  : public Object
+{
+private:
+    PrimitiveType::FString name = "";
+public: 
+    PrimitiveType::Integer age = 20; 
+public:
+    A()
+    {
+        REGISTER_FIELD("name", &name, (int)BindingFlags::Private);
+        RegisterField("age", &age, (int)BindingFlags::Public);
+    }
+};
 
 
-int main()
+
+int main(int args, char** argv)
 {
 	//Core::BoxFile box = Core::BoxFile("Test");
 	//box.Open();
@@ -71,9 +89,15 @@ int main()
     //window.Register(new RectangleShape({ 10,10 }, 200, 100));
     //window.Register(new CircleShape({ 10,120 }, 100));
     //window.Register(new ComplexShape(_points));
-    //window.Open(); 
-    Object o = Object();
-    o.Register("name", 1, 1);
+    ////window.Open(); 
+    //Object o = Object();
+    //o.Register("name", 1, 1);
+
+    A a;
+    LOG(a.age);
+    a.SetFieldValue("age", new PrimitiveType::Integer(10)); 
+    LOG_WARNING(a.GetFields(BindingFlags::Public)[0]->ReflectedObject()); 
+    LOG(a.age);
     return 0;
 
 

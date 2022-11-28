@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BindingFlags.h" />
     <ClInclude Include="Boolean.h" />
     <ClInclude Include="BoxFile.h" />
     <ClInclude Include="CircleShape.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="EDayOfWeek.h" />
     <ClInclude Include="Environnement.h" />
     <ClInclude Include="Exception.h" />
+    <ClInclude Include="FieldInfo.h" />
     <ClInclude Include="File.h" />
     <ClInclude Include="FileStream.h" />
     <ClInclude Include="framework.h" />
@@ -183,10 +185,12 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Environnement.cpp" />
     <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="FieldInfo.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="FileStream.cpp" />
     <ClCompile Include="FString.cpp" />
     <ClCompile Include="Integer.cpp" />
+    <ClCompile Include="O3DLibrary.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="pch.cpp">

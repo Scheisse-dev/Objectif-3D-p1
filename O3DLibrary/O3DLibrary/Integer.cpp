@@ -69,6 +69,14 @@ Core::PrimitiveType::Integer::operator int() const
 {
 	return value;
 }
+Core::Object& Core::PrimitiveType::Integer::operator=(const Object* _obj)
+{
+	const Integer* _other = dynamic_cast<const Integer*>(_obj);
+	if (_other == nullptr)
+		return *this;
+	value = _other->value;
+	return *this;
+}
 O3DLIBRARY_API Core::PrimitiveType::Integer Core::PrimitiveType::Integer::operator+(const Integer& _other) const
 {
 	return  value + _other;

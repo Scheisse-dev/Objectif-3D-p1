@@ -5,7 +5,7 @@ namespace Core
 {
 	namespace PrimitiveType
 	{
-		class Boolean sealed: public Object
+		class O3DLIBRARY_API Boolean sealed: public Object
 		{
 #pragma region f/p
 		private: 
@@ -13,9 +13,9 @@ namespace Core
 #pragma endregion f/p
 #pragma region constructeur
 		public: 
-			O3DLIBRARY_API Boolean() = default;
-			O3DLIBRARY_API Boolean(const bool _value); 
-			O3DLIBRARY_API Boolean(const Boolean& _copy);
+			 Boolean() = default;
+			 Boolean(const bool _value); 
+			 Boolean(const Boolean& _copy);
 #pragma endregion constructeur
 #pragma region override
 		public: 

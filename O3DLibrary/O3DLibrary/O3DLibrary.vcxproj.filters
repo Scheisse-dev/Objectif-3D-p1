@@ -100,15 +100,21 @@
     <Filter Include="Core\Window\Shape\ComplexShape">
       <UniqueIdentifier>{85914c1b-f276-438d-af58-85f0b05b9f32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Reflection">
+      <UniqueIdentifier>{65166dac-42a3-4ca9-b1fa-59d95e668352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Reflection\FieldInfo">
+      <UniqueIdentifier>{52da5289-5a7b-4619-90da-b89c817b723f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Reflection\FieldInfo\BindingFlags">
+      <UniqueIdentifier>{3c1c174b-40b8-4f91-b5f6-bade756fbdd5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="O3DLibrary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
@@ -186,6 +192,15 @@
     <ClInclude Include="ComplexShape.h">
       <Filter>Core\Window\Shape\ComplexShape</Filter>
     </ClInclude>
+    <ClInclude Include="O3DLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldInfo.h">
+      <Filter>Core\Reflection\FieldInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="BindingFlags.h">
+      <Filter>Core\Reflection\FieldInfo\BindingFlags</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -259,6 +274,12 @@
     </ClCompile>
     <ClCompile Include="ComplexShape.cpp">
       <Filter>Core\Window\Shape\ComplexShape</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldInfo.cpp">
+      <Filter>Core\Reflection\FieldInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="O3DLibrary.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
