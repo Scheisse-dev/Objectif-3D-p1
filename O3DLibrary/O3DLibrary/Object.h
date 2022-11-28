@@ -10,6 +10,7 @@
 
 #define REGISTER_FIELD(X,Y,Z) RegisterField(X,Y,Z)
 
+
 namespace Core
 {
 
@@ -20,12 +21,14 @@ namespace Core
 
     }
     enum class BindingFlags; 
+    class MethodsInfo;
     class FieldInfo;
     class O3DLIBRARY_API Object
     {
 #pragma region f/p
     private: 
         std::map<const char*, FieldInfo*> fields = std::map<const char*, FieldInfo*>(); 
+        std::map<const char*, MethodsInfo*> methods = std::map<const char*, MethodsInfo*>();
 #pragma endregion f/p 
 #pragma region constructor/destructor
     public:
@@ -34,6 +37,7 @@ namespace Core
 #pragma endregion constructor/destructor
 #pragma region methods
     protected: 
+        int RegisterFunction(); 
         int RegisterField(const char* _name, Object* _obj, int _mask);
     public:
         virtual Core::PrimitiveType::Boolean Equals(const Object* _obj) const;
@@ -41,6 +45,8 @@ namespace Core
         std::vector<FieldInfo*> GetFields() const;
         std::vector<FieldInfo*> GetFields(BindingFlags _flags) const;
         FieldInfo* GetField(const char* _name) ; 
+        template<typename ...args>
+        void SetParam(args... param);
         template<typename T>
         void SetValue(Object* obj);
         template<typename T>

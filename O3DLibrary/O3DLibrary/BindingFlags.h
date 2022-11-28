@@ -7,7 +7,7 @@ namespace Core
 		Public = 1,
 		Private = 2,
 		Static = 4,
-		Const = 8
+		Const = 8,
 
 	};
 

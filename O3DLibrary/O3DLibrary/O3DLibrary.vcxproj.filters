@@ -109,6 +109,9 @@
     <Filter Include="Core\Reflection\FieldInfo\BindingFlags">
       <UniqueIdentifier>{3c1c174b-40b8-4f91-b5f6-bade756fbdd5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Reflection\MethodsInfo">
+      <UniqueIdentifier>{c0ee285e-484c-4819-88ee-f5a7d24ba8a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -201,6 +204,9 @@
     <ClInclude Include="BindingFlags.h">
       <Filter>Core\Reflection\FieldInfo\BindingFlags</Filter>
     </ClInclude>
+    <ClInclude Include="MethodsInfo.h">
+      <Filter>Core\Reflection\MethodsInfo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -280,6 +286,9 @@
     </ClCompile>
     <ClCompile Include="O3DLibrary.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MethodsInfo.cpp">
+      <Filter>Core\Reflection\MethodsInfo</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -162,6 +162,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="FString.h" />
     <ClInclude Include="Integer.h" />
+    <ClInclude Include="MethodsInfo.h" />
     <ClInclude Include="O3DLibrary.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Path.h" />
@@ -190,6 +191,7 @@
     <ClCompile Include="FileStream.cpp" />
     <ClCompile Include="FString.cpp" />
     <ClCompile Include="Integer.cpp" />
+    <ClCompile Include="MethodsInfo.cpp" />
     <ClCompile Include="O3DLibrary.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Path.cpp" />
