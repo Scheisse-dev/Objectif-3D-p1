@@ -7,6 +7,13 @@
 
 
 #pragma region methods
+int Core::Object::RegisterFunction(const char* name, Object* _obj, int _mask)
+{
+    //mask = type 
+    // obj = func => tab d'obj 
+    // name 
+    return 0;
+}
 int Core::Object::RegisterField(const char* _name, Object* _obj, int _mask)
 {
     if (fields.contains(_name)) return fields.size(); 
@@ -50,5 +57,12 @@ Core::FieldInfo* Core::Object::GetField(const char* _name)
 Core::Object& Core::Object::operator=(const Object* obj)
 {
     return *this;
+}
+Core::Object& Core::Object::operator[](const Object* obj)
+{
+    // return tab object 
+    
+    
+
 }
 #pragma endregion methods

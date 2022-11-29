@@ -37,7 +37,7 @@ namespace Core
 #pragma endregion constructor/destructor
 #pragma region methods
     protected: 
-        int RegisterFunction(); 
+        int RegisterFunction(const char* name, Object* _obj, int _mask);
         int RegisterField(const char* _name, Object* _obj, int _mask);
     public:
         virtual Core::PrimitiveType::Boolean Equals(const Object* _obj) const;
@@ -45,8 +45,6 @@ namespace Core
         std::vector<FieldInfo*> GetFields() const;
         std::vector<FieldInfo*> GetFields(BindingFlags _flags) const;
         FieldInfo* GetField(const char* _name) ; 
-        template<typename ...args>
-        void SetParam(args... param);
         template<typename T>
         void SetValue(Object* obj);
         template<typename T>
@@ -55,6 +53,7 @@ namespace Core
 #pragma region operator
     public: 
         virtual Object& operator=(const Object* obj);
+        virtual Object& operator[](const Object* obj); 
 #pragma endregion operator
     };
     typedef Object* object;

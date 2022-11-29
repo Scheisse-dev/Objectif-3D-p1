@@ -39,10 +39,14 @@ private:
     PrimitiveType::FString name = "";
 public: 
     PrimitiveType::Integer age = 20; 
+    int Test()
+    {
+        return 0;
+    }
 public:
     A()
     {
-        REGISTER_FIELD("name", &name, (int)BindingFlags::Private);
+        REGISTER_FIELD("name", Test(), (int)BindingFlags::Private);
         RegisterField("age", &age, (int)BindingFlags::Public);
     }
 };

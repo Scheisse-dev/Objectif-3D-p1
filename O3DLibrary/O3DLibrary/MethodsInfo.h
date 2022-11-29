@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
 #include <vector>
+#include "FString.h"
 
 namespace Core
 {
@@ -10,7 +11,7 @@ namespace Core
 		class Boolean;
 		class Interger;
 	}
-	class MethodsInfo : public Object
+	class O3DLIBRARY_API MethodsInfo : public Object
 	{
 #pragma region f/p 
 	private: 
