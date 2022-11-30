@@ -16,7 +16,9 @@
 #include <ComplexShape.h>
 #include <vector>
 #include <FieldInfo.h>
-
+#include <MethodsInfo.h>
+#include <ParameterInfo.h>
+#include <Enum.h>
 
 
 
@@ -35,26 +37,58 @@ static bool InstanceOf(const Derived*)
 
 class A  : public Object
 {
-private:
-    PrimitiveType::FString name = "";
 public: 
-    PrimitiveType::Integer age = 20; 
-    int Test()
+//private:
+//    PrimitiveType::FString name = "";
+//public: 
+//    PrimitiveType::Integer age = 20; 
+//    int Test()
+//    {
+//        return 0;
+//    }
+//public:
+//    A()
+//    {
+//        REGISTER_FIELD("name", &name, (int)BindingFlags::Private);
+//        RegisterField("age", &age, (int)BindingFlags::Public);
+//    }
+    void Test(const FString& msg, const FString& a)
     {
-        return 0;
+        LOG(msg);
+        LOG(a);
     }
-public:
-    A()
-    {
-        REGISTER_FIELD("name", Test(), (int)BindingFlags::Private);
-        RegisterField("age", &age, (int)BindingFlags::Public);
-    }
+    REGISTER_METHOD(Test, &A::Test, this, std::vector<ParameterInfo>({ ParameterInfo("msg", "FString", 0), ParameterInfo("a", "FString", 1) }));
 };
 
+//#define GetName(var) #var
+//FString operator*(FString type)
+//{
+//   return GetName(type);
+//}
 
 
-int main(int args, char** argv)
+
+
+
+
+
+ENUM(Type, Int = 5, Float = 15);
+
+int main()
 {
+    std::cout << *Type::Int << std::endl;
+    std::cout << (int)Type::Float << std::endl;
+    return 0; 
+
+
+
+
+
+
+
+
+
+
 	//Core::BoxFile box = Core::BoxFile("Test");
 	//box.Open();
 	//LOG(box.Result()); 
@@ -97,14 +131,25 @@ int main(int args, char** argv)
     //Object o = Object();
     //o.Register("name", 1, 1);
 
+    //A a;
+    //LOG(a.age);
+    //a.SetFieldValue("age", new PrimitiveType::Integer(10)); 
+    //LOG_WARNING(a.GetFields(BindingFlags::Public)[0]->ReflectedObject()); 
+    //LOG(a.age);
+    //return 0;
+
     A a;
-    LOG(a.age);
-    a.SetFieldValue("age", new PrimitiveType::Integer(10)); 
-    LOG_WARNING(a.GetFields(BindingFlags::Public)[0]->ReflectedObject()); 
-    LOG(a.age);
+    MethodInfo<void, const FString& , const FString&>* method = a.GetMethod<void, const FString&, const FString&>("Test");
+    if (method == nullptr)
+    {
+        std::cout << "Function null";
+        return -1;
+    }
+    for (ParameterInfo _params : method->Parameters())
+    {
+        std::cout << "Type " << _params.TypeName() << ", param name : " << _params.Name() << " position: " << _params.Position();
+    }
     return 0;
-
-
 
     
 }

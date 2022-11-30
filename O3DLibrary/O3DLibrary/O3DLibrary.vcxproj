@@ -154,6 +154,7 @@
     <ClInclude Include="Directory.h" />
     <ClInclude Include="EConsoleColor.h" />
     <ClInclude Include="EDayOfWeek.h" />
+    <ClInclude Include="Enum.h" />
     <ClInclude Include="Environnement.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="FieldInfo.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="MethodsInfo.h" />
     <ClInclude Include="O3DLibrary.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ParameterInfo.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Process.h" />
@@ -191,7 +193,6 @@
     <ClCompile Include="FileStream.cpp" />
     <ClCompile Include="FString.cpp" />
     <ClCompile Include="Integer.cpp" />
-    <ClCompile Include="MethodsInfo.cpp" />
     <ClCompile Include="O3DLibrary.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Path.cpp" />

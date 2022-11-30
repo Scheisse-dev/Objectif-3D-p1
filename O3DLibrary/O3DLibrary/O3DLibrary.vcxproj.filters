@@ -112,6 +112,12 @@
     <Filter Include="Core\Reflection\MethodsInfo">
       <UniqueIdentifier>{c0ee285e-484c-4819-88ee-f5a7d24ba8a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Reflection\MethodsInfo\ParameterInfo">
+      <UniqueIdentifier>{2fdc9d4b-c7a6-4ccd-a1ee-725cbd13aeda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimitiveType\Enum">
+      <UniqueIdentifier>{bc1c858d-feef-49f1-ad4d-488a0857bc2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -207,6 +213,12 @@
     <ClInclude Include="MethodsInfo.h">
       <Filter>Core\Reflection\MethodsInfo</Filter>
     </ClInclude>
+    <ClInclude Include="ParameterInfo.h">
+      <Filter>Core\Reflection\MethodsInfo\ParameterInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>Core\PrimitiveType\Enum</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -286,9 +298,6 @@
     </ClCompile>
     <ClCompile Include="O3DLibrary.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MethodsInfo.cpp">
-      <Filter>Core\Reflection\MethodsInfo</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

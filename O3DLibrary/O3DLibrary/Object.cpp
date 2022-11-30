@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "Object.h"
 #include "FString.h"
 #include "Boolean.h"
@@ -7,18 +6,11 @@
 
 
 #pragma region methods
-int Core::Object::RegisterFunction(const char* name, Object* _obj, int _mask)
-{
-    //mask = type 
-    // obj = func => tab d'obj 
-    // name 
-    return 0;
-}
 int Core::Object::RegisterField(const char* _name, Object* _obj, int _mask)
 {
-    if (fields.contains(_name)) return fields.size(); 
+    if (fields.contains(_name)) return fields.size();
     fields.insert(std::pair(_name, new FieldInfo(_name, _obj, _mask)));
-    return fields.size(); 
+    return fields.size();
 }
 O3DLIBRARY_API Core::PrimitiveType::Boolean Core::Object::Equals(const Object* _obj) const
 {
@@ -35,7 +27,7 @@ std::vector<Core::FieldInfo*> Core::Object::GetFields() const
 
     for (std::pair<const char*, FieldInfo*> _field : fields)
         _result.push_back(_field.second);
-    return _result; 
+    return _result;
 }
 std::vector<Core::FieldInfo*> Core::Object::GetFields(BindingFlags _flags) const
 {
@@ -44,7 +36,7 @@ std::vector<Core::FieldInfo*> Core::Object::GetFields(BindingFlags _flags) const
     for (FieldInfo* _field : fields | std::ranges::views::values)
     {
         if (_field->Flags() & _flags)
-        _result.push_back(_field);
+            _result.push_back(_field);
     }
     return _result;
 }
@@ -57,12 +49,5 @@ Core::FieldInfo* Core::Object::GetField(const char* _name)
 Core::Object& Core::Object::operator=(const Object* obj)
 {
     return *this;
-}
-Core::Object& Core::Object::operator[](const Object* obj)
-{
-    // return tab object 
-    
-    
-
 }
 #pragma endregion methods
