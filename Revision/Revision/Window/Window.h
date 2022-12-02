@@ -5,6 +5,8 @@
 #include <string>;
 #include <gdiplus.h>
 #include <map>
+#include "..\Shapes\Shape.h"
+#include "..\Shapes\RectangleShape\RectangleShape.h"
 
 class WindowItem;
 
@@ -18,7 +20,13 @@ private:
 	std::map<std::string, WindowItem*> menus = std::map<std::string, WindowItem*>();
 	int width = 1920; 
 	int height = 1080;
+
+
+	std::vector<class Shape*> shapes = std::vector<Shape*>();
 	HDC hdc = HDC(); 
+	PAINTSTRUCT paintStruct = PAINTSTRUCT();
+	Gdiplus::GdiplusStartupInput gdiplusStartupInput = Gdiplus::GdiplusStartupInput();
+	ULONG_PTR gdiplusToken = 0;
 #pragma endregion f/p
 #pragma region constructor/destructor
 public:
@@ -35,6 +43,7 @@ protected:
 	virtual void AddMenus(HWND _hwnd);
 	WindowItem* CreateWindowMenu(std::string _name);
 public:
+	void Register(Shape* _shape);
 	int MenusCount() const; 
 	void RegisterMenu(WindowItem* _menu);
 	void Open(); 

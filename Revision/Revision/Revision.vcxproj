@@ -127,23 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Envrironnement\Environment.cpp" />
-    <ClCompile Include="FileReader\FileReader.cpp" />
-    <ClCompile Include="Menu\Menu.cpp" />
-    <ClCompile Include="Menu\MenuItem\MenuItem.cpp" />
+    <ClCompile Include="Shapes\RectangleShape\RectangleShape.cpp" />
+    <ClCompile Include="Shapes\ComplexShape\ComplexShape.cpp" />
+    <ClCompile Include="Shapes\CircleShape\CircleShape.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="Revision.cpp" />
-    <ClCompile Include="Utils\Utils.cpp" />
+    <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Window\WindowItem\WindowItem.cpp" />
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Envrironnement\Environment.h" />
-    <ClInclude Include="FileReader\FileReader.h" />
-    <ClInclude Include="Menu\Menu.h" />
-    <ClInclude Include="Menu\MenuItem\MenuItem.h" />
+    <ClInclude Include="Shapes\RectangleShape\RectangleShape.h" />
+    <ClInclude Include="Shapes\ComplexShape\ComplexShape.h" />
+    <ClInclude Include="Shapes\CircleShape\CircleShape.h" />
     <ClInclude Include="Object\Object.h" />
-    <ClInclude Include="Utils\Utils.h" />
+    <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Window\WindowItem\WindowItem.h" />
     <ClInclude Include="Window\Window.h" />
   </ItemGroup>

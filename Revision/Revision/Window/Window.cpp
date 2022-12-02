@@ -2,15 +2,18 @@
 #include "WindowItem/WindowItem.h"
 
 
-#pragma region f/p
+#define IDM_ELLIPSE    1100
+#define IDM_RECTANGLE  1200
+#define IDM_ROUNDRECT  1300
 
-#pragma endregion f/p
 #pragma region constructor/destructor
 Window::Window(const std::string& _name, const int _width, const int _height)
 {
 	name = _name; 
 	width = _width; 
 	height = _height;
+
+	Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr);
 
 	const LPCWSTR _className = L"Default Window"; 
 	HINSTANCE _instance = HINSTANCE(); 
@@ -48,6 +51,17 @@ LRESULT _stdcall Window::WindowProc(HWND _hWindow, UINT _msg, WPARAM _wp, LPARAM
 	case WM_CREATE:
 		AddMenus(_hWindow);
 		break;
+	case WM_PAINT:
+	{
+		hdc = BeginPaint(_hWindow, &paintStruct);
+
+		for (Shape* _shape : shapes)
+			_shape->Draw(hdc);
+
+		EndPaint(_hWindow, &paintStruct);
+		break;
+
+	}
 	case WM_DESTROY:
 	{
 		Close();
@@ -83,6 +97,7 @@ void Window::Update()
 			}
 		}
 	}
+	Gdiplus::GdiplusShutdown(gdiplusToken);
 }
 
 void Window::AddMenus(HWND _hwnd)
@@ -101,6 +116,11 @@ WindowItem* Window::CreateWindowMenu(std::string _name)
 	WindowItem* _menu = new WindowItem(this, _name);
 	menus.insert(std::pair<std::string, WindowItem*>(_name, _menu));
 	return _menu; 
+}
+
+void Window::Register(Shape* _shape)
+{
+	shapes.push_back(_shape);
 }
 
 int Window::MenusCount() const
