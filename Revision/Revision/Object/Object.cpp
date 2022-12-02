@@ -4,3 +4,4 @@ std::string Object::ToString() const
 {
 	return "";
 }
+
