@@ -147,6 +147,7 @@
     <ClInclude Include="Boolean.h" />
     <ClInclude Include="BoxFile.h" />
     <ClInclude Include="CircleShape.h" />
+    <ClInclude Include="ClipBoard.h" />
     <ClInclude Include="ComplexShape.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="CoreIO.h" />
@@ -181,6 +182,7 @@
     <ClCompile Include="Boolean.cpp" />
     <ClCompile Include="BoxFile.cpp" />
     <ClCompile Include="CircleShape.cpp" />
+    <ClCompile Include="ClipBoard.cpp" />
     <ClCompile Include="ComplexShape.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="DateTime.cpp" />
