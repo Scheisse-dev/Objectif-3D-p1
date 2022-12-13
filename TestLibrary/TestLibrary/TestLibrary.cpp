@@ -156,6 +156,7 @@
 //}
 int main()
 {
+	
 	Core::ClipBoard::Copy("P1");
 	return 0;
 }
