@@ -7,7 +7,12 @@
 Core::PrimitiveType::FString const Core::PrimitiveType::FString::Empty = "";
 
 #pragma region methods 
-O3DLIBRARY_API Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin, const int _end) const 
+O3DLIBRARY_API Core::PrimitiveType::FString Core::PrimitiveType::FString::Convert(const std::wstring& _wstring)
+{
+	const std::string& _str = std::string(_wstring.begin(), _wstring.end()); 
+	return _str.c_str(); 
+}
+O3DLIBRARY_API Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin, const int _end) const
 {
 	FString _result = Empty;
 	for (int i = _begin; i < _end; i++)

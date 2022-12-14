@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
 #include "EDayOfWeek.h"
+#include <CoreWindow.h>
 
 namespace Core
 {
@@ -19,6 +20,7 @@ namespace Core
 #pragma endregion f/P
 #pragma region constructor	
 	public: 
+		O3DLIBRARY_API DateTime(const SYSTEMTIME& _time);
 		O3DLIBRARY_API DateTime(const int _day, const int _month, const int _years, const int _hour, const int _minute, const int _second);
 		O3DLIBRARY_API DateTime(const int _day, const int _month, const int _years, const int _hour, const int _minute);
 		O3DLIBRARY_API DateTime(const int _day, const int _month, const int _years, const int _hour);

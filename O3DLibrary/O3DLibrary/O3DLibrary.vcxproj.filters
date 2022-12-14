@@ -121,6 +121,9 @@
     <Filter Include="Core\ClipBoard">
       <UniqueIdentifier>{32c56789-7eff-4e65-93bb-9bd95823e6ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\TimeZone">
+      <UniqueIdentifier>{a435bab2-30f9-43f7-8121-3819706958e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -225,6 +228,9 @@
     <ClInclude Include="ClipBoard.h">
       <Filter>Core\ClipBoard</Filter>
     </ClInclude>
+    <ClInclude Include="TimeZone.h">
+      <Filter>Core\TimeZone</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -307,6 +313,9 @@
     </ClCompile>
     <ClCompile Include="ClipBoard.cpp">
       <Filter>Core\ClipBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeZone.cpp">
+      <Filter>Core\TimeZone</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

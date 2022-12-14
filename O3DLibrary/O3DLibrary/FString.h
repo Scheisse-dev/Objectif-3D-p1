@@ -77,6 +77,7 @@ namespace Core
 				value = _array;
 				length += 1;
 			}
+			O3DLIBRARY_API static FString Convert(const std::wstring& _wstring); 
 			O3DLIBRARY_API FString SubString(const int _begin, const int _end) const ;
 			O3DLIBRARY_API FString SubString(const int _begin) const ;
 			O3DLIBRARY_API FString Replace(const char _old, const char _new) const;
@@ -138,7 +139,7 @@ namespace Core
 			int _index = 0;
 			for (int i = 0; i < _str.length; i++)
 			{
-				if (_str[i] == '{' && _str[i] == '}')
+				if (_str[i] == '{' && _str[i+1] == '}')
 				{
 					_result.Append(_arguments[_index]->ToString());
 					_index++, i++;
@@ -147,7 +148,7 @@ namespace Core
 			}
 
 
-			return FString();
+			return _result;
 		}
 	}
 

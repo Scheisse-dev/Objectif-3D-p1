@@ -5,6 +5,16 @@
 
 
 #pragma region constructor
+Core::DateTime::DateTime(const SYSTEMTIME& _time)
+{
+	day = _time.wDay;
+	month = _time.wMonth;
+	years = _time.wYear;
+	hour = _time.wHour;
+	minute = _time.wMinute;
+	second = _time.wSecond;
+	dayOfWeek = (EDayOfWeek)CalculateDayOfWeek();
+}
 Core::DateTime::DateTime(const int _day, const int _month, const int _years, const int _hour, const int _minute, const int _second)
 {
 	day = _day;
@@ -157,7 +167,7 @@ O3DLIBRARY_API Core::PrimitiveType::Boolean Core::DateTime::Equals(const DateTim
 
 O3DLIBRARY_API Core::PrimitiveType::FString Core::DateTime::ToString() const
 {
-	return ToStringFormat("h:ms:s D-M-Y"); 
+	return ToStringFormat("h:m:s D-M-Y"); 
 }
 
 O3DLIBRARY_API Core::PrimitiveType::Boolean Core::DateTime::Equals(const Object* _obj) const

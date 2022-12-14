@@ -154,9 +154,12 @@
 //
 //    
 //}
+
+#include <TimeZone.h>
+
+
 int main()
 {
-	
-	Core::ClipBoard::Copy("P1");
-	return 0;
+    Core::TimeZone time = Core::TimeZone(Core::ETimeZoneName::Afghanistan);
+    std::cout << time.ToString();
 }
