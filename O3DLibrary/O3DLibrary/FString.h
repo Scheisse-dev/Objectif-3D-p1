@@ -28,7 +28,7 @@ namespace Core
 #pragma endregion f/p
 #pragma region constructor/destructor
 		public:
-			O3DLIBRARY_API FString() = default;
+			O3DLIBRARY_API FString();
 			O3DLIBRARY_API FString(const char* _value)
 			{
 				if (_value == nullptr) _value = "";

@@ -156,10 +156,32 @@
 //}
 
 #include <TimeZone.h>
+#include <Hash.h>
+#include <Map.h>
+#include <KeyValuePair.h>
+#include <WebClient.h>
+#include <Uri.h>
 
+using namespace Core;
+using namespace PrimitiveType;
+using namespace Collections; 
+using namespace Net;
 
 int main()
-{
-    Core::TimeZone time = Core::TimeZone(Core::ETimeZoneName::Afghanistan);
-    std::cout << time.ToString();
+{   
+	//Map<Integer, FString> map = Map<Integer, FString>
+	//{
+	//	{0, "Hello"},
+	//	{1000, "World"}
+	//};
+
+	//LOG(map[0]);
+	//LOG(map[1000]);
+
+	//map.Remove(0);
+
+		WebClient _request = WebClient(Uri("https://s50.notube.io/download.php?token=f11212534b5bb7b69220a888e6c7e3eb"));
+		_request.DownloadFile("D:/P1.mp4");
+
+
 }

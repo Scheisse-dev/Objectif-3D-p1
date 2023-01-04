@@ -10,7 +10,7 @@ namespace Core
 		{
 #pragma region f/p
 		private:
-			int value = 0;
+			int value = INT_MIN;
 		public: 
 			 static Integer MinValue();
 			 static Integer MiaxValue();

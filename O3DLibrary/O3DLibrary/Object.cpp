@@ -2,6 +2,7 @@
 #include "FString.h"
 #include "Boolean.h"
 #include "FieldInfo.h"
+#include "Hash.h"
 #include <ranges>
 
 
@@ -19,7 +20,11 @@ O3DLIBRARY_API Core::PrimitiveType::Boolean Core::Object::Equals(const Object* _
 
 O3DLIBRARY_API Core::PrimitiveType::FString Core::Object::ToString() const
 {
-    return "";
+    return typeid(*this).name(); 
+}
+O3DLIBRARY_API int Core::Object::GetHashCode() const
+{
+    return Core::Utils::Hash::HashCode(ToString());
 }
 std::vector<Core::FieldInfo*> Core::Object::GetFields() const
 {

@@ -48,6 +48,7 @@ namespace Core
     public:
         virtual Core::PrimitiveType::Boolean Equals(const Object* _obj) const;
         virtual Core::PrimitiveType::FString ToString() const;
+        virtual int GetHashCode() const; 
         std::vector<FieldInfo*> GetFields() const;
         std::vector<FieldInfo*> GetFields(BindingFlags _flags) const;
         FieldInfo* GetField(const char* _name);

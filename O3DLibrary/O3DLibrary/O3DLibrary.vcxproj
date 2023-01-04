@@ -163,7 +163,10 @@
     <ClInclude Include="FileStream.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="FString.h" />
+    <ClInclude Include="Hash.h" />
     <ClInclude Include="Integer.h" />
+    <ClInclude Include="KeyValuePair.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="MethodsInfo.h" />
     <ClInclude Include="O3DLibrary.h" />
     <ClInclude Include="Object.h" />
@@ -176,6 +179,8 @@
     <ClInclude Include="TextReader.h" />
     <ClInclude Include="TextWritter.h" />
     <ClInclude Include="TimeZone.h" />
+    <ClInclude Include="Uri.h" />
+    <ClInclude Include="WebClient.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowMenu.h" />
   </ItemGroup>
@@ -211,6 +216,8 @@
     <ClCompile Include="TextReader.cpp" />
     <ClCompile Include="TextWritter.cpp" />
     <ClCompile Include="TimeZone.cpp" />
+    <ClCompile Include="Uri.cpp" />
+    <ClCompile Include="WebClient.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowMenu.cpp" />
   </ItemGroup>
