@@ -143,7 +143,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FlappyBird\Entity\Bird\Bird.cpp" />
+    <ClCompile Include="FlappyBird\FlappyBird.cpp" />
+    <ClCompile Include="Input\Input.cpp" />
+    <ClCompile Include="FlappyBird\Entity\Pipe\Pipe.cpp" />
     <ClCompile Include="SflmStart.cpp" />
+    <ClCompile Include="Test\TestFlappy.cpp" />
+    <ClCompile Include="Test\WindowTest.cpp" />
+    <ClCompile Include="Window\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FlappyBird\Entity\Bird\Bird.h" />
+    <ClInclude Include="Event\Event.h" />
+    <ClInclude Include="FlappyBird\Entity\Entity.h" />
+    <ClInclude Include="FlappyBird\FlappyBird.h" />
+    <ClInclude Include="Input\Input.h" />
+    <ClInclude Include="FlappyBird\Entity\Pipe\Pipe.h" />
+    <ClInclude Include="Test\TestFlappy.h" />
+    <ClInclude Include="Time\Time.h" />
+    <ClInclude Include="Test\WindowTest.h" />
+    <ClInclude Include="Window\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
