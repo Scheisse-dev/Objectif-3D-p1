@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
 #include "Uri.h"
+#include "ActionInternal.h"
 namespace Core
 {
 	namespace Net
@@ -10,6 +11,8 @@ namespace Core
 #pragma region f/p
 		private:
 			Uri uri = Uri(); 
+		public:
+			Action<float> OnDownloadProgress = nullptr; 
 #pragma endregion f/p
 #pragma region constructor
 		public:

@@ -167,6 +167,19 @@ using namespace PrimitiveType;
 using namespace Collections; 
 using namespace Net;
 
+class Progress : public Object
+{
+public:
+	void Display(float _value)
+	{
+		const char* _str = "=================================================";
+		const int _width = 60;
+		const int _pad = (_value / 100) * _width;
+		const int _rpad = _width - _pad;
+		printf("\r % .0f % %[% .*s % s % *s]", _value, _pad, _str, ">", _rpad, "");
+	}
+};
+
 int main()
 {   
 	//Map<Integer, FString> map = Map<Integer, FString>
@@ -179,9 +192,11 @@ int main()
 	//LOG(map[1000]);
 
 	//map.Remove(0);
-
-		WebClient _request = WebClient(Uri("https://s50.notube.io/download.php?token=f11212534b5bb7b69220a888e6c7e3eb"));
-		_request.DownloadFile("D:/P1.mp4");
+	Progress progressBar = Progress(); 
+	WebClient _request = WebClient(Uri("https://s53.notube.io/download.php?token=c02a73d47a4071084ac11de1ab54b519"));
+	_request.OnDownloadProgress.AddDynamic(&progressBar, &Progress::Display);
+	_request.DownloadFile("D:/P1.mp4");
+	return 0;
 
 
 }

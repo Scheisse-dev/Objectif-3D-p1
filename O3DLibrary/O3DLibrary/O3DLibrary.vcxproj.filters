@@ -148,6 +148,18 @@
     <Filter Include="Core\Net\Uri">
       <UniqueIdentifier>{bc7e57a0-00a6-404d-923b-dd5a94dec077}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Net\WebCallback">
+      <UniqueIdentifier>{b2688a64-c745-4de7-a8c6-83d191192e92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event">
+      <UniqueIdentifier>{534820fd-cc54-402f-b104-fda837a34df3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event\Delegate">
+      <UniqueIdentifier>{edd78d22-70b2-4c92-a683-e58de2465c7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event\Action">
+      <UniqueIdentifier>{b3647a6e-75a8-4a34-a73f-f0b5f8be2b77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -270,6 +282,15 @@
     <ClInclude Include="WebClient.h">
       <Filter>Core\Net\WebClient</Filter>
     </ClInclude>
+    <ClInclude Include="WebCallback.h">
+      <Filter>Core\Net\WebCallback</Filter>
+    </ClInclude>
+    <ClInclude Include="Delegate.h">
+      <Filter>Core\Event\Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionInternal.h">
+      <Filter>Core\Event\Action</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -361,6 +382,9 @@
     </ClCompile>
     <ClCompile Include="WebClient.cpp">
       <Filter>Core\Net\WebClient</Filter>
+    </ClCompile>
+    <ClCompile Include="WebCallback.cpp">
+      <Filter>Core\Net\WebCallback</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
