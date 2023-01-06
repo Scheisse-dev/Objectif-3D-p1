@@ -13,6 +13,5 @@ void Bird::SetSprite()
 	birdSprite.setPosition(0, 300);
 	birdSprite.setTexture(texture);
 	birdSprite.setScale(0.1f, 0.1f);
-	birdSprite.setOrigin(10,10);
 }
 #pragma endregion methods

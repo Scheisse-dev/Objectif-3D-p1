@@ -10,7 +10,8 @@ public:
 	sf::Texture pipeTexture;
 	sf::Sprite pipeSprite;
 	sf::Sprite pipe2Sprite;
-	float speed = 0.1f;
+	sf::Sprite pipe3Sprite;
+	sf::Sprite pipe4Sprite;
 	float height = 1.f;
 	float width = 1.f;
 	const char* texture = "../Sprites/Pipe.png";
@@ -18,6 +19,7 @@ public:
 #pragma region constructor
 public:
 	Pipe();
+	//~Pipe(); 
 #pragma endregion constructor
 #pragma region methods
 public:

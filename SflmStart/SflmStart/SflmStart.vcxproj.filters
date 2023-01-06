@@ -39,6 +39,9 @@
     <ClCompile Include="FlappyBird\Entity\Pipe\Pipe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FlappyBird\FlappyMenu\FlappyMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event\Event.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FlappyBird\Entity\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\FlappyMenu\FlappyMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

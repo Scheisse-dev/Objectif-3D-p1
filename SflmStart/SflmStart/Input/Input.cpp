@@ -14,3 +14,5 @@ bool Input::isKeyUp(const sf::Keyboard::Key& _key)
 	if (_current == nullptr) return false;
 	return _current->type == sf::Event::KeyReleased && _current->key.code == _key;
 }
+
+

@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="FlappyBird\Entity\Bird\Bird.cpp" />
     <ClCompile Include="FlappyBird\FlappyBird.cpp" />
+    <ClCompile Include="FlappyBird\FlappyMenu\FlappyMenu.cpp" />
     <ClCompile Include="Input\Input.cpp" />
     <ClCompile Include="FlappyBird\Entity\Pipe\Pipe.cpp" />
     <ClCompile Include="SflmStart.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Event\Event.h" />
     <ClInclude Include="FlappyBird\Entity\Entity.h" />
     <ClInclude Include="FlappyBird\FlappyBird.h" />
+    <ClInclude Include="FlappyBird\FlappyMenu\FlappyMenu.h" />
     <ClInclude Include="Input\Input.h" />
     <ClInclude Include="FlappyBird\Entity\Pipe\Pipe.h" />
     <ClInclude Include="Test\TestFlappy.h" />
