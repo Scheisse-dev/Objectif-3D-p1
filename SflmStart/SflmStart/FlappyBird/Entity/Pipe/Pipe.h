@@ -15,6 +15,7 @@ public:
 	float height = 1.f;
 	float width = 1.f;
 	const char* texture = "../Sprites/Pipe.png";
+	//const char* texture = "../Sprites/HaroldTest.png";
 #pragma endregion f/p 
 #pragma region constructor
 public:

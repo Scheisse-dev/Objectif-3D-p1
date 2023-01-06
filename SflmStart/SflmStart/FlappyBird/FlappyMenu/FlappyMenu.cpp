@@ -4,6 +4,7 @@ FlappyMenu::FlappyMenu()
 {
 	SetGameOverSprite();
 	SetGameStart();
+	
 }
 
 void FlappyMenu::SetGameOverSprite()
@@ -27,6 +28,9 @@ void FlappyMenu::SetGameOverSprite()
 	text.setString("GameOver");
 	text.setCharacterSize(70);
 	text.setPosition(300, 250);
+
+
+
 }
 
 void FlappyMenu::SetGameStart()
@@ -44,7 +48,4 @@ void FlappyMenu::SetGameStart()
 	startSprite.setPosition(350, 250);
 }
 
-void FlappyMenu::SetCollision()
-{
 
-}

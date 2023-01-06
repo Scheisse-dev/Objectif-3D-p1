@@ -26,7 +26,6 @@ public:
 public:
 	void SetGameOverSprite();
 	void SetGameStart();
-	void SetCollision();
 #pragma endregion mehods
 };
 

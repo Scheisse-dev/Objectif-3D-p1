@@ -9,7 +9,6 @@ Window::Window(const float _width, const float _height, const char* _title)
 	width = _width; 
 	height = _height;
 	title = _title; 
-
 }
 
 Window::~Window()
@@ -23,7 +22,7 @@ Window::~Window()
 void Window::Update()
 {
 	
-	SetFrameLimit(60);
+	SetFrameLimit(160);
 	sf::Event _event = sf::Event(); 
 	sf::Clock _clock = sf::Clock(); 
 	while (window->isOpen())

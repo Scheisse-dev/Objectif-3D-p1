@@ -9,7 +9,7 @@ private:
 	float height = 0.1f;
 	float speed = 0.1f; 
 	bool isOffGame = false;
-	const char* texture = "../Sprite/HarlodText.png";
+	const char* texture = "../Sprite/HarlodTest.png";
 #pragma endregion f/p 
 #pragma region constructor
 public:

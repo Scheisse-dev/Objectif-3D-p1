@@ -10,7 +10,7 @@ Bird::Bird()
 void Bird::SetSprite()
 {
 	texture.loadFromFile(texturePath);
-	birdSprite.setPosition(0, 300);
+	birdSprite.setPosition(50, 300);
 	birdSprite.setTexture(texture);
 	birdSprite.setScale(0.1f, 0.1f);
 }
