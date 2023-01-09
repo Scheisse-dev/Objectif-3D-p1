@@ -143,24 +143,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FlappyBird\Entity\Bird\Bird.cpp" />
+    <ClCompile Include="FlappyBird\Bird\FB_Bird.cpp" />
+    <ClCompile Include="FlappyBird\Menu\MainMenu\FB_MainMenu.cpp" />
+    <ClCompile Include="Utils\GIF\GIF.cpp" />
+    <ClCompile Include="Math\Mathf.cpp" />
+    <ClCompile Include="UI\Manager\UIElementManager.cpp" />
+    <ClCompile Include="Window\Menu\BaseMenu.cpp" />
+    <ClCompile Include="UI\Button\FB_Button.cpp" />
+    <ClCompile Include="UI\Image\FB_Image.cpp" />
+    <ClCompile Include="UI\Label\FB_Label.cpp" />
+    <ClCompile Include="UI\FB_UIElement.cpp" />
+    <ClCompile Include="FlappyBird\Manager\FB_GameObjectManager\FB_GameObjectManager.cpp" />
+    <ClCompile Include="FlappyBird\FB_Game\FB_Game.cpp" />
     <ClCompile Include="FlappyBird\FlappyBird.cpp" />
-    <ClCompile Include="FlappyBird\FlappyMenu\FlappyMenu.cpp" />
+    <ClCompile Include="FlappyBird\GameObject\GameObject.cpp" />
     <ClCompile Include="Input\Input.cpp" />
-    <ClCompile Include="FlappyBird\Entity\Pipe\Pipe.cpp" />
+    <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="SflmStart.cpp" />
     <ClCompile Include="Test\TestFlappy.cpp" />
     <ClCompile Include="Test\WindowTest.cpp" />
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FlappyBird\Entity\Bird\Bird.h" />
+    <ClInclude Include="FlappyBird\Bird\FB_Bird.h" />
+    <ClInclude Include="FlappyBird\Menu\MainMenu\FB_MainMenu.h" />
+    <ClInclude Include="Utils\GIF\GIF.h" />
+    <ClInclude Include="Math\Mathf.h" />
+    <ClInclude Include="UI\Manager\UIElementManager.h" />
+    <ClInclude Include="Utils\GIF\stb_image.h" />
+    <ClInclude Include="Window\Menu\BaseMenu.h" />
+    <ClInclude Include="Event\Delegate\Delegate.h" />
+    <ClInclude Include="UI\Button\FB_Button.h" />
+    <ClInclude Include="UI\Image\FB_Image.h" />
+    <ClInclude Include="UI\Label\FB_Label.h" />
+    <ClInclude Include="UI\FB_UIElement.h" />
+    <ClInclude Include="FlappyBird\Manager\FB_GameObjectManager\FB_GameObjectManager.h" />
+    <ClInclude Include="FlappyBird\FB_Game\FB_Game.h" />
     <ClInclude Include="Event\Event.h" />
-    <ClInclude Include="FlappyBird\Entity\Entity.h" />
     <ClInclude Include="FlappyBird\FlappyBird.h" />
-    <ClInclude Include="FlappyBird\FlappyMenu\FlappyMenu.h" />
+    <ClInclude Include="FlappyBird\GameObject\GameObject.h" />
     <ClInclude Include="Input\Input.h" />
-    <ClInclude Include="FlappyBird\Entity\Pipe\Pipe.h" />
+    <ClInclude Include="Object\Object.h" />
+    <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Test\TestFlappy.h" />
     <ClInclude Include="Time\Time.h" />
     <ClInclude Include="Test\WindowTest.h" />

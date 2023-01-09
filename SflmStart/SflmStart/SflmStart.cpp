@@ -1,13 +1,9 @@
 #include <SFML/Graphics.hpp>
-#include "Test/WindowTest.h"
-#include "FlappyBird/FlappyBird.h"
-
+#include "FlappyBird/FB_Game/FB_Game.h"
 #include <iostream>
 
 int main()
 {
-	//WindowTest window = WindowTest();
-	//window.Open();
-	FlappyBird flappy = FlappyBird();
-	flappy.Open();
+	FB_Game game = FB_Game();
+	game.Open();
 }
