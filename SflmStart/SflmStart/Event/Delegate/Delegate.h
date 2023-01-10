@@ -34,6 +34,12 @@ public:
 #pragma endregion constructor
 #pragma region methods
 public:
+
+	bool IsValid() const
+	{
+		return instance != nullptr && function != nullptr;
+	}
+
 	template<typename Class>
 	void SetDynamic(Class* _instance, Res(Class::* ptr) (Params...))
 	{

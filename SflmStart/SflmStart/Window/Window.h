@@ -6,11 +6,10 @@
 class Window : public Object
 {
 #pragma region f/p
-private:
+protected:
 	float width = 900; 
 	float height = 600;
 	const char* title = "Default Window";
-protected:
 	sf::Texture textureBackground;
 	sf::Sprite background;
 	sf::RenderWindow* window = nullptr;
@@ -40,7 +39,7 @@ public:
 	float Height() const; 
 protected:
 	void CloseAllMenus();
-	void OpenMenu(const char* _name, BaseMenu* _menu); 
+	void OpenMenu(const char* _name); 
 	void RegisterMenu(const char* _name, BaseMenu* _menu);
 	virtual void InitMenu();
 	virtual void OnDraw() = 0; 

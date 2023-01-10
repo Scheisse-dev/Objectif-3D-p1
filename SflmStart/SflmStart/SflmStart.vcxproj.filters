@@ -27,9 +27,6 @@
     <ClCompile Include="Test\WindowTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlappyBird\FlappyBird.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Test\TestFlappy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -75,6 +72,18 @@
     <ClCompile Include="Utils\GIF\GIF.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FlappyBird\Pipe\FB_Pipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyBird\Manager\Texture\FB_TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyBird\Score\FB_Score.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyBird\Menu\GameOver\FB_GameOverMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event\Event.h">
@@ -90,9 +99,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Test\WindowTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FlappyBird\FlappyBird.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestFlappy.h">
@@ -147,6 +153,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils\GIF\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\Pipe\FB_Pipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\Manager\Texture\FB_TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\Score\FB_Score.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\Menu\GameOver\FB_GameOverMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\DataBase\GameObjectDataBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

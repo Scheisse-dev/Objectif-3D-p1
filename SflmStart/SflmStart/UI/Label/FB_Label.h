@@ -17,11 +17,13 @@ public:
 #pragma region methods
 	private:
 		void Free();
+public:
+		void SetText(const char* _text);
+		void SetCharacterSize(const int _size);
+		void SetColor(const sf::Color& _color);
 #pragma endregion methods
 #pragma region override
 public:
-	virtual void SetCharacterSize(const int _size);
-	virtual void SetColor(const sf::Color& _color);
 	virtual void SetPosition(const sf::Vector2f& _position) override;
 	virtual void SetScale(const sf::Vector2f& _scale) override;
 	virtual void Draw(Window* _window) override;

@@ -1,16 +1,19 @@
 #include "FB_Label.h"
+#include "SFML/Graphics.hpp"
+
 #pragma region constructor/destructor
 FB_Label::FB_Label(Window* _owner, const char* _text) : FB_UIElement(_owner)
 {
 	text = new sf::Text();
 	text->setString(_text);
 	font = new sf::Font(); 
-	if (!font->loadFromFile("D:/GitHub/Objectif - 3D - p1/SflmStart/Fonts/DeutscheZierschrift"))
+	if (!font->loadFromFile("D:/GitHub/Objectif-3D-p1/SflmStart/Fonts/DeutscheZierschrift.ttf"))
 	{
-		void Free();
+		Free();
 		return;
 
 	}
+	text->setFont(*font);
 }
 FB_Label::~FB_Label()
 {
@@ -29,6 +32,10 @@ void FB_Label::Free()
 
 #pragma endregion constructor/destructor
 #pragma region override
+void FB_Label::SetText(const char* _text)
+{
+	text->setString(_text);
+}
 void FB_Label::SetCharacterSize(const int _size)
 {
 	text->setCharacterSize(_size);

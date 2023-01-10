@@ -1,8 +1,5 @@
 #pragma once
-#define STB_IMAGE_IMPLEMENTATION
-#define STB_ONLY_GIF
 
-#include "stb_image.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
 class GIF

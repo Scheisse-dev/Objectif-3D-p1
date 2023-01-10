@@ -108,7 +108,7 @@ void Window::RegisterMenu(const char* _name, BaseMenu* _menu)
 	menus.insert(std::pair(_name, _menu));
 }
 
-void Window::OpenMenu(const char* _name, BaseMenu* _menu)
+void Window::OpenMenu(const char* _name)
 {
 	CloseAllMenus();
 	if (!menus.contains(_name))

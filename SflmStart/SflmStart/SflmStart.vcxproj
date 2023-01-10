@@ -143,8 +143,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FlappyBird\Menu\GameOver\FB_GameOverMenu.cpp" />
+    <ClCompile Include="FlappyBird\Manager\Texture\FB_TextureManager.cpp" />
+    <ClCompile Include="FlappyBird\Pipe\FB_Pipe.cpp" />
     <ClCompile Include="FlappyBird\Bird\FB_Bird.cpp" />
     <ClCompile Include="FlappyBird\Menu\MainMenu\FB_MainMenu.cpp" />
+    <ClCompile Include="FlappyBird\Score\FB_Score.cpp" />
     <ClCompile Include="Utils\GIF\GIF.cpp" />
     <ClCompile Include="Math\Mathf.cpp" />
     <ClCompile Include="UI\Manager\UIElementManager.cpp" />
@@ -155,7 +159,6 @@
     <ClCompile Include="UI\FB_UIElement.cpp" />
     <ClCompile Include="FlappyBird\Manager\FB_GameObjectManager\FB_GameObjectManager.cpp" />
     <ClCompile Include="FlappyBird\FB_Game\FB_Game.cpp" />
-    <ClCompile Include="FlappyBird\FlappyBird.cpp" />
     <ClCompile Include="FlappyBird\GameObject\GameObject.cpp" />
     <ClCompile Include="Input\Input.cpp" />
     <ClCompile Include="Object\Object.cpp" />
@@ -165,8 +168,13 @@
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FlappyBird\DataBase\GameObjectDataBase.h" />
+    <ClInclude Include="FlappyBird\Menu\GameOver\FB_GameOverMenu.h" />
+    <ClInclude Include="FlappyBird\Manager\Texture\FB_TextureManager.h" />
+    <ClInclude Include="FlappyBird\Pipe\FB_Pipe.h" />
     <ClInclude Include="FlappyBird\Bird\FB_Bird.h" />
     <ClInclude Include="FlappyBird\Menu\MainMenu\FB_MainMenu.h" />
+    <ClInclude Include="FlappyBird\Score\FB_Score.h" />
     <ClInclude Include="Utils\GIF\GIF.h" />
     <ClInclude Include="Math\Mathf.h" />
     <ClInclude Include="UI\Manager\UIElementManager.h" />
@@ -180,7 +188,6 @@
     <ClInclude Include="FlappyBird\Manager\FB_GameObjectManager\FB_GameObjectManager.h" />
     <ClInclude Include="FlappyBird\FB_Game\FB_Game.h" />
     <ClInclude Include="Event\Event.h" />
-    <ClInclude Include="FlappyBird\FlappyBird.h" />
     <ClInclude Include="FlappyBird\GameObject\GameObject.h" />
     <ClInclude Include="Input\Input.h" />
     <ClInclude Include="Object\Object.h" />

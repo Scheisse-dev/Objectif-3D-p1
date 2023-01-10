@@ -9,8 +9,8 @@ BaseMenu::BaseMenu(Window* _owner)
 
 BaseMenu::~BaseMenu()
 {
-	delete owner;
-	owner = nullptr; 
+	//delete owner;
+	//owner = nullptr; 
 }
 #pragma endregion constructor/destructor
 #pragma region methods
