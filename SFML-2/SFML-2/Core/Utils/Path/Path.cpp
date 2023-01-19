@@ -4,17 +4,16 @@
 
 std::string Core::Utils::Path::GetPath(const std::string& _path)
 {
-	const size_t _length = _path.length();
-	char* _array = new char[_length];
-	strcpy(_array, _path.data());
-	for (size_t i = 0; i < _length; i++)
+	std::string _result = _path;
+	size_t _startPos = 0; 
+	const std::string _from = "\\";
+	const std::string _to = "/";
+	while ((_startPos = _result.find(_from, _startPos)) != std::string::npos)
 	{
-		if (_path[i] == '\\')
-			_array[i] = DirectorySeparator;
+		_result.replace(_startPos, _from.length(), _to);
+		_startPos += _to.length();
 	}
-	return _array;
-	
-
+	return _result;
 }
 
 std::string Core::Utils::Path::Combine(const std::initializer_list<std::string>& _paths)

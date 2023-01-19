@@ -1,11 +1,14 @@
 #include "Label.h"
 #include "../../Utils/Debug/Debug.h"
+#include "../../Manager/Font/FontManager.h"
 
 #pragma region constructor
 Core::UI::Label::Label(Window* _owner, const char* _text) : super(_owner)
 {
 	text = new sf::Text();
 	text->setString(_text);
+	sf::Font* _font = Manager::FontManager::Instance()->Load("DeutscheZierschrift");
+	text->setFont(*_font);
 	drawable = text; 
 }
 

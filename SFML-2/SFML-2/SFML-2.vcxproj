@@ -147,6 +147,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game\GameWindow\GameWindow.cpp" />
+    <ClCompile Include="Game\Coin\Coin.cpp" />
+    <ClCompile Include="Core\Window\Menu\BaseMenu.cpp" />
     <ClCompile Include="Core\Manager\Base\BaseManager.cpp" />
     <ClCompile Include="Core\UI\Button\Button.cpp" />
     <ClCompile Include="Core\Object\Object.cpp" />
@@ -158,6 +161,15 @@
     <ClCompile Include="Core\UI\Label\Label.cpp" />
     <ClCompile Include="Core\UI\Image\Image.cpp" />
     <ClCompile Include="Core\Manager\Font\FontManager.cpp" />
+    <ClCompile Include="Core\GameObject\GameObject.cpp" />
+    <ClCompile Include="Core\Manager\GameObjectManager\GameObjectManager.cpp" />
+    <ClCompile Include="Core\Gif\Gif.cpp" />
+    <ClCompile Include="Game\Entity\Entity.cpp" />
+    <ClCompile Include="Game\Entity\Stats\EntityStats.cpp" />
+    <ClCompile Include="Game\Interface\Interactable\IInteractable.cpp" />
+    <ClCompile Include="Game\Entity\Mob\Mob.cpp" />
+    <ClCompile Include="Game\Entity\Player\Player.cpp" />
+    <ClCompile Include="Game\GameWindow\Menu\MainMenu.cpp" />
     <ClCompile Include="SFML-2.cpp" />
     <ClCompile Include="Core\Window\Window.cpp" />
     <ClCompile Include="Core\UI\UIElement.cpp" />
@@ -183,6 +195,10 @@
     <Object Include="x64\Debug\SFML-2.obj" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Game\GameWindow\GameWindow.h" />
+    <ClInclude Include="Game\Coin\Coin.h" />
+    <ClInclude Include="Core\Utils\stb_image.h" />
+    <ClInclude Include="Core\Window\Menu\BaseMenu.h" />
     <ClInclude Include="Core\Manager\Base\BaseManager.h" />
     <ClInclude Include="Core\UI\Button\Button.h" />
     <ClInclude Include="Core\Object\Object.h" />
@@ -201,6 +217,16 @@
     <ClInclude Include="Core\UI\Image\Image.h" />
     <ClInclude Include="Core\Manager\Font\FontManager.h" />
     <ClInclude Include="Core\Manager\TextureManager\TextureManager.h" />
+    <ClInclude Include="Core\GameObject\GameObject.h" />
+    <ClInclude Include="Core\Manager\GameObjectManager\GameObjectManager.h" />
+    <ClInclude Include="Core\Gif\Gif.h" />
+    <ClInclude Include="Game\Entity\Entity.h" />
+    <ClInclude Include="Game\Entity\Stats\EntityStats.h" />
+    <ClInclude Include="Game\Interface\Interactable\IInteractable.h" />
+    <ClInclude Include="Game\Entity\Mob\Mob.h" />
+    <ClInclude Include="Game\Entity\Player\Player.h" />
+    <ClInclude Include="Game\Physics\Physics.h" />
+    <ClInclude Include="Game\GameWindow\Menu\MainMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

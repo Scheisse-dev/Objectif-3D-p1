@@ -15,6 +15,7 @@ namespace Core
 		sf::RenderWindow* render = nullptr;
 		sf::Event currentEvent = sf::Event(); 
 		sf::Clock deltaClock = sf::Clock(); 
+		std::map<const char*, class BaseMenu*> menus = std::map<const char*, BaseMenu*>(); 
 #pragma endregion f/p
 #pragma region constructor/destructor
 	public:
@@ -31,10 +32,14 @@ namespace Core
 		int Height() const;
 		sf::RenderWindow* Render() const;
 		void Draw(sf::Drawable* _drawable) const;
+		void OpenMenu(const char* _name);
 	protected:
+		void CloseAllMenu();
+		void RegisterMenu(const char* _name, BaseMenu* _menu);
 		void OnDraw();
 		void OnReceiveEvent(const sf::Event& _event);
 		void OnUpdate();
+		
 	private:
 		void Update(); 
 #pragma endregion methods

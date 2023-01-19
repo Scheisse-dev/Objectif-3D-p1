@@ -1,12 +1,15 @@
 #include "Image.h"
 #include "../../Utils/Debug/Debug.h"
+#include "../../Manager/TextureManager/TextureManager.h"
 
 #pragma region constructor
 	
 Core::UI::Image::Image(Window* _owner, const char* _path) : super(_owner)
 {
 	sprite = new sf::Sprite(); 
-	//TODO loadTexture
+	sf::Texture* _texture = Manager::TextureManager::Instance()->Load(_path);
+	checkLow((_texture != nullptr), std::format("[Image] => '{}' is nullptr !", _path))
+		sprite->setTexture(*_texture);
 	drawable = sprite;
 }
 

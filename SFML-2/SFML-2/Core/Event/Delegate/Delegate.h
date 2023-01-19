@@ -63,13 +63,13 @@ namespace Core
 			{
 				instance = nullptr; 
 				function = nullptr; 
-				return this;
+				return *this;
 			}
 			Delegate& operator=(const Delegate& _other)
 			{
 				instance = _other.instance;
 				function = _other.function;
-				return this;
+				return *this;
 			}
 #pragma endregion operator
 		};
