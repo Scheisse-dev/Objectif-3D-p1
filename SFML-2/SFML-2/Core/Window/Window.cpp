@@ -31,6 +31,7 @@ Core::Window::~Window()
 void Core::Window::Open()
 {
 	render = new sf::RenderWindow(sf::VideoMode(width, height), title); 
+	render->setFramerateLimit(60);
 	Update();
 }
 void Core::Window::Close()

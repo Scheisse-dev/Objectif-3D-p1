@@ -25,7 +25,7 @@ namespace Core
 #pragma endregion constructor/destructor
 #pragma region methods
 		public:
-			void SetActive(bool _status);
+			virtual void SetActive(bool _status);
 			bool IsActive() const;
 			virtual bool IsValid() const;
 			virtual void Draw(); 

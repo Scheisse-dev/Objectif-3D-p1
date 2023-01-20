@@ -50,7 +50,7 @@ void Core::GameObject::SetPosition(const sf::Vector2f& _position)
 void Core::GameObject::SetOrigin(const sf::Vector2f& _origin)
 {
 	checkLow((sprite != nullptr), "[GameObject] => sprite is nullptr !")
-	sprite->setOrigin(_origin);
+		sprite->setOrigin(_origin);
 }
 void Core::GameObject::SetScale(const sf::Vector2f& _scale)
 {
@@ -59,13 +59,13 @@ void Core::GameObject::SetScale(const sf::Vector2f& _scale)
 }
 sf::Vector2f Core::GameObject::Position() const
 {
-	check((sprite != nullptr), "[GameObject] => sprite is nullptr !", sf::Vector2f(0,0))
-	return sprite->getPosition();
+	check((sprite != nullptr), "[GameObject] => sprite is nullptr !", sf::Vector2f(0, 0))
+		return sprite->getPosition();
 }
 sf::Vector2f Core::GameObject::Origin() const
 {
 	check((sprite != nullptr), "[GameObject] => sprite is nullptr !", sf::Vector2f(0, 0))
-	return sprite->getOrigin();
+		return sprite->getOrigin();
 }
 sf::Vector2f Core::GameObject::Scale() const
 {
@@ -87,10 +87,11 @@ void Core::GameObject::Draw(Window* _window)
 			debugShape->setOrigin(Origin());
 			_window->Draw(debugShape);
 		}
+	_window->Draw(sprite);
 }
-void Core::GameObject::OnUpdate(){}
-void Core::GameObject::OnCollisionEnter(GameObject* _object){}
-void Core::GameObject::OnCollisionExit(GameObject* _object){}
+void Core::GameObject::OnUpdate() {}
+void Core::GameObject::OnCollisionEnter(GameObject* _object) {}
+void Core::GameObject::OnCollisionExit(GameObject* _object) {}
 
 sf::FloatRect Core::GameObject::GlobalBounds() const
 {

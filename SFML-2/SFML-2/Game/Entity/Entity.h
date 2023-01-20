@@ -38,6 +38,7 @@ namespace Game
 			bool IsAlive();
 			bool IsGrounded() const;
 			void OnUpdate() override;
+			void OnCollisionEnter(GameObject* _object) override; 
 #pragma endregion methods
 		};
 	}

@@ -8,7 +8,7 @@ void Core::Manager::GameObjectManager::CheckCollision()
 	{
 		for (GameObject* _b : gameObjects)
 		{
-			if (_a = _b) continue;
+			if (_a == _b) continue;
 			if (_a->GlobalBounds().intersects(_b->GlobalBounds()))
 			{
 				std::vector<GameObject*>& _collideObject = _b->CollidedObject();

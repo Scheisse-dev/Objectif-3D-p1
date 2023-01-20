@@ -4,12 +4,13 @@
 #include "../../Core/Utils/Math/Mathf.h"
 #include "../../Core/Time/Time.h"
 #include "../Physics/Physics.h"
+#include "../Ground/Ground.h"
 
 #pragma region constructor/destructor
 Game::Entity::Entity::Entity(const char* _texturePath, const EntityStats& _stats)
 {
 	stats = _stats;
-	sprite = new sf::Sprite(); 
+	sprite = new sf::Sprite();
 	sf::Texture* _texture = Core::Manager::TextureManager::Instance()->Load(_texturePath);
 	checkLow((_texture != nullptr), std::format("[Entity] => error on loaded texture {}", _texturePath));
 	sprite->setTexture(*_texture);
@@ -25,7 +26,7 @@ void Game::Entity::Entity::AddLife(float _life)
 void Game::Entity::Entity::SetLife(float _value)
 {
 	checkLow(_value > 0, "life must be greater than 0")
-	stats.life = Core::Utils::Mathf::Clamp(_value, 0.0f, stats.maxLife);
+		stats.life = Core::Utils::Mathf::Clamp(_value, 0.0f, stats.maxLife);
 }
 void Game::Entity::Entity::SetMaxLife(float _value)
 {
@@ -70,6 +71,12 @@ void Game::Entity::Entity::OnUpdate()
 {
 	super::OnUpdate();
 	if (!isGrounded)
-	SetPosition(Position() + sf::Vector2f(0, 1) * GRAVITY * Core::Time::deltaTime);
+		SetPosition(Position() + sf::Vector2f(0, 1) * GRAVITY * Core::Time::deltaTime);
+}
+void Game::Entity::Entity::OnCollisionEnter(GameObject* _object)
+{
+	const Ground* _ground = dynamic_cast<Ground*>(_object);
+	if (_ground == nullptr) return;
+	isGrounded = true;
 }
 #pragma endregion methods

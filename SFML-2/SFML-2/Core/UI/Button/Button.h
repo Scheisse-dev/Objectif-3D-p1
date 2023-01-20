@@ -24,6 +24,7 @@ namespace Core
 #pragma region override
 		public:
 			bool IsValid() const override;
+			virtual void SetActive(bool _status) override; 
 			void Draw() override;
 			void OnUpdate() override;
 			virtual void SetPosition(const sf::Vector2f& _position) override;

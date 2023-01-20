@@ -35,10 +35,10 @@ void Core::UI::Button::Draw()
 void Core::UI::Button::OnUpdate()
 {
 	const sf::Vector2i _mousePosition = sf::Mouse::getPosition(*owner->Render()); 
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && image->GlobalBounds().contains(sf::Vector2f(-_mousePosition.x, _mousePosition.y)))
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && image->GlobalBounds().contains(sf::Vector2f(_mousePosition.x, _mousePosition.y)))
 	{
 		checkLow(OnClick.IsValid(), "[Button] => Delegate 'OnClick' is not valid !")
-			OnClick.Invoke();
+		OnClick.Invoke();
 	}
 	
 }
@@ -78,5 +78,9 @@ sf::FloatRect Core::UI::Button::GlobalBounds() const
 {
 
 	return image->GlobalBounds();
+}
+void Core::UI::Button::SetActive(bool _status)
+{
+	image->SetActive(_status);
 }
 #pragma endregion override
