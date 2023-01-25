@@ -23,14 +23,8 @@ Get-ChildItem $path -Recurse -Filter *.h |
             {
                 if($line -match "UCLASS")
                 {
-                    $isObject = $true
+                    $str += "REGISTER_CLASS($className)`n"
                 }
             }
-            if($isObject)
-            {
-                $str += "#include `"$includePath`"`n"
-                $str += "REGISTER_CLASS($className)`n"
-            }
-        }
 
 $str | Out-File $assemblyPath
