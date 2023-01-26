@@ -90,7 +90,7 @@
       </Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>powershell.exe -ExecutionPolicy Bypass -File Assembly.ps1 -path $(ProjectDir)</Command>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Reflection.ps1 -path $(ProjectDir)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,7 +117,7 @@
       </Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>powershell.exe -ExecutionPolicy Bypass -File Assembly.ps1 -path $(ProjectDir)</Command>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Reflection.ps1 -path $(ProjectDir)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -140,7 +140,7 @@
       </Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>powershell.exe -ExecutionPolicy Bypass -File Assembly.ps1 -path $(ProjectDir)</Command>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Reflection.ps1 -path $(ProjectDir)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -167,7 +167,7 @@
       </Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>powershell.exe -ExecutionPolicy Bypass -File Assembly.ps1 -path $(ProjectDir)</Command>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Reflection.ps1 -path $(ProjectDir)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -221,7 +221,7 @@
     <ClInclude Include="Test\PrimaryType\Integer\IntegerTest.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assembly.ps1" />
+    <None Include="Reflection.ps1" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

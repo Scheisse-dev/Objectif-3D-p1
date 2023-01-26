@@ -157,6 +157,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assembly.ps1" />
+    <None Include="Reflection.ps1" />
   </ItemGroup>
 </Project>
