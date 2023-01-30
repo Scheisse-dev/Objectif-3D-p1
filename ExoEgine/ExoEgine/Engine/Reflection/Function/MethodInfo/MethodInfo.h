@@ -16,7 +16,10 @@ namespace Engine::Reflection
 #pragma region f/p
 	private:
 		typedef Res(Object::* FunctionType)(Params...);
+		typedef Res(*StaticFunctionType)(Params ...);
 		FunctionType function = nullptr;
+		StaticFunctionType staticFunction = nullptr;
+		
 		BindingFlags flags = BindingFlags::NoPublic;
 #pragma endregion f/p
 #pragma region constructor
@@ -31,6 +34,12 @@ namespace Engine::Reflection
 			function = reinterpret_cast<FunctionType>(ptr);
 			flags = _flags;
 		}
+		MethodsInfo(const std::string& _name, Res(* ptr)(Params...), const std::vector<ParameterInfo*>& _params, const BindingFlags& _flags)
+			:Function(_name, _params)
+		{
+			staticFunction = ptr;
+			flags = _flags;
+		}
 		
 #pragma endregion constructor
 #pragma region methods
@@ -41,23 +50,29 @@ namespace Engine::Reflection
 		}
 		Res Invoke(Object* _instance, Params... _params)
 		{
-			return (_instance->*function)(_params...);
+			if (function != nullptr)
+			{
+				return (_instance->*function)(_params...);
+			}
+			return staticFunction(_params...);
 		}
 		void* GetAdresse() const
 		{
-			return (void*&)function;
+			if (function != nullptr)
+				return (void*&)function;
+			return (void*&)staticFunction;
 		}
 #pragma endregion methods
 #pragma region operator
 	public:
 		bool operator==(nullptr_t)
 		{
-			return function == nullptr;
+			return function == nullptr || staticFunction == nullptr;
 		}
 		bool operator!=(nullptr_t)
 		{
 
-			return 	function != nullptr;
+			return 	function != nullptr || staticFunction == nullptr;
 		}
 
 		bool operator==(const MethodsInfo& _other)

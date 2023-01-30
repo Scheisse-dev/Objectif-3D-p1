@@ -3,7 +3,8 @@
 #include "../Reflection/Function/Function.h"
 #include "../Reflection/Flags/BindingFlag.h"
 #include "../Reflection/Function/MethodInfo/MethodInfo.h"
-
+#include "../Reflection/Function/Parameter/ParameterInfo.h"
+#include "../Utils/Interface/Log/ILogger.h"
 #include <map>
 #include <format>
 
@@ -19,8 +20,8 @@
 #define UCLASS(...)
 
 
-#define REGISTER_FIELD(name, field, flags) const int field##name = InsertField(#name,(Object*)field, flags);
-#define REGISTER_METHOD(name, method, params, flags) const int Method##name = InsertMethod(#name, method, params, flags);
+#define REGISTER_FIELD(name, field, flags) const size_t field##name = InsertField(#name,(Object*)field, flags);
+#define REGISTER_METHOD(name, method, params, flags) const size_t Method##name = InsertMethod(#name, method, params, flags);
 
 #define DECLARE_CLASS_INFO_FLAGS(current, parent, flags) \
 	public:\
@@ -48,7 +49,7 @@ namespace Engine
 		class Boolean;
 		class String;
 	}
-	class Object
+	class Object : public Interface::ILogger
 	{
 #pragma region f/p
 	private:
@@ -89,7 +90,8 @@ namespace Engine
 
 		template<typename Res, typename Class, typename... Params>
 		size_t InsertMethod(const std::string& _name, Res(Class::* ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags);
-
+		template<typename Res, typename... Params>
+		size_t InsertMethod(const std::string& _name, Res(*ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags);
 
 		size_t InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags);
 #pragma endregion methods
@@ -134,6 +136,15 @@ namespace Engine
 
 	template<typename Res, typename Class, typename ...Params>
 	inline size_t Engine::Object::InsertMethod(const std::string& _name, Res(Class::* ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags)
+	{
+		if (functions.contains(_name)) return functions.size();
+		Reflection::MethodsInfo<Res, Params...>* _function = new Reflection::MethodsInfo<Res, Params...>(_name, ptr, _params, _flags);
+		functions.insert(std::pair(_name, _function));
+		return functions.size();
+	}
+
+	template<typename Res, typename ...Params>
+	inline size_t Engine::Object::InsertMethod(const std::string& _name, Res( *ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags)
 	{
 		if (functions.contains(_name)) return functions.size();
 		Reflection::MethodsInfo<Res, Params...>* _function = new Reflection::MethodsInfo<Res, Params...>(_name, ptr, _params, _flags);

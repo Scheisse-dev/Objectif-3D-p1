@@ -1,7 +1,7 @@
 #pragma once
 #include "../../Object/Object.h"
 #include <windows.h>
-
+#include "../Interface/Log/ILogger.h"
 
 namespace Engine::Utils
 {
@@ -19,15 +19,15 @@ namespace Engine::Utils
 		public:
 			static void Log(const std::string& _msg);
 			static void Log(const Object& _obj);
-			static void Log(const Object* _obj);
+			static void Log(const ILogger* _obj);
 
 			static void LogWarning(const std::string& _msg);
 			static void LogWarning(const Object& _obj);
-			static void LogWarning(const Object* _obj);
+			static void LogWarning(const ILogger* _obj);
 
 			static void LogError(const std::string& _msg);
 			static void LogError(const Object& _obj);
-			static void LogError(const Object* _obj);
+			static void LogError(const ILogger* _obj);
 #pragma endregion methods
 	};
 

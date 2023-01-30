@@ -171,6 +171,10 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Window\Engine\EngineWindow.cpp" />
+    <ClCompile Include="Engine\Component\Component.cpp" />
+    <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
+    <ClCompile Include="Test\PrimaryType\List\ListTest.cpp" />
     <ClCompile Include="Test\A.cpp" />
     <ClCompile Include="Engine\GameObject\GameObject.cpp" />
     <ClCompile Include="Engine\Reflection\Field\FieldInfo.cpp" />
@@ -193,6 +197,16 @@
     <ClCompile Include="Test\PrimaryType\Integer\IntegerTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Window\Engine\EngineWindow.h" />
+    <ClInclude Include="Engine\Component\Component.h" />
+    <ClInclude Include="Engine\PrimaryType\List\IList.h" />
+    <ClInclude Include="Engine\PrimaryType\List\List.h" />
+    <ClInclude Include="Engine\Utils\CoreDefine.h" />
+    <ClInclude Include="Engine\Utils\Interface\Log\ILogger.h" />
+    <ClInclude Include="Engine\Utils\Template\Pointer.h" />
+    <ClInclude Include="Engine\Manager\GameObject\GameObjectManager.h" />
+    <ClInclude Include="Engine\Window\Window.h" />
+    <ClInclude Include="Test\PrimaryType\List\ListTest.h" />
     <ClInclude Include="Test\A.h" />
     <ClInclude Include="Engine\Event\Action\Action.h" />
     <ClInclude Include="Engine\Event\Delegate\Delegate.h" />
@@ -222,6 +236,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Reflection.ps1" />
+    <None Include="ReflectionFunction.ps1" />
+    <None Include="ReflectionProperty.ps1" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

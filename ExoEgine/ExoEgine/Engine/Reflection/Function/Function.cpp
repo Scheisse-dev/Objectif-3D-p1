@@ -10,6 +10,16 @@ Engine::Reflection::Function::Function(const std::string& _name, const std::vect
 
 #pragma endregion constructor
 #pragma region methods
+Engine::PrimaryType::String Engine::Reflection::Function::ToString() const
+{
+    std::string _result = "Name: " + name + "\n";
+    for (const ParameterInfo* _parameter : parameters)
+    {
+        _result += _parameter->ToString();
+        _result += " ";
+    }
+    return _result.c_str();
+}
 Engine::PrimaryType::String Engine::Reflection::Function::Name() const
 {
     return name.c_str();

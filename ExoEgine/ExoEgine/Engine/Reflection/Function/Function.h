@@ -1,4 +1,5 @@
 #pragma once
+#include "../../Utils/Interface/Log/ILogger.h"
 #include <string>
 #include <vector>
 
@@ -13,7 +14,7 @@ namespace Engine
 	{
 		class ParameterInfo;
 
-		class Function
+		class Function : Interface::ILogger
 		{
 #pragma region f/p
 		private:
@@ -28,6 +29,7 @@ namespace Engine
 #pragma endregion constructor/destructor
 #pragma region methods
 		public:
+			PrimaryType::String ToString() const; 
 			class Engine::PrimaryType::String Name() const;
 			std::vector<ParameterInfo*> Paramters() const;
 #pragma endregion methods

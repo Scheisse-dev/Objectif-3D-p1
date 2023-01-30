@@ -12,6 +12,11 @@ Engine::Reflection::ParameterInfo::ParameterInfo(std::string _name, int _positio
 #pragma endregion constructor
 #pragma region methods
 
+Engine::PrimaryType::String Engine::Reflection::ParameterInfo::ToString() const
+{
+	return std::format("Name: {}, Position: {}", name, position).c_str();
+}
+
 std::string Engine::Reflection::ParameterInfo::Name() const
 {
 	return name;

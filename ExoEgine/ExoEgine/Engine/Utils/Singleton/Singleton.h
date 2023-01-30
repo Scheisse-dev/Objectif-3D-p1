@@ -9,7 +9,7 @@ namespace Engine::Utils
 		DECLARE_CLASS_INFO(Singleton, Object)
 #pragma region f/p
 	private:
-		static T* instance = nullptr;
+		static inline T* instance = nullptr;
 #pragma endregion f/p
 #pragma region constructor/destructor
 	public:

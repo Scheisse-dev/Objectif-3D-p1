@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
-#include "../../../Object/Object.h"
+#include "../../../Utils/Interface/Log/ILogger.h"
 
 
 namespace Engine::Reflection
 {
-	class ParameterInfo : public Object
+	class ParameterInfo : public Interface::ILogger
 	{
 #pragma region f/p
 	private:
@@ -20,6 +20,7 @@ namespace Engine::Reflection
 #pragma endregion constructor
 #pragma region methods
 	public:
+		PrimaryType::String ToString() const; 
 		std::string Name() const;
 		int Position() const;
 #pragma endregion methods

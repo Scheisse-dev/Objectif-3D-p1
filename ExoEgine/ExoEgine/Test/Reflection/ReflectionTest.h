@@ -9,15 +9,10 @@ namespace Test
 	class ReflectionTest : public Engine::Object
 	{
 		Engine::PrimaryType::String name = "Toto";
-		REGISTER_FIELD(name, &name, BindingFlags::NoPublic)
 	public:
 		Engine::PrimaryType::Integer age = 24;
-		REGISTER_FIELD(age, &age, BindingFlags::Public)
-
 		void Update();
-		REGISTER_METHOD(Update, &ReflectionTest::Update, {}, BindingFlags::Public)
 		void Display(const std::string& _msg);
-		REGISTER_METHOD(Display, &ReflectionTest::Display, (std::vector{new Engine::Reflection::ParameterInfo("msg", 0)}), BindingFlags::Public)
 
 		static void Test();
 	};

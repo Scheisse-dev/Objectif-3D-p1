@@ -29,16 +29,17 @@ namespace Engine::PrimaryType
 		Boolean Contains(const String& _str) const; 
 		static Boolean IsNullOrEmpty(const String& _str);
 
+
 		String ToLower() const;
 		String ToUpper() const;
-		String SubString(int _begin) const;
-		String SubString(int _begin, int _end) const;
+		String SubString(size_t _begin) const;
+		String SubString(size_t _begin, size_t _end) const;
 		String Replace(const String& _old, const String& _new) const; 
 		String Replace(char _old, char _new); 
 		String Trim() const;
-		int FindFirstOf(char _c); // TODO replace int with Integer class
-		int FindLastOf(char _c); //TODO replace int with integer class
-		int Lenght() const; //TODO replace int with Integerclass
+		size_t FindFirstOf(char _c); // TODO replace int with Integer class
+		size_t FindLastOf(char _c); //TODO replace int with integer class
+		size_t Lenght() const; //TODO replace int with Integerclass
 		void Append(const char* _str);
 		void Append(const String& _str);
 		const char* ToCstr() const;
@@ -50,13 +51,17 @@ namespace Engine::PrimaryType
 #pragma endregion override
 #pragma region operator
 	public:
+		String& operator+=(const char* _str);
+		String& operator+=(const String& _str);
 		operator const char* ();
 		operator const char* () const;
-		Boolean operator==(const String& _str);
-		Boolean operator!=(const String& _str);
-#pragma endregion operator
+		Boolean operator==(const String& _str) const;
+		Boolean operator!=(const String& _str) const;
+		Boolean operator==(const char* _str) const;
+		Boolean operator!=(const char* _str) const;
 		Object& operator=(const Object* _other) override; 
 		String& operator=(const String& _other); 
+#pragma endregion operator
 	};
 
 }
