@@ -26,6 +26,7 @@ namespace Engine::PrimaryType
 #pragma endregion methods
 #pragma region override
 		PrimaryType::String ToString() const override;
+		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName) override;
 #pragma endregion override
 #pragma region operator
 		Integer& operator=(const Integer& _other);

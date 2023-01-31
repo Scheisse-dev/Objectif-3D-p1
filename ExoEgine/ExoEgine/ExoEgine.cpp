@@ -1,14 +1,13 @@
 #include <iostream>
-#include "Engine/Utils/DebugMacro.h"
-#include "Test/PrimaryType/List/ListTest.h"
+
+#include "Engine/Window/Engine/EngineWindow.h"
+#include "Engine/Manager/GameObject/GameObjectManager.h"
+#include "Engine/GameObject/GameObject.h"
+#include "Test/Reflection/Json/JsonTest.h"
 
 
 int main()
 {
-	Test::ListTest test = Test::ListTest();
-	test.Test(); 
-	Engine::Reflection::ParameterInfo* p = new Engine::Reflection::ParameterInfo("age", 0);
-	LOG(p)
-	delete p;
-	return 0;
+	Test::JsonTest test = Test::JsonTest();
+	test.JTest();
 }

@@ -67,6 +67,20 @@ Engine::PrimaryType::Boolean Engine::PrimaryType::Double::IsNaN(const Double& _v
 {
 	return std::isnan(_value);
 }
+Engine::PrimaryType::String Engine::PrimaryType::Double::ToString() const
+{
+	if (IsNaN(*this)) return "NaN";
+	if (IsPositiveInfinity(*this)) return "Positive Infinity";
+	if (IsNegativeInfinity(*this)) return "Negative Infinity";
+	return std::to_string(value).c_str();
+}
+void Engine::PrimaryType::Double::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
+{
+	if (String::IsNullOrEmpty(_fieldName))
+		_os << std::string("\"") + ToString().ToCstr() + "\"";
+	else
+		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+}
 #pragma endregion methods
 #pragma region operator
 Engine::PrimaryType::Double& Engine::PrimaryType::Double::operator=(const Double& _other)

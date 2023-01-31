@@ -29,6 +29,11 @@ namespace Engine::PrimaryType
 		static Boolean IsNegativeInfinity(const Double& _value);
 		static Boolean IsNaN(const Double& _value);
 #pragma endregion methods
+#pragma region override
+	public:
+		String ToString() const override;
+		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName) override;
+#pragma endregion override
 #pragma region operator
 	public:
 		Double& operator=(const Double& _other);

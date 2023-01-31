@@ -28,7 +28,7 @@ namespace Engine::Reflection
 			PrimaryType::Boolean IsArray() const;
 			PrimaryType::Boolean IsReflectedClass() const;
 			PrimaryType::String Name() const; 
-			Object ReflectedObject() const;
+			Object* ReflectedObject() const;
 			BindingFlags Flags() const;
 
 #pragma endregion methods

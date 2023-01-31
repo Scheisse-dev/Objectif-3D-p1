@@ -1,6 +1,7 @@
 #include "GameObjectManager.h"
 #include "../../GameObject/GameObject.h"
 
+
 void Engine::Manager::GameObjectManager::Register(GameObject* _obj)
 {
 	gameobjects.push_back(_obj);
@@ -17,6 +18,7 @@ void Engine::Manager::GameObjectManager::Update() const
 	{
 		for (Component* _component : _gameobject->Components())
 		{
+			if (_component == nullptr) continue;
 			if (_component->enable)
 			{
 				Reflection::MethodsInfo<void>* _method = _component->GetFunction<void>("Update");
@@ -25,6 +27,12 @@ void Engine::Manager::GameObjectManager::Update() const
 			}
 		}
 	}
+}
+
+void Engine::Manager::GameObjectManager::Draw(const Window::EngineWindow* _window)
+{
+	for (const GameObject* _obj : gameobjects)
+		_obj->Draw(_window);
 }
 
 void Engine::Manager::GameObjectManager::OnDestroy()

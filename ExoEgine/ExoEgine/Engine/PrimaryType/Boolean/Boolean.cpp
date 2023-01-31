@@ -18,6 +18,13 @@ Engine::PrimaryType::String Engine::PrimaryType::Boolean::ToString() const
 {
 	return value ? "true" : "false";
 }
+void Engine::PrimaryType::Boolean::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
+{
+	if (String::IsNullOrEmpty(_fieldName))
+		_os << std::string("\"") + ToString().ToCstr() + "\"";
+	else
+		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+}
 #pragma endregion override
 #pragma region operator
 Engine::PrimaryType::Boolean& Engine::PrimaryType::Boolean::operator=(const Boolean& _other)

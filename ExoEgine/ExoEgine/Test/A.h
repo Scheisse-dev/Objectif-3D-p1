@@ -1,24 +1,27 @@
 #pragma once
-#include "../../Engine/Object/Object.h"
-#include "../../Engine/PrimaryType/String/String.h"
-#include "../../Engine/PrimaryType/Integer/Integer.h"
-#include "../../Engine/Reflection/Function/Parameter/ParameterInfo.h"
 
+#include "../../Engine/PrimaryType/Integer/Integer.h"
+#include "../../Engine/PrimaryType/Float/Float.h"
+#include "../../Engine/PrimaryType/Double/Double.h"
+#include "../../Engine/PrimaryType/String/String.h"
+#include "../../Engine/PrimaryType/Boolean/Boolean.h"
 
 UCLASS()
 class A : public Engine::Object
 {
+	UPROPERTY() Engine::PrimaryType::Integer age = 0;
+REGISTER_FIELD(age, &age, BindingFlags::NoPublic)
 
-public: 
+		UPROPERTY() Engine::PrimaryType::Float fo = 0.0f;
+REGISTER_FIELD(fo, &fo, BindingFlags::NoPublic)
 
-public:
-	UFUNCTION() void Update();
-REGISTER_METHOD(Update, &A::Update, {}, BindingFlags::Public)
+UPROPERTY() Engine::PrimaryType::Double doudouble = 10000000000000000000;
+REGISTER_FIELD(doudouble, &doudouble, BindingFlags::NoPublic)
 
-	UFUNCTION() void Display(std::string& _msg, int _machin);
-REGISTER_METHOD(Display, &A::Display, (std::vector<Engine::Reflection::ParameterInfo*>{new Engine::Reflection::ParameterInfo("_msg", 0),new Engine::Reflection::ParameterInfo("_machin", 1)}), BindingFlags::Public)
+UPROPERTY() Engine::PrimaryType::String stream = "string";
+REGISTER_FIELD(stream, &stream, BindingFlags::NoPublic)
 
-	UFUNCTION() void Test(); 
-REGISTER_METHOD(Test, &A::Test, {}, BindingFlags::Public)
 
+UPROPERTY() Engine::PrimaryType::Boolean boogie = true; 
+REGISTER_FIELD(boogie, &boogie, BindingFlags::NoPublic)
 };

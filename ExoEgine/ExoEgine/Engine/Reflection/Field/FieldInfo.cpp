@@ -40,9 +40,9 @@ Engine::PrimaryType::String Engine::Reflection::FieldInfo::Name() const
 {
 	return name;
 }
-Engine::Object Engine::Reflection::FieldInfo::ReflectedObject() const
+Engine::Object* Engine::Reflection::FieldInfo::ReflectedObject() const
 {
-	return *reflectedObject;
+	return reflectedObject;
 }
 BindingFlags Engine::Reflection::FieldInfo::Flags() const
 {

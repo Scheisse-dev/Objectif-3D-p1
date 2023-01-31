@@ -67,6 +67,7 @@ namespace Engine
 #pragma region methods
 	public:
 		virtual PrimaryType::String ToString() const;
+		PrimaryType::String ClassName() const;
 		PrimaryType::Boolean IsClass() const;
 		Reflection::FieldInfo* GetField(const PrimaryType::String& _name);
 		std::vector<Reflection::FieldInfo*> Fields() const ;
@@ -75,6 +76,15 @@ namespace Engine
 		void SetValue(const Object* _obj);
 		template <typename T>
 		void SetFieldValue(const std::string& _name, T* _value);
+
+		virtual void Serialize(std::ostream& _os);
+		virtual void DeSerialize(std::istream& _os);
+		virtual void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName);
+		virtual void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName);
+
+
+
+
 
 		template<typename Res, typename... Params>
 		Reflection::MethodsInfo<Res, Params...>* GetFunction(const std::string& _name);

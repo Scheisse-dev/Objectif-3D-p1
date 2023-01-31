@@ -14,7 +14,13 @@ Engine::Object::Object(const Object& _copy)
 
 #pragma endregion constructor/destructor
 #pragma region methods
+
 Engine::PrimaryType::String Engine::Object::ToString() const
+{
+    return ClassName(); 
+}
+
+Engine::PrimaryType::String Engine::Object::ClassName() const
 {
     Engine::PrimaryType::String _str = typeid(*this).name();
     _str = _str.Replace("class", "");
@@ -43,6 +49,48 @@ size_t Engine::Object::InsertField(const std::string& _name, Object* _var, const
     return fields.size();
 }
 
+
+void Engine::Object::Serialize(std::ostream& _os)
+{
+    const std::vector<Reflection::FieldInfo*> _fields = Fields();
+    const size_t _length = _fields.size();
+    //Add class Name to file => os
+    _os << std::string("\"") + ClassName().ToCstr() + "\" : " + "{\n";
+    for (size_t i = 0; i < _length; i++)
+    {
+        if (_fields[i]->ReflectedObject() == nullptr) continue;
+        if (_fields[i]->IsReflectedClass())
+        {
+            _fields[i]->ReflectedObject()->Serialize(_os);
+        }
+        else
+        {
+            _fields[i]->ReflectedObject()->SerializeField(_os, _fields[i]->Name());
+        }
+        if (i < _length - 1)
+            _os << ",\n";
+    }
+    _os << "\n}";
+}
+void Engine::Object::DeSerialize(std::istream& _os)
+{
+    const std::vector<Reflection::FieldInfo*> _fields = Fields();
+    const size_t _length = _fields.size();
+    for (size_t i = 0; i < _length; i++)
+    {
+        if (_fields[i]->ReflectedObject() == nullptr) continue;
+        if (_fields[i]->IsReflectedClass()) _fields[i]->ReflectedObject()->DeSerialize(_os);
+        else _fields[i]->ReflectedObject()->DeSerializeField(_os, _fields[i]->Name());
+    }
+}
+void Engine::Object::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
+{
+
+}
+void Engine::Object::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)
+{
+
+}
 
 
 

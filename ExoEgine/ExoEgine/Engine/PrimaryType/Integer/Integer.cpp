@@ -45,6 +45,15 @@ Engine::PrimaryType::String Engine::PrimaryType::Integer::ToString() const
 {
 	return std::to_string(value).c_str();
 }
+
+void Engine::PrimaryType::Integer::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
+{
+	if (String::IsNullOrEmpty(_fieldName))
+		_os << std::string("\"") + ToString().ToCstr() + "\"";
+	else
+		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+}
+
 #pragma endregion override
 #pragma region operator
 Engine::PrimaryType::Integer& Engine::PrimaryType::Integer::operator=(const Integer& _other)
