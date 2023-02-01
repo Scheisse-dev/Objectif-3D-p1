@@ -41,6 +41,7 @@ namespace Engine::PrimaryType
 		size_t FindLastOf(char _c); //TODO replace int with integer class
 		size_t Lenght() const; //TODO replace int with Integerclass
 		void Append(const char* _str);
+		void Append(char _char);
 		void Append(const String& _str);
 		const char* ToCstr() const;
 
@@ -54,6 +55,7 @@ namespace Engine::PrimaryType
 	public:
 		String& operator+=(const char* _str);
 		String& operator+=(const String& _str);
+		String& operator+=(char _c);
 		operator const char* ();
 		operator const char* () const;
 		Boolean operator==(const String& _str) const;

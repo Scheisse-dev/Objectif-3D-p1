@@ -85,11 +85,25 @@ void Engine::Object::DeSerialize(std::istream& _os)
 }
 void Engine::Object::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
 {
+    if (PrimaryType::String::IsNullOrEmpty(_fieldName))
+        _os << std::string("\"") + ToString().ToCstr() + "\"";
+    else
+        _os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
 
 }
 void Engine::Object::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)
 {
-
+    if (PrimaryType::String::IsNullOrEmpty(_fieldName))
+        throw "fieldName is null or empty";
+    else
+    {
+        _fieldName = _os.read(_fieldName);
+        //_os >> _fieldName;
+        //substr(begin : end ,)
+        // trim " _result
+        // 
+        //
+    }
 }
 
 

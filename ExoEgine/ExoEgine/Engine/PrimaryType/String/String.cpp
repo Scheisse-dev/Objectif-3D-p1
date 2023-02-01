@@ -83,13 +83,16 @@ Engine::PrimaryType::String Engine::PrimaryType::String::ToUpper() const
 #pragma region methods
 Engine::PrimaryType::String Engine::PrimaryType::String::SubString(size_t _begin) const
 {
-	const std::string _result = value;
-	return _result.substr(_begin).c_str();
+	return SubString(_begin, Lenght());
 }
 Engine::PrimaryType::String Engine::PrimaryType::String::SubString(size_t _begin, size_t _end) const
 {
-	const std::string _result = value;
-	return _result.substr(_begin, _end).c_str();
+	String _result = ""; 
+	for (size_t i = _begin; i < _end; i++)
+	{
+		_result += value[i];
+	}
+	return _result;
 }
 Engine::PrimaryType::String Engine::PrimaryType::String::Replace(const String& _old, const String& _new) const
 {
@@ -140,6 +143,16 @@ void Engine::PrimaryType::String::Append(const char* _str)
 {
 	Append(String(_str));
 }
+void Engine::PrimaryType::String::Append(char _char)
+{
+	const size_t _newLength = length + 2;
+	char* _array = new char[_newLength];
+	strcpy(_array, value);
+	_array[length] = _char;
+	_array[length + 1] = '\0';
+	value = _array;
+	length += 1;
+}
 void Engine::PrimaryType::String::Append(const String& _str)
 {
 	const size_t _newLength = length + _str.length;
@@ -181,6 +194,11 @@ Engine::PrimaryType::String& Engine::PrimaryType::String::operator+=(const char*
 Engine::PrimaryType::String& Engine::PrimaryType::String::operator+=(const String& _str)
 {
 	Append(_str);
+	return *this;
+}
+Engine::PrimaryType::String& Engine::PrimaryType::String::operator+=(char _c)
+{
+	Append(_c);
 	return *this;
 }
 Engine::PrimaryType::String::operator const char* ()

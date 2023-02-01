@@ -24,16 +24,12 @@ Engine::PrimaryType::Vector2 Engine::PrimaryType::Vector2::MoveTowards(const Vec
 #pragma endregion constructor
 
 #pragma region override
-Engine::PrimaryType::String Engine::PrimaryType::Vector2::ToString() const
-{
-	
-}
 void Engine::PrimaryType::Vector2::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
 {
 	if (String::IsNullOrEmpty(_fieldName))
-		_os << std::string("\"") + ToString().ToCstr() + "\"";
+		_os << std::string("\"") + std::to_string(x) + "\"" + std::to_string(y) + "\"";
 	else
-		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + "x :" + std::to_string(x) + "\" " + "y :" + std::to_string(y) + "\"" + ",";
 }
 #pragma endregion override
 

@@ -5,6 +5,7 @@
 #include "../../Engine/PrimaryType/Double/Double.h"
 #include "../../Engine/PrimaryType/String/String.h"
 #include "../../Engine/PrimaryType/Boolean/Boolean.h"
+#include "../../Engine/PrimaryType/Vector/Vector2/Vector2.h"
 
 UCLASS()
 class A : public Engine::Object
@@ -24,4 +25,9 @@ REGISTER_FIELD(stream, &stream, BindingFlags::NoPublic)
 
 UPROPERTY() Engine::PrimaryType::Boolean boogie = true; 
 REGISTER_FIELD(boogie, &boogie, BindingFlags::NoPublic)
+
+UPROPERTY() Engine::PrimaryType::Vector2 vactor = Engine::PrimaryType::Vector2(5, 2);
+REGISTER_FIELD(vactor, &vactor, BindingFlags::NoPublic)
+
+
 };

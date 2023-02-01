@@ -54,6 +54,11 @@ void Engine::PrimaryType::Integer::SerializeField(std::ostream& _os, const Prima
 		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
 }
 
+void Engine::PrimaryType::Integer::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)
+{
+
+}
+
 #pragma endregion override
 #pragma region operator
 Engine::PrimaryType::Integer& Engine::PrimaryType::Integer::operator=(const Integer& _other)
