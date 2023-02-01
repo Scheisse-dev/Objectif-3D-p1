@@ -172,20 +172,32 @@ const char* Engine::PrimaryType::String::ToCstr() const
 
 #pragma endregion methods
 #pragma region override
-
-#pragma endregion override
-#pragma region operator
 Engine::PrimaryType::String Engine::PrimaryType::String::ToString() const
 {
 	return value;
 }
 void Engine::PrimaryType::String::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
 {
-	if (String::IsNullOrEmpty(_fieldName))
-		_os << std::string("\"") + ToString().ToCstr() + "\"";
-	else
-		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+	_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
 }
+void Engine::PrimaryType::String::DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName)
+{
+	std::string _line;
+	while (std::getline(_is, _line))
+	{
+		if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
+		{
+			String _str = _line.c_str();
+			_str = _str.SubString(_str.FindFirstOf(':'));
+			_str = _str.SubString(_str.FindFirstOf('*'), _str.FindLastOf('"')).Replace("\"", "");
+			*this = _str;
+			break;
+		}
+	}
+}
+
+#pragma endregion override
+#pragma region operator
 Engine::PrimaryType::String& Engine::PrimaryType::String::operator+=(const char* _str)
 {
 	Append(_str);

@@ -28,7 +28,9 @@ REGISTER_FIELD(x, &x, BindingFlags::NoPublic)
 #pragma endregion methods
 #pragma region override
 	public:
+		String ToString() const override;
 		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName) override;
+		void DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName) override;
 #pragma endregion override
 #pragma region operator
 	public:

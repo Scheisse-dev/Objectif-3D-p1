@@ -4,7 +4,8 @@
 #include "../../Utils/Template/Pointer.h"
 #include "../Integer/Integer.h"
 #include "../../Utils/DebugMacro.h"
-#include"../../Utils/CoreDefine.h"
+#include "../../Utils/CoreDefine.h"
+
 
 namespace Engine::PrimaryType
 {
@@ -77,10 +78,17 @@ namespace Engine::PrimaryType
 			return data.size();
 		}
 #pragma endregion methods
-#pragma region operator
+#pragma region override
 	public:
+		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName) override
+		{
 
-#pragma endregion operator
+		}
+		void DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName) override
+		{
+
+		}
+#pragma endregion override
 	};
 
 }

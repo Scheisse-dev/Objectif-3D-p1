@@ -54,9 +54,20 @@ void Engine::PrimaryType::Integer::SerializeField(std::ostream& _os, const Prima
 		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
 }
 
-void Engine::PrimaryType::Integer::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)
+void Engine::PrimaryType::Integer::DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName)
 {
-
+	std::string _line;
+	while (std::getline(_is, _line))
+	{
+		if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
+		{
+			String _str = _line.c_str();
+			_str = _str.SubString(_str.FindFirstOf(':'));
+			_str = _str.SubString(_str.FindFirstOf('*'), _str.FindLastOf('"')).Replace("\"", "");
+			*this = std::stoi(_str.ToCstr());
+			break;
+		}
+	}
 }
 
 #pragma endregion override

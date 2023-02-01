@@ -78,6 +78,8 @@ void Engine::Object::DeSerialize(std::istream& _os)
     const size_t _length = _fields.size();
     for (size_t i = 0; i < _length; i++)
     {
+        _os.clear();
+        _os.seekg(0);
         if (_fields[i]->ReflectedObject() == nullptr) continue;
         if (_fields[i]->IsReflectedClass()) _fields[i]->ReflectedObject()->DeSerialize(_os);
         else _fields[i]->ReflectedObject()->DeSerializeField(_os, _fields[i]->Name());
@@ -85,25 +87,13 @@ void Engine::Object::DeSerialize(std::istream& _os)
 }
 void Engine::Object::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
 {
-    if (PrimaryType::String::IsNullOrEmpty(_fieldName))
-        _os << std::string("\"") + ToString().ToCstr() + "\"";
-    else
-        _os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+
+
 
 }
 void Engine::Object::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)
 {
-    if (PrimaryType::String::IsNullOrEmpty(_fieldName))
-        throw "fieldName is null or empty";
-    else
-    {
-        _fieldName = _os.read(_fieldName);
-        //_os >> _fieldName;
-        //substr(begin : end ,)
-        // trim " _result
-        // 
-        //
-    }
+
 }
 
 

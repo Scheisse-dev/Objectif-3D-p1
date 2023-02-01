@@ -24,12 +24,29 @@ Engine::PrimaryType::Vector2 Engine::PrimaryType::Vector2::MoveTowards(const Vec
 #pragma endregion constructor
 
 #pragma region override
+Engine::PrimaryType::String Engine::PrimaryType::Vector2::ToString() const
+{
+	return std::format("({}, {})", x, y).c_str();
+}
 void Engine::PrimaryType::Vector2::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
 {
-	if (String::IsNullOrEmpty(_fieldName))
-		_os << std::string("\"") + std::to_string(x) + "\"" + std::to_string(y) + "\"";
-	else
-		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + "x :" + std::to_string(x) + "\" " + "y :" + std::to_string(y) + "\"" + ",";
+	_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+}
+void Engine::PrimaryType::Vector2::DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName)
+{
+	std::string _line = "";
+	while (std::getline(_is, _line))
+	{
+		if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
+		{
+			String _str = _line.c_str();
+			_str = _str.SubString(_str.FindFirstOf('('), _str.FindLastOf(')'));
+			String _x = _str.SubString(_str.FindFirstOf('(') + 1, _str.FindFirstOf(','));
+			String _y = _str.SubString(_str.FindFirstOf(' ') + 1);
+			*this = Vector2(std::stof(_x.ToCstr()), std::stof(_y.ToCstr()));
+			break;
+		}
+	}
 }
 #pragma endregion override
 
