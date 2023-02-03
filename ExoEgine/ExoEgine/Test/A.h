@@ -6,28 +6,27 @@
 #include "../../Engine/PrimaryType/String/String.h"
 #include "../../Engine/PrimaryType/Boolean/Boolean.h"
 #include "../../Engine/PrimaryType/Vector/Vector2/Vector2.h"
+#include "../../Engine/PrimaryType/List/List.h"
+#include "B.h"
 
 UCLASS()
 class A : public Engine::Object
 {
-	UPROPERTY() Engine::PrimaryType::Integer age = 0;
-REGISTER_FIELD(age, &age, BindingFlags::NoPublic)
+public:
+	UPROPERTY() Engine::PrimaryType::Integer age = 50;
+REGISTER_FIELD(age, &age, BindingFlags::Public)
 
-		UPROPERTY() Engine::PrimaryType::Float fo = 0.0f;
-REGISTER_FIELD(fo, &fo, BindingFlags::NoPublic)
+UPROPERTY() Engine::PrimaryType::List<Engine::PrimaryType::String> names = { "je", "suis", "une", "loutre", "maritime" };
+REGISTER_FIELD(names, &names, BindingFlags::Public)
 
-UPROPERTY() Engine::PrimaryType::Double doudouble = 10000000000000000000;
-REGISTER_FIELD(doudouble, &doudouble, BindingFlags::NoPublic)
-
-UPROPERTY() Engine::PrimaryType::String stream = "string";
-REGISTER_FIELD(stream, &stream, BindingFlags::NoPublic)
-
-
-UPROPERTY() Engine::PrimaryType::Boolean boogie = true; 
-REGISTER_FIELD(boogie, &boogie, BindingFlags::NoPublic)
-
-UPROPERTY() Engine::PrimaryType::Vector2 vactor = Engine::PrimaryType::Vector2(5, 2);
-REGISTER_FIELD(vactor, &vactor, BindingFlags::NoPublic)
-
-
+UPROPERTY() Engine::PrimaryType::List<B*> blist = { new B(), new B(), new B() };
+REGISTER_FIELD(blist, &blist, BindingFlags::Public)
+//
+//Engine::PrimaryType::String ToString() const override
+//{
+//	Engine::PrimaryType::String _result = "";
+//	for (B* _value : blist)
+//		_result += _value->toast.ToString();
+//	return _result; 
+//}
 };

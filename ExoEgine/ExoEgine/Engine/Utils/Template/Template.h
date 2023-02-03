@@ -2,9 +2,9 @@
 
 #include "../../PrimaryType/Boolean/Boolean.h"
 
-template <typename T> struct IsPointer { static inline Engine::PrimaryType::Boolean Value = false; };
-template <typename T> struct IsPointer<T*> { static inline Engine::PrimaryType::Boolean Value = true; };
-template<typename T> struct IsPointer<const T> { static inline Engine::PrimaryType::Boolean Value = IsPointer<T>::Value; };
+template <typename T> struct IsPointer { enum { Value = false }; };
+template <typename T> struct IsPointer<T*> { enum{ Value = true }; };
+template<typename T> struct IsPointer<const T> { enum {Value = IsPointer<T>::Value }; };
 
 template<typename Base, typename Derived>
 bool IsSame(Derived* _der)

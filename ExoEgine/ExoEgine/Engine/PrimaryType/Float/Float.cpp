@@ -65,27 +65,15 @@ Engine::PrimaryType::String Engine::PrimaryType::Float::ToString() const
 	if (IsNegativeInfinity(*this)) return "Negative Infinity";
 	return std::to_string(value).c_str();
 }
-void Engine::PrimaryType::Float::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
+void Engine::PrimaryType::Float::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index)
 {
-	if (String::IsNullOrEmpty(_fieldName))
-		_os << std::string("\"") + ToString().ToCstr() + "\"";
-	else
-		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+	Reflection::ReflectionUtils::SerializePrimaryType(_os, this, _fieldName);
 }
 void Engine::PrimaryType::Float::DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName)
 {
-	std::string _line;
-	while (std::getline(_is, _line))
-	{
-		if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
-		{
-			String _str = _line.c_str();
-			_str = _str.SubString(_str.FindFirstOf(':'));
-			_str = _str.SubString(_str.FindFirstOf('*'), _str.FindLastOf('"')).Replace("\"", "");
-			*this = std::stoi(_str.ToCstr());
-			break;
-		}
-	}
+	String _str = Reflection::ReflectionUtils::GetLine(_is, _fieldName);
+	_str = _str.Replace("\"", "").Replace("\t", "").Replace(",", "").Replace(_fieldName, "").Replace(":", "").Trim();
+	*this = std::stoi(_str.ToCstr());
 }
 #pragma endregion override
 #pragma region operator

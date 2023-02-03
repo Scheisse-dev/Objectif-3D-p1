@@ -4,5 +4,5 @@ template<typename T> struct RemovePointer {
 };
 
 template<typename T> struct RemovePointer<T*> {
-	using Type = T;
+	using Type = std::remove_pointer<T>::type;
 };

@@ -16,6 +16,7 @@ namespace Engine::PrimaryType
 #pragma endregion f/p
 #pragma region constructor
 	public:
+		Integer() = default; 
 		Integer(int _value);
 		Integer(const Integer& _copy);
 #pragma endregion constructor
@@ -26,7 +27,7 @@ namespace Engine::PrimaryType
 #pragma endregion methods
 #pragma region override
 		PrimaryType::String ToString() const override;
-		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName) override;
+		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index) override;
 		void DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName) override;
 #pragma endregion override
 #pragma region operator

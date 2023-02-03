@@ -37,8 +37,8 @@ namespace Engine::PrimaryType
 		String Replace(const String& _old, const String& _new) const; 
 		String Replace(char _old, char _new); 
 		String Trim() const;
-		size_t FindFirstOf(char _c); // TODO replace int with Integer class
-		size_t FindLastOf(char _c); //TODO replace int with integer class
+		size_t FindFirstOf(char _c) const; // TODO replace int with Integer class
+		size_t FindLastOf(char _c) const; //TODO replace int with integer class
 		size_t Lenght() const; //TODO replace int with Integerclass
 		void Append(const char* _str);
 		void Append(char _char);
@@ -49,7 +49,7 @@ namespace Engine::PrimaryType
 #pragma region override
 	public:
 		String ToString() const override;
-		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName) override;
+		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index) override;
 		void DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName) override;
 #pragma endregion override
 #pragma region operator

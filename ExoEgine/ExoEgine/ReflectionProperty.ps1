@@ -97,6 +97,11 @@ Get-ChildItem $path -Recurse -Filter *.h |
 
                     $field = ReplaceStr -str $line -toReplace @("inline", "const", "static", "constexpr", "UPROPERTY()") -to ""
                     $field = $field.TrimStart()
+                    if($field.Contains(">"))
+                    {
+                        $str = $field.Substring($field.IndexOf(">"))
+                        $isPointer = $str.Contains("*")
+                    }
                     $field = $field.Substring($field.IndexOf(' ') + 1)
                     $field = $field.Substring(0,$field.IndexOf(' ')).Trim()
 

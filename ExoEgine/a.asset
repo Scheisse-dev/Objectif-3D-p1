@@ -1,8 +1,52 @@
 "A" : {
-"age" : "0",
-"boogie" : "true",
-"doudouble" : "10000000000000000000.000000",
-"fo" : "0.000000",
-"stream" : "string",
-"vactor" : "x :5.000000" y :2.000000",
+	"age" : "50",
+	"blist" : "B"[
+			"B" : {
+		"toast" : "Integer"[
+					"7",
+					"8",
+					"9",
+					"10"
+			]	
+},
+			"B" : {
+		"toast" : "Integer"[
+					"7",
+					"8",
+					"9",
+					"10"
+			]	
+},
+			"B" : {
+		"toast" : "Integer"[
+					"7",
+					"8",
+					"9",
+					"10"
+			]	
+}
+	],
+	"names" : "String"[
+			"je",
+			"suis",
+			"une",
+			"loutre",
+			"maritime"
+	]
+}"C" : {
+	"B" : {
+		"toast" : "Integer"[
+					"7",
+					"8",
+					"9",
+					"10"
+			]	
+},
+	"test" : "Integer"[
+			"1",
+			"2",
+			"3",
+			"4",
+			"5"
+	]
 }

@@ -20,7 +20,7 @@ namespace Engine::PrimaryType
 #pragma region override
 	public:
 		PrimaryType::String ToString() const override; 
-		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName) override;
+		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index) override;
 		void DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName) override;
 #pragma endregion override
 #pragma region operator

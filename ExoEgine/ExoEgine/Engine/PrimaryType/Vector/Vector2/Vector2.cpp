@@ -1,5 +1,6 @@
 #include "Vector2.h"
 
+#include "../../../Reflection/Utils/ReflectionUtils.h"
 #include "../../../Utils/DebugMacro.h"
 #include "../../Boolean/Boolean.h"
 
@@ -28,25 +29,24 @@ Engine::PrimaryType::String Engine::PrimaryType::Vector2::ToString() const
 {
 	return std::format("({}, {})", x, y).c_str();
 }
-void Engine::PrimaryType::Vector2::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName)
+void Engine::PrimaryType::Vector2::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index)
 {
+	if (String::IsNullOrEmpty(_fieldName))
+	{
+		_os << std::string("\"") + ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+	}
+	else
 	_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
 }
 void Engine::PrimaryType::Vector2::DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName)
 {
-	std::string _line = "";
-	while (std::getline(_is, _line))
-	{
-		if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
-		{
-			String _str = _line.c_str();
-			_str = _str.SubString(_str.FindFirstOf('('), _str.FindLastOf(')'));
-			String _x = _str.SubString(_str.FindFirstOf('(') + 1, _str.FindFirstOf(','));
-			String _y = _str.SubString(_str.FindFirstOf(' ') + 1);
-			*this = Vector2(std::stof(_x.ToCstr()), std::stof(_y.ToCstr()));
-			break;
-		}
-	}
+
+	const String& _str = Reflection::ReflectionUtils::GetLine(_is, _fieldName); 
+	const String& _x = _str.SubString(_str.FindFirstOf('(') + 1, _str.FindFirstOf(','));
+	const String& _y = _str.SubString(_str.FindFirstOf(',') + 1, _str.FindFirstOf(')'));
+	*this = Vector2(std::stof(_x.ToCstr()), std::stof(_y.ToCstr()));
+
+
 }
 #pragma endregion override
 

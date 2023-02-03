@@ -171,13 +171,13 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp" />
     <ClCompile Include="Engine\Window\Engine\EngineWindow.cpp" />
     <ClCompile Include="Engine\Component\Component.cpp" />
     <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
     <ClCompile Include="Test\Reflection\Json\JsonTest.cpp" />
     <ClCompile Include="Test\Component\PlayerComponent.cpp" />
     <ClCompile Include="Test\PrimaryType\List\ListTest.cpp" />
-    <ClCompile Include="Test\A.cpp" />
     <ClCompile Include="Engine\GameObject\GameObject.cpp" />
     <ClCompile Include="Engine\Reflection\Field\FieldInfo.cpp" />
     <ClCompile Include="Engine\Reflection\Function\MethodInfo\MethodInfo.cpp" />
@@ -201,6 +201,9 @@
     <ClCompile Include="Engine\PrimaryType\Vector\Vector2\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Reflection\Utils\ReflectionUtils.h" />
+    <ClInclude Include="Test\B.h" />
+    <ClInclude Include="Test\C.h" />
     <ClInclude Include="Engine\Time\Time.h" />
     <ClInclude Include="Engine\Window\Engine\EngineWindow.h" />
     <ClInclude Include="Engine\Component\Component.h" />
