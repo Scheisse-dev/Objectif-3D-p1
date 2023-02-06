@@ -5,6 +5,7 @@
 #include "../Reflection/Function/MethodInfo/MethodInfo.h"
 #include "../Reflection/Function/Parameter/ParameterInfo.h"
 #include "../Utils/Interface/Log/ILogger.h"
+#include "../Utils/ObjectMacro.h"
 #include <map>
 #include <format>
 
@@ -162,6 +163,6 @@ namespace Engine
 		return functions.size();
 	}
 
-
 }
+
 

@@ -62,6 +62,7 @@ namespace Engine::Event
 		{
 			return GetAdresse() == _other.GetAdresse();
 		}
+		template<typename Class>
 		PrimaryType::Boolean operator==(Res(Class::* ptr)(Params...))
 		{
 			return GetAdresse() == (void*&)ptr;
@@ -70,13 +71,13 @@ namespace Engine::Event
 		{
 			instance = _other.instance;
 			function = _other.function;
-			return *this
+			return *this;
 		}
 		Delegate& operator=(nullptr_t)
 		{
 			function = nullptr;
 			instance = nullptr;
-			return *this
+			return *this;
 		}
 		Res operator()(Params... _params)
 		{

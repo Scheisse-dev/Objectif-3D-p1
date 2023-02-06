@@ -1,13 +1,14 @@
 #include <iostream>
 
-#include "Engine/Window/Engine/EngineWindow.h"
-#include "Engine/Manager/GameObject/GameObjectManager.h"
-#include "Engine/GameObject/GameObject.h"
-#include "Test/Reflection/Json/JsonTest.h"
+#include "Engine/Object/Object.h"
+#include "Engine/Utils/DebugMacro.h"
+#include "Engine/Transform/Transform.h"
+#include <map>
 
 
 int main()
 {
-	Test::JsonTest test = Test::JsonTest();
-	test.JTest();
+
+	Engine::Transform* transform = dynamic_cast<Engine::Transform*>(TypeOfData::Types["Transform"]);
+	
 }

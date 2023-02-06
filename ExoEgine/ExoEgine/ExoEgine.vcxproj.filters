@@ -99,6 +99,12 @@
     <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Selection\Selection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Object\Object.h">
@@ -233,10 +239,23 @@
     <ClInclude Include="Engine\Reflection\Utils\ReflectionUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Selection\Selection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Utils\ObjectMacro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Assemby.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Reflection.ps1" />
     <None Include="ReflectionProperty.ps1" />
     <None Include="ReflectionFunction.ps1" />
+    <None Include="Assembly.ps1" />
   </ItemGroup>
 </Project>

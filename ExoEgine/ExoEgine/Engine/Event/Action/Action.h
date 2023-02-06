@@ -17,7 +17,7 @@ namespace Engine::Event
 			delegates.clear();
 		}
 		template<typename Class>
-		Action(Class* _instance, Res(Class::*ptr)(Params...)
+		Action(Class* _instance, Res(Class::*ptr)(Params...))
 		{
 			checkBaseOf(Object, Class)
 			delegates.push_back(Delegate<Res, Params...>(_instance, ptr));
@@ -28,13 +28,13 @@ namespace Engine::Event
 		void AddDynamic(Class* _instance, Res(Class::*ptr)(Params...))
 		{
 			checkBaseOf(Object, Class)
-				delegates.push_back(Delegate<Res, Params...>(instance, ptr));
+				delegates.push_back(Delegate<Res, Params...>(_instance, ptr));
 		}
 		template <typename Class>
 		void RemoveDynamic(Class* _instance, Res(Class::* ptr)(Params...))
 		{
 			checkBaseOf(Object, Class)
-			std::vector<Delegate<Res, Params...>>::iterator it = delegate.begin();
+			typename std::vector<Delegate<Res, Params...>>::iterator it = delegates.begin();
 			for (; it != delegates.end(); it++)
 			{
 				if (*it.GetAdresse() == (void*&)ptr && *it.Instance() == _instance)
@@ -48,15 +48,17 @@ namespace Engine::Event
 		{
 			if constexpr (std::is_same_v<Res, void>)
 			{
-				for (Delegate<Res, Params...> _delegate)
+				for (Delegate<Res, Params...> _delegate : delegates)
 					_delegate.Invoke(_params...);
 				return Res();
 			}
 			else
+			{
 				Res _result = Res();
-			for (Delegate<Res, Params...> _delegate : delegates)
-				_result = _delegate.Invoke(_params...);
-			return _result; 
+				for (Delegate<Res, Params...> _delegate : delegates)
+					_result = _delegate.Invoke(_params...);
+				return _result;
+			}
 		}
 
 #pragma endregion methods

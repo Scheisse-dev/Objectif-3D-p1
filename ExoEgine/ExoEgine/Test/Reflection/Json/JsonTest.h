@@ -6,7 +6,7 @@ namespace Test
 	class JsonTest
 	{
 	public:
-		virtual void JTest();
+		static void JTest();
 	};
 
 }
