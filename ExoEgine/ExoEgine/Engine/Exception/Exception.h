@@ -16,7 +16,6 @@ namespace Engine
 	public:
 		Exception(const std::source_location& _source = std::source_location::current()); 
 		Exception(const char* _error, const std::source_location& _source = std::source_location::current());
-		Exception(const Exception& _copy);
 #pragma endregion constructor
 #pragma region methods
 		PrimaryType::String Error() const;

@@ -19,9 +19,8 @@ namespace Engine::PrimaryType
 #pragma endregion f/p
 #pragma region constructor
 	public:
-		Float() = default;
+		Float();
 		Float(float _value);
-		Float(const Float& _copy);
 #pragma endregion constructor
 #pragma region methods
 	public:

@@ -23,7 +23,7 @@ namespace Engine::Window
 #pragma endregion f/p
 #pragma region constructor
     public:
-        Window() = delete;
+        Window() = default;
         Window(const char* _name, const int _width = 800, const int _height = 600)
         {
             name = _name;

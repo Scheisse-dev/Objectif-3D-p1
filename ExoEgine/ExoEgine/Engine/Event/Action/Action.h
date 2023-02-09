@@ -77,6 +77,12 @@ namespace Engine::Event
 	};
 }
 
+template<typename Res, typename... Params>
+Engine::Event::Action<Res, Params...>::Action(const Action& _copy)
+{
+	delegates = _copy.delegates;
+}
+
 template<typename... Params>
 using Action = Engine::Event::Action<void, Params...>;
 template<typename T, typename... Params>

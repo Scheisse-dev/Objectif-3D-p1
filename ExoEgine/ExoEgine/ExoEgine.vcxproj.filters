@@ -105,6 +105,15 @@
     <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\UI\Interactable\Slider\Slider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\UI\Interactable\TextField\TextField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\UI\Interactable\Toggle\Toggle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Object\Object.h">
@@ -248,7 +257,16 @@
     <ClInclude Include="Engine\Utils\ObjectMacro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Assemby.h">
+    <ClInclude Include="Assembly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\UI\Interactable\Slider\Slider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\UI\Interactable\TextField\TextField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\UI\Interactable\Toggle\Toggle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

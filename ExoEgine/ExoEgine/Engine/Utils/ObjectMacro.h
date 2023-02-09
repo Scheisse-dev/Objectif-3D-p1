@@ -1,7 +1,18 @@
 #pragma once
+#include <map>
 
+namespace Engine
+{
+	class Object;
+}
+
+namespace Test
+{
+}
 
 #define REGISTER_TYPE(type) const size_t Type##type = TypeOfData::Register(#type, new type());
+
+#define GET_TYPE(name) return TypeOfData::Types(name);
 
 struct TypeOfData
 {
@@ -15,17 +26,17 @@ struct TypeOfData
 	}
 };
 
-
 template<typename T>
 struct TypeOf
 {
-	
-	static T* GetType()
+
+	static T* GetType(T _type)
 	{
 		return nullptr;
 	}
 
 };
+
 
 #define Expose_TypeOf(type)\
 template<>\

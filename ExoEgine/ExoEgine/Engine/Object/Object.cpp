@@ -59,7 +59,7 @@ void Engine::Object::Serialize(std::ostream& _os, int _index)
     {
         
         _os <<std::string(_index, '\t');
-        if (i < 0)
+        //if (i < 0)
         if (_fields[i]->ReflectedObject() == nullptr) continue;
         if (_fields[i]->IsReflectedClass())
         {
@@ -80,8 +80,7 @@ void Engine::Object::DeSerialize(std::istream& _os)
     const size_t _length = _fields.size();
     for (size_t i = 0; i < _length; i++)
     {
-        _os.clear();
-        _os.seekg(0);
+
         if (_fields[i]->ReflectedObject() == nullptr) continue;
         if (_fields[i]->IsReflectedClass()) _fields[i]->ReflectedObject()->DeSerialize(_os);
         else _fields[i]->ReflectedObject()->DeSerializeField(_os, _fields[i]->Name());

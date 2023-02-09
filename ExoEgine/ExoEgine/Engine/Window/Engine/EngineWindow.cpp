@@ -5,6 +5,10 @@
 Engine::Window::EngineWindow::EngineWindow() : super("Engine", 1920, 1080)
 {
 }
+Engine::Window::EngineWindow::EngineWindow(const EngineWindow& _copy)
+    :Window<EngineWindow>(_copy.name, _copy.width, _copy.height)
+{
+}
 void Engine::Window::EngineWindow::Open()
 {
     super::Open();

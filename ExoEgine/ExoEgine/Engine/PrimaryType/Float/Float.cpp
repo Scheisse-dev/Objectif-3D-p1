@@ -12,6 +12,8 @@ const Engine::PrimaryType::Float Engine::PrimaryType::Float::NegativeInfinity = 
 const Engine::PrimaryType::Float Engine::PrimaryType::Float::NaN = 0.0f * PositiveInfinity;
 #pragma endregion f/p
 #pragma region constructor
+Engine::PrimaryType::Float::Float() = default;
+
 Engine::PrimaryType::Float::Float(float _value) : super()
 {
 	value = _value;

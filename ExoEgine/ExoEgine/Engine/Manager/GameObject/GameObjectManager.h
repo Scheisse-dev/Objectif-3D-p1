@@ -19,6 +19,11 @@ namespace Engine::Manager
     private:
         std::vector<GameObject*> gameobjects = std::vector<GameObject*>();
 #pragma region f/p
+#pragma region constructor
+    public:
+        GameObjectManager();
+        ~GameObjectManager();
+#pragma endregion constructor
 #pragma region methods
     public:
         void Register(GameObject* _object);

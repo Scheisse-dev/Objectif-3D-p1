@@ -21,18 +21,20 @@ namespace Engine
         DECLARE_CLASS_INFO(GameObject, Object)
 #pragma region f/p
     private:
-        PrimaryType::List<Component*> components = PrimaryType::List<Component*>();
+        UPROPERTY() PrimaryType::List<Component*> components = PrimaryType::List<Component*>();
+REGISTER_FIELD(components, &components, BindingFlags::NoPublic)
     protected:
-        sf::Shape* shape = nullptr;
+        UPROPERTY() sf::Shape* shape = nullptr;
+REGISTER_FIELD(shape, shape, BindingFlags::NoPublic)
     public:
-        PrimaryType::String name = "";
+        UPROPERTY() PrimaryType::String name = "";
+REGISTER_FIELD(name, &name, BindingFlags::Public)
         Transform* transform = new Transform();
 #pragma endregion f/p
 #pragma region constructor/destructor
     public:
         GameObject() = default;
         GameObject(const PrimaryType::String& _name);
-        GameObject(const GameObject& _copy);
         ~GameObject() override;
 #pragma endregion constructor/destructor
 #pragma region methods
@@ -47,6 +49,8 @@ namespace Engine
         T* AddComponent();
         template<typename T>
         T* GetComponent() const;
+
+        void OnDeserializeFinish() override; 
 #pragma endregion methods
 #pragma region operator
     public:

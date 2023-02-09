@@ -7,6 +7,7 @@
 #include "../Manager/GameObject/GameObjectManager.h"
 
 #pragma region constructor/destructor
+
 Engine::GameObject::GameObject(const PrimaryType::String& _name) : super()
 {
     name = _name;
@@ -69,6 +70,11 @@ void Engine::GameObject::Draw(const Window::EngineWindow* _window) const
 }
 #pragma endregion methods
 #pragma region operator
+void Engine::GameObject::OnDeserializeFinish()
+{
+    for (Component*& _coponent : components)
+        _coponent->gameobject = this;
+}
 Engine::GameObject& Engine::GameObject::operator=(const GameObject& _other)
 {
     name = _other.name;

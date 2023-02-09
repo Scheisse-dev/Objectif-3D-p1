@@ -7,20 +7,27 @@
 #include "../../Engine/PrimaryType/Boolean/Boolean.h"
 #include "../../Engine/PrimaryType/Vector/Vector2/Vector2.h"
 #include "../../Engine/PrimaryType/List/List.h"
+#include "../../Engine/Transform/Transform.h"
+#include "../../Engine/Component/Component.h"
 #include "B.h"
 
 UCLASS()
 class A : public Engine::Object
 {
 public:
-	UPROPERTY() Engine::PrimaryType::Integer age = 50;
-REGISTER_FIELD(age, &age, BindingFlags::Public)
 
-UPROPERTY() Engine::PrimaryType::List<Engine::PrimaryType::String> names = { "je", "suis", "une", "loutre", "maritime" };
-REGISTER_FIELD(names, &names, BindingFlags::Public)
+	
+	
 
-UPROPERTY() Engine::PrimaryType::List<B*> blist = { new B(), new B(), new B() };
-REGISTER_FIELD(blist, &blist, BindingFlags::Public)
+	UPROPERTY() Engine::PrimaryType::List<Engine::PrimaryType::Integer> coucou = {5 , 1 , 6};
+REGISTER_FIELD(coucou, &coucou, BindingFlags::Public)
+	
+	UPROPERTY() Engine::PrimaryType::List<Engine::Component> list = {  };
+REGISTER_FIELD(list, &list, BindingFlags::Public)
+
+	
+
+
 //
 //Engine::PrimaryType::String ToString() const override
 //{

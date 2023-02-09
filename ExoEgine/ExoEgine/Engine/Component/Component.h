@@ -14,18 +14,17 @@ namespace Engine
 		public:
 		UPROPERTY() PrimaryType::Boolean enable = true;
 REGISTER_FIELD(enable, &enable, BindingFlags::Public)
-		UPROPERTY() GameObject* gameobject = nullptr;
-REGISTER_FIELD(gameobject, gameobject, BindingFlags::Public)
+		GameObject* gameobject = nullptr;
 #pragma endregion f/p
 #pragma region constructor/destructor
 	public:
 		Component() = default;
-		Component(const Component&) = default; 
 		~Component() override = default;
 #pragma endregion constructor/destructor
 #pragma region operator
 	public:
 		Object& operator=(const Object* _obj) override;
+		Component& operator=(const Component& _cop);
 
 #pragma endregion operator
 	};

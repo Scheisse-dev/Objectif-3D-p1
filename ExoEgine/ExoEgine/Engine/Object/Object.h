@@ -14,26 +14,38 @@
 
 #pragma region define
 
-	
+
 
 #define UFUNCTION(...)
 #define UPROPERTY(...)
 #define UCLASS(...)
 
 
-#define REGISTER_FIELD(name, field, flags) const size_t field##name = InsertField(#name,(Object*)field, flags);
-#define REGISTER_METHOD(name, method, params, flags) const size_t Method##name = InsertMethod(#name, method, params, flags);
+#define DECLARE_CLONE(TClass) \
+    public:\
+		TClass(const TClass& _copy);\
+        Object* Clone() override\
+        {\
+            return new TClass(*this);\
+        }
 
 #define DECLARE_CLASS_INFO_FLAGS(current, parent, flags) \
 	public:\
+		DECLARE_CLONE(current);\
 		typedef current self;\
 		typedef parent super;\
 		const int flagsInfo = RegisterClassInfo((int)flags);
 
 #define DECLARE_CLASS_INFO(current, parent) \
 	public:\
+		DECLARE_CLONE(current);\
 		typedef current self;\
 		typedef parent super;
+
+#define REGISTER_FIELD(name, field, flags) const size_t field##name = InsertField(#name,(Object*)field, flags);
+#define REGISTER_METHOD(name, method, params, flags) const size_t Method##name = InsertMethod(#name, method, params, flags);
+
+
 
 #pragma endregion define
 
@@ -77,12 +89,16 @@ namespace Engine
 		void SetValue(const Object* _obj);
 		template <typename T>
 		void SetFieldValue(const std::string& _name, T* _value);
-
 		virtual void Serialize(std::ostream& _os, int _index = 1);
 		virtual void DeSerialize(std::istream& _os);
 		virtual void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index);
 		virtual void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName);
+		virtual void OnDeserializeFinish() {}
 
+		virtual Object* Clone()
+		{
+			return new Object(*this);
+		}
 
 
 
@@ -164,5 +180,4 @@ namespace Engine
 	}
 
 }
-
 

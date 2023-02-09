@@ -2,6 +2,8 @@
 #include "../Utils/DebugMacro.h"
 
 #pragma region operator
+Engine::Component::Component(const Component&) = default;
+
 Engine::Object& Engine::Component::operator=(const Object* _obj)
 {
 	const Component* _other = dynamic_cast<const Component*>(_obj);
@@ -9,6 +11,11 @@ Engine::Object& Engine::Component::operator=(const Object* _obj)
 	super::operator=(_obj);
 	enable = _other->enable;
 	gameobject = _other->gameobject;
+	return *this;
+}
+Engine::Component& Engine::Component::operator=(const Engine::Component& _cop)
+{
+
 	return *this;
 }
 #pragma endregion operator

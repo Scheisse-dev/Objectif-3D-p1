@@ -19,7 +19,6 @@ REGISTER_FIELD(x, &x, BindingFlags::NoPublic)
 #pragma region constructor
 	public:
 		Vector2() = default;
-		Vector2(const Vector2&) = default;
 		Vector2(float _x, float _y);
 #pragma endregion constructor
 #pragma region methods

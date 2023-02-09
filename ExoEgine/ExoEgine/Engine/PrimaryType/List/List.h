@@ -1,13 +1,14 @@
 #pragma once
 #include "IList.h"
-#include "../ValueType/ValueType.h"
 #include "../../Utils/Template/Template.h"
 #include "../Integer/Integer.h"
 #include "../../Utils/DebugMacro.h"
 #include "../../Utils/CoreDefine.h"
 #include "../../Utils/Template/Pointer.h"
+#include "../String/String.h"
 
-#define GET_NAME(name) #name;
+#include <iostream>
+
 
 namespace Engine::PrimaryType
 {
@@ -25,7 +26,6 @@ namespace Engine::PrimaryType
 	public:
 		List() = default;
 		List(List&&) = default;
-		List(const List&) = default;
 		List(const std::initializer_list<InElementType>& _tab)
 		{
 			for (const InElementType& _item : _tab)
@@ -84,22 +84,25 @@ namespace Engine::PrimaryType
 	public:
 		void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index) override
 		{
-			if (String::IsNullOrEmpty(_fieldName))
-				_os << "[\n";
-			else
-				_os << "\"" << std::string(_fieldName.ToCstr()) << "\" : ";
-
-			if constexpr (IsPointer<InElementType>::Value)
-			{
-				_os << "\"" << data[0]->ClassName().ToCstr() << "\"";
-			}
-			else
-			{
-				_os << "\"" << data[0].ClassName().ToCstr() << "\"";
-			}
-			_os << "[\n";
-
 			const size_t _size = data.size();
+
+			if (_size > 0)
+			{
+				if (String::IsNullOrEmpty(_fieldName))
+					_os << "[\n";
+				else
+					_os << "\"" << std::string(_fieldName.ToCstr()) << "\" : ";
+
+
+				if constexpr (IsPointer<InElementType>::Value)
+				{
+					_os << "\"" << data[0]->ClassName().ToCstr() << "\"";
+				}
+				else
+				{
+					_os << "\"" << data[0].ClassName().ToCstr() << "\"";
+				}
+				_os << "[\n";
 			for (size_t i = 0; i < _size; i++)
 			{
 				_os << std::string(_index, '\t') << "\t\t";
@@ -124,6 +127,7 @@ namespace Engine::PrimaryType
 				_os << "\n";
 			}
 			_os << std::string(_index, '\t') << "]";
+			}
 
 		}
 		void DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName) override
@@ -131,58 +135,40 @@ namespace Engine::PrimaryType
 			std::string _line;
 			bool _isStarted = false;
 			std::vector<InElementType> _result = std::vector<InElementType>();
-			size_t _index = 0;
+			size_t _index = -1;
 			typedef typename RemovePointer<InElementType>::Type TypeNoPointer;
-
 			TypeNoPointer _element = TypeNoPointer();
 
 			while (std::getline(_is, _line))
 			{
-
 				if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
 				{
 					_isStarted = true;
-					_index = _is.tellg();
-					++_index;
 				}
-				if (_isStarted)
+				else if (_line.find("],") != std::string::npos) break;
+				else if (_isStarted && _line.find('}') == std::string::npos)
 				{
-
-					if (_element.IsClass())
-					{
-						if (_line.find('}') != std::string::npos && _line.find(',') == std::string::npos) break;
-
-					}
-					else if (_line.find(']') != std::string::npos) break;
-
-					_is.clear();
-					_is.seekg(_index);
+					std::cout << _line << std::endl;
+					if (_index != -1) _is.seekg(_index);
+					String _className = _line.c_str();
+					_className = _className.SubString(_className.FindFirstOf('\"'), _className.FindFirstOf(':'));
+					_className = _className.Replace("\"", "").Trim();
+					Object* _classType = TypeOfData::Types[_className.ToCstr()];
+					Object* _data = _classType ? _classType->Clone() : new TypeNoPointer();
+					if (_data->IsClass()) _data->DeSerialize(_is);
+					else _data->DeSerializeField(_is, "");
 					if constexpr (IsPointer<InElementType>::Value)
 					{
-
-						InElementType _elementToAdd = new typename RemovePointer<InElementType>::Type();
-						if (_elementToAdd->IsClass())
-							_elementToAdd->DeSerialize(_is);
-						else
-							_elementToAdd->DeSerializeField(_is, "");
-						_result.push_back(_elementToAdd);
+						_result.push_back(dynamic_cast<InElementType>(_data));
 					}
 					else
 					{
-						InElementType _elementToAdd = InElementType();
-						if (_elementToAdd.IsClass())
-							_elementToAdd.DeSerialize(_is);
-						else
-							_elementToAdd.DeSerializeField(_is, "");
-						_result.push_back(_elementToAdd);
+						_result.push_back(*dynamic_cast<InElementType*>(_data));
 					}
 					_index = _is.tellg();
-
 				}
 			}
 			*this = _result;
-
-
 		}
 #pragma endregion override
 #pragma region operator
@@ -202,4 +188,10 @@ namespace Engine::PrimaryType
 #pragma endregion operator
 	};
 
+}
+
+template<typename InElementType, typename InSizeType>
+Engine::PrimaryType::List<InElementType, InSizeType>::List(const List& _copy)
+{
+	data = _copy.data;
 }

@@ -10,6 +10,7 @@ Engine::Reflection::FieldInfo::FieldInfo(PrimaryType::String _name, Object* _ref
 
 }
 
+Engine::Reflection::FieldInfo::FieldInfo(const FieldInfo& _copy) = default;
 
 #pragma endregion constructor
 #pragma region methods

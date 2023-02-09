@@ -2,6 +2,16 @@
 #include "../../GameObject/GameObject.h"
 
 
+
+
+Engine::Manager::GameObjectManager::GameObjectManager() = default;
+
+Engine::Manager::GameObjectManager::GameObjectManager(const GameObjectManager& _copy) = default;
+
+
+Engine::Manager::GameObjectManager::~GameObjectManager() = default;
+
+
 void Engine::Manager::GameObjectManager::Register(GameObject* _obj)
 {
 	gameobjects.push_back(_obj);

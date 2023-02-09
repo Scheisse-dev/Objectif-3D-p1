@@ -10,6 +10,10 @@ Engine::PrimaryType::Vector2::Vector2(float _x, float _y)
 	x = _x;
 	y = _y;
 }
+
+Engine::PrimaryType::Vector2::Vector2(const Vector2&) = default;
+
+
 Engine::PrimaryType::Vector2 Engine::PrimaryType::Vector2::MoveTowards(const Vector2& _current, const Vector2& _target, float _dt)
 {
 	const float _x = _target.x - _current.x;

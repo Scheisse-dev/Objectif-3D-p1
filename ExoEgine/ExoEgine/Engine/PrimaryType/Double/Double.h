@@ -20,7 +20,6 @@ namespace Engine::PrimaryType
 #pragma region constructor
 		Double() = default; 
 		Double(double _value);
-		Double(const Double& _copy);
 	public:
 		static Double Parse(const String& _str);
 		static class Boolean TryParse(const String& _str,Double& _output); 

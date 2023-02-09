@@ -1,52 +1,8 @@
 "A" : {
-	"age" : "50",
-	"blist" : "B"[
-			"B" : {
-		"toast" : "Integer"[
-					"7",
-					"8",
-					"9",
-					"10"
-			]	
-},
-			"B" : {
-		"toast" : "Integer"[
-					"7",
-					"8",
-					"9",
-					"10"
-			]	
-},
-			"B" : {
-		"toast" : "Integer"[
-					"7",
-					"8",
-					"9",
-					"10"
-			]	
-}
-	],
-	"names" : "String"[
-			"je",
-			"suis",
-			"une",
-			"loutre",
-			"maritime"
-	]
-}"C" : {
-	"B" : {
-		"toast" : "Integer"[
-					"7",
-					"8",
-					"9",
-					"10"
-			]	
-},
-	"test" : "Integer"[
+	"coucou" : "Integer"[
+			"5",
 			"1",
-			"2",
-			"3",
-			"4",
-			"5"
-	]
+			"6"
+	],
+	
 }
