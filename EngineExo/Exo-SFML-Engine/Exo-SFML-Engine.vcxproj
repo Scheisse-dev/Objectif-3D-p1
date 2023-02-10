@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{40a14920-3895-4aa6-9d77-7ed5e47a97ff}</ProjectGuid>
+    <RootNamespace>ExoSFMLEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>D:\GitHub\Objectif-3D-p1\EngineExo\SFML-2.5.1\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\GitHub\Objectif-3D-p1\EngineExo\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Register.ps1 -path $(ProjectDir)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>D:\GitHub\Objectif-3D-p1\EngineExo\SFML-2.5.1\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\GitHub\Objectif-3D-p1\EngineExo\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Register.ps1 -path $(ProjectDir)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>D:\GitHub\Objectif-3D-p1\EngineExo\SFML-2.5.1\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\GitHub\Objectif-3D-p1\EngineExo\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Register.ps1 -path $(ProjectDir)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>D:\GitHub\Objectif-3D-p1\EngineExo\SFML-2.5.1\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\GitHub\Objectif-3D-p1\EngineExo\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Register.ps1 -path $(ProjectDir)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp" />
+    <ClCompile Include="Engine\Manager\UIElement\UIElementManager.cpp" />
+    <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp" />
+    <ClCompile Include="Engine\UI\UIElement.cpp" />
+    <ClCompile Include="Engine\Window\Engine\EngineWindow.cpp" />
+    <ClCompile Include="Engine\Component\Component.cpp" />
+    <ClCompile Include="Engine\GameObject\GameObject.cpp" />
+    <ClCompile Include="Engine\Reflection\Fields\FieldsInfo.cpp" />
+    <ClCompile Include="Engine\Reflection\Function\Methods\MethodsInfo.cpp" />
+    <ClCompile Include="Engine\Reflection\Function\ParameterInfo\ParameterInfo.cpp" />
+    <ClCompile Include="Engine\Reflection\Function\Function.cpp" />
+    <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
+    <ClCompile Include="Engine\Selection\Selection.cpp" />
+    <ClCompile Include="Engine\UI\Shape\UI_Shape.cpp" />
+    <ClCompile Include="Test\Component\PlayerComponent.cpp" />
+    <ClCompile Include="Test\PrimaryType\List\ListTest.cpp" />
+    <ClCompile Include="Test\Reflexion\Json\JsonTest.cpp" />
+    <ClCompile Include="Test\Reflexion\ReflexionTest.cpp" />
+    <ClCompile Include="Test\PrimaryType\DoubleTest\DoubleTest.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Double\Double.cpp" />
+    <ClCompile Include="Engine\Utils\Console\Console.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Boolean\Boolean.cpp" />
+    <ClCompile Include="Engine\Exception\Exception.cpp" />
+    <ClCompile Include="Exo-SFML-Engine.cpp" />
+    <ClCompile Include="Engine\Object\Object.cpp" />
+    <ClCompile Include="Engine\PrimaryType\ValueType\ValueType.cpp" />
+    <ClCompile Include="Engine\PrimaryType\String\String.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Integer\Integer.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Float\Float.cpp" />
+    <ClCompile Include="Test\PrimaryType\FloatTest\FloatTest.cpp" />
+    <ClCompile Include="Test\PrimaryType\Integer\IntegerTest.cpp" />
+    <ClCompile Include="Engine\Transform\Transform.cpp" />
+    <ClCompile Include="Engine\PrimaryType\Vector2\Vector2.cpp" />
+    <ClCompile Include="Engine\UI\Label\UI_Label.cpp" />
+    <ClCompile Include="Engine\UI\Radio\UI_Radio.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h" />
+    <ClInclude Include="Engine\Object\Clone.h" />
+    <ClInclude Include="Engine\Reflection\Utils\ReflectionUtils.h" />
+    <ClInclude Include="Engine\Utils\ObjectMacro.h" />
+    <ClInclude Include="Engine\Window\Engine\EngineWindow.h" />
+    <ClInclude Include="Engine\Component\Component.h" />
+    <ClInclude Include="Engine\Event\Action\ActionInternal.h" />
+    <ClInclude Include="Engine\Event\Delegate\Delegate.h" />
+    <ClInclude Include="Engine\PrimaryType\List\IList.h" />
+    <ClInclude Include="Engine\PrimaryType\List\List.h" />
+    <ClInclude Include="Engine\Reflection\Flags\BindingFlags.h" />
+    <ClInclude Include="Engine\Reflection\Function\ParameterInfo\ParameterInfo.h" />
+    <ClInclude Include="Engine\Utils\CoreDefine.h" />
+    <ClInclude Include="Engine\Utils\Interface\Log\ILogger.h" />
+    <ClInclude Include="Engine\Utils\Singleton\Singleton.h" />
+    <ClInclude Include="Engine\Utils\Template\Pointer.h" />
+    <ClInclude Include="Engine\Utils\Template\Template.h" />
+    <ClInclude Include="Engine\GameObject\GameObject.h" />
+    <ClInclude Include="Engine\Reflection\Fields\FieldsInfo.h" />
+    <ClInclude Include="Engine\Reflection\Function\Methods\MethodsInfo.h" />
+    <ClInclude Include="Engine\Reflection\Function\Function.h" />
+    <ClInclude Include="Engine\Manager\GameObject\GameObjectManager.h" />
+    <ClInclude Include="Engine\Window\Window.h" />
+    <ClInclude Include="Engine\Selection\Selection.h" />
+    <ClInclude Include="Engine\UI\Shape\UI_Shape.h" />
+    <ClInclude Include="Test\A.h" />
+    <ClInclude Include="Assemblie.h" />
+    <ClInclude Include="Test\Reflexion\Json\JsonTest.h" />
+    <ClInclude Include="Test\Component\PlayerComponent.h" />
+    <ClInclude Include="Test\PrimaryType\List\ListTest.h" />
+    <ClInclude Include="Test\Reflexion\ReflexionTest.h" />
+    <ClInclude Include="Test\PrimaryType\DoubleTest\DoubleTest.h" />
+    <ClInclude Include="Engine\PrimaryType\Double\Double.h" />
+    <ClInclude Include="Engine\Utils\Console\Console.h" />
+    <ClInclude Include="Engine\PrimaryType\Boolean\Boolean.h" />
+    <ClInclude Include="Engine\Object\Object.h" />
+    <ClInclude Include="Engine\PrimaryType\Enum\Enum.h" />
+    <ClInclude Include="Engine\PrimaryType\ValueType\ValueType.h" />
+    <ClInclude Include="Engine\PrimaryType\String\String.h" />
+    <ClInclude Include="Engine\PrimaryType\Integer\Integer.h" />
+    <ClInclude Include="Engine\Exception\Exception.h" />
+    <ClInclude Include="Engine\Utils\DebugMacro.h" />
+    <ClInclude Include="Engine\PrimaryType\Float\Float.h" />
+    <ClInclude Include="Test\PrimaryType\FloatTest\FloatTest.h" />
+    <ClInclude Include="Test\PrimaryType\Integer\IntegerTest.h" />
+    <ClInclude Include="Engine\Transform\Transform.h" />
+    <ClInclude Include="Engine\PrimaryType\Vector2\Vector2.h" />
+    <ClInclude Include="Engine\Time\Time.h" />
+    <ClInclude Include="Engine\UI\UIElement.h" />
+    <ClInclude Include="Engine\UI\Label\UI_Label.h" />
+    <ClInclude Include="Engine\UI\Radio\UI_Radio.h" />
+    <ClInclude Include="Engine\Manager\UIElement\UIElementManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="a.asset" />
+    <None Include="Assemblie.ps1" />
+    <None Include="Register.ps1" />
+    <None Include="RegisterMethod.ps1" />
+    <None Include="RegisterProperty.ps1" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
