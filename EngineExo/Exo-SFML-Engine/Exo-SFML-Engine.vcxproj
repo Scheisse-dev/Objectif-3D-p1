@@ -156,9 +156,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp" />
-    <ClCompile Include="Engine\Manager\UIElement\UIElementManager.cpp" />
     <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp" />
-    <ClCompile Include="Engine\UI\UIElement.cpp" />
+    <ClCompile Include="Engine\UI\Button\Button.cpp" />
+    <ClCompile Include="Engine\UI\Element\UIElement.cpp" />
     <ClCompile Include="Engine\Window\Engine\EngineWindow.cpp" />
     <ClCompile Include="Engine\Component\Component.cpp" />
     <ClCompile Include="Engine\GameObject\GameObject.cpp" />
@@ -168,7 +168,10 @@
     <ClCompile Include="Engine\Reflection\Function\Function.cpp" />
     <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
     <ClCompile Include="Engine\Selection\Selection.cpp" />
-    <ClCompile Include="Engine\UI\Shape\UI_Shape.cpp" />
+    <ClCompile Include="Engine\UI\Slider\Slider.cpp" />
+    <ClCompile Include="Engine\UI\Label\Label.cpp" />
+    <ClCompile Include="Engine\Manager\FontManager.cpp" />
+    <ClCompile Include="Engine\Manager\EventSystem\EventSystem.cpp" />
     <ClCompile Include="Test\Component\PlayerComponent.cpp" />
     <ClCompile Include="Test\PrimaryType\List\ListTest.cpp" />
     <ClCompile Include="Test\Reflexion\Json\JsonTest.cpp" />
@@ -188,13 +191,19 @@
     <ClCompile Include="Test\PrimaryType\Integer\IntegerTest.cpp" />
     <ClCompile Include="Engine\Transform\Transform.cpp" />
     <ClCompile Include="Engine\PrimaryType\Vector2\Vector2.cpp" />
-    <ClCompile Include="Engine\UI\Label\UI_Label.cpp" />
-    <ClCompile Include="Engine\UI\Radio\UI_Radio.cpp" />
+    <ClCompile Include="Engine\UI\TextField\TextField.cpp" />
+    <ClCompile Include="Engine\UI\Toggle\Toggle.cpp" />
+    <ClCompile Include="Engine\Manager\Texture\TextureManager.cpp" />
+    <ClCompile Include="Test\Z.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\UI\Button\Button.h" />
     <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h" />
     <ClInclude Include="Engine\Object\Clone.h" />
     <ClInclude Include="Engine\Reflection\Utils\ReflectionUtils.h" />
+    <ClInclude Include="Engine\UI\Interface\IPointerExitHandler.h" />
+    <ClInclude Include="Engine\UI\Interface\IPointerMoveHandler.h" />
+    <ClInclude Include="Engine\UI\Interface\ITextEntered.h" />
     <ClInclude Include="Engine\Utils\ObjectMacro.h" />
     <ClInclude Include="Engine\Window\Engine\EngineWindow.h" />
     <ClInclude Include="Engine\Component\Component.h" />
@@ -216,7 +225,12 @@
     <ClInclude Include="Engine\Manager\GameObject\GameObjectManager.h" />
     <ClInclude Include="Engine\Window\Window.h" />
     <ClInclude Include="Engine\Selection\Selection.h" />
-    <ClInclude Include="Engine\UI\Shape\UI_Shape.h" />
+    <ClInclude Include="Engine\UI\Slider\Slider.h" />
+    <ClInclude Include="Engine\UI\Label\Label.h" />
+    <ClInclude Include="Engine\Manager\FontManager.h" />
+    <ClInclude Include="Engine\UI\Interface\IPointerClickHandler.h" />
+    <ClInclude Include="Engine\UI\Interface\IPointerEnterHandler.h" />
+    <ClInclude Include="Engine\Manager\EventSystem\EventSystem.h" />
     <ClInclude Include="Test\A.h" />
     <ClInclude Include="Assemblie.h" />
     <ClInclude Include="Test\Reflexion\Json\JsonTest.h" />
@@ -240,10 +254,11 @@
     <ClInclude Include="Engine\Transform\Transform.h" />
     <ClInclude Include="Engine\PrimaryType\Vector2\Vector2.h" />
     <ClInclude Include="Engine\Time\Time.h" />
-    <ClInclude Include="Engine\UI\UIElement.h" />
-    <ClInclude Include="Engine\UI\Label\UI_Label.h" />
-    <ClInclude Include="Engine\UI\Radio\UI_Radio.h" />
-    <ClInclude Include="Engine\Manager\UIElement\UIElementManager.h" />
+    <ClInclude Include="Engine\UI\Element\UIElement.h" />
+    <ClInclude Include="Engine\UI\TextField\TextField.h" />
+    <ClInclude Include="Engine\UI\Toggle\Toggle.h" />
+    <ClInclude Include="Engine\Manager\Texture\TextureManager.h" />
+    <ClInclude Include="Test\Z.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />

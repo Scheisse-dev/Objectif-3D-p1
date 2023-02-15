@@ -1,17 +1,5 @@
-"A" : {
-	"boolean" : "true",
-	"doubl" : "3.140000",
-	"floate" : "6.900000",
-	"integer" : "42",
-	"list" : [
-			"Transform" : {
-		"enabled" : "true",
-		"position" : "(0, 0)"
-	},
-			"PlayerComponent" : {
-		"enabled" : "true"
-	}
-	],
-	"str" : "string",
-	"vector" : "(0, 0)"
+"Z" : {
+	"ball" : "false",
+	"pint" : "1",
+	"strong" : "string"
 }

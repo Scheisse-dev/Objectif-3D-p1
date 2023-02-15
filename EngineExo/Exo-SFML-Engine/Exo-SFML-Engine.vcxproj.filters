@@ -105,19 +105,34 @@
     <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\UI\UIElement.cpp">
+    <ClCompile Include="Engine\UI\Element\UIElement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\UI\Label\UI_Label.cpp">
+    <ClCompile Include="Engine\UI\Button\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\UI\Shape\UI_Shape.cpp">
+    <ClCompile Include="Engine\UI\Slider\Slider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\UI\Radio\UI_Radio.cpp">
+    <ClCompile Include="Engine\UI\Label\Label.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Manager\UIElement\UIElementManager.cpp">
+    <ClCompile Include="Engine\UI\TextField\TextField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\FontManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\EventSystem\EventSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\UI\Toggle\Toggle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Manager\Texture\TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\Z.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -263,19 +278,49 @@
     <ClInclude Include="Engine\Object\Clone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\UI\UIElement.h">
+    <ClInclude Include="Engine\UI\Element\UIElement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\UI\Label\UI_Label.h">
+    <ClInclude Include="Engine\UI\Button\Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\UI\Shape\UI_Shape.h">
+    <ClInclude Include="Engine\UI\Slider\Slider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\UI\Radio\UI_Radio.h">
+    <ClInclude Include="Engine\UI\Label\Label.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Manager\UIElement\UIElementManager.h">
+    <ClInclude Include="Engine\UI\TextField\TextField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\FontManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\UI\Interface\IPointerClickHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\UI\Interface\IPointerEnterHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\UI\Interface\IPointerExitHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\EventSystem\EventSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\UI\Toggle\Toggle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Manager\Texture\TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\UI\Interface\IPointerMoveHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\UI\Interface\ITextEntered.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\Z.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
