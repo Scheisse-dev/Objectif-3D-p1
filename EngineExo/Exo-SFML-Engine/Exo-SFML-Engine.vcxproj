@@ -172,6 +172,7 @@
     <ClCompile Include="Engine\UI\Label\Label.cpp" />
     <ClCompile Include="Engine\Manager\FontManager.cpp" />
     <ClCompile Include="Engine\Manager\EventSystem\EventSystem.cpp" />
+    <ClCompile Include="Engine\UI\Menu\Menu.cpp" />
     <ClCompile Include="Test\Component\PlayerComponent.cpp" />
     <ClCompile Include="Test\PrimaryType\List\ListTest.cpp" />
     <ClCompile Include="Test\Reflexion\Json\JsonTest.cpp" />
@@ -231,6 +232,7 @@
     <ClInclude Include="Engine\UI\Interface\IPointerClickHandler.h" />
     <ClInclude Include="Engine\UI\Interface\IPointerEnterHandler.h" />
     <ClInclude Include="Engine\Manager\EventSystem\EventSystem.h" />
+    <ClInclude Include="Engine\UI\Menu\Menu.h" />
     <ClInclude Include="Test\A.h" />
     <ClInclude Include="Assemblie.h" />
     <ClInclude Include="Test\Reflexion\Json\JsonTest.h" />

@@ -9,7 +9,7 @@ Engine::UI::Button::Button(const std::string& _text, float _width, float _height
     shape = new sf::RectangleShape(sf::Vector2f(width, height));
     shape->setFillColor(baseColor);
     text.setString(_text);
-    text.setFont(*Manager::FontManager::Instance()->GetFont("Duck"));
+    text.setFont(*Manager::FontManager::Instance()->GetFont("Arial"));
     text.setCharacterSize(25);
     text.setOrigin(shape->getOrigin());
     text.setFillColor(sf::Color::Black);
