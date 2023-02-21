@@ -337,5 +337,6 @@
     <None Include="Register.ps1" />
     <None Include="a.asset" />
     <None Include="Assemblie.ps1" />
+    <None Include="b.asset" />
   </ItemGroup>
 </Project>

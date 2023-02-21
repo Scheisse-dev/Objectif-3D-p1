@@ -76,6 +76,10 @@ void Engine::UI::Slider::Setmax(float _max)
 {
     maxValue = _max;
 }
+float Engine::UI::Slider::GetValue()
+{
+    return currentValue;
+}
 #pragma endregion methods
 #pragma region override
 void Engine::UI::Slider::Draw(sf::RenderWindow* _window)
@@ -102,42 +106,6 @@ void Engine::UI::Slider::OnPointerMove(float _x, float _y)
 }
 
 #pragma endregion override
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

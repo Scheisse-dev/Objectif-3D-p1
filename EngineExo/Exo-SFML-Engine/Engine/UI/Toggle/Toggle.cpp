@@ -24,6 +24,10 @@ Engine::UI::Toggle::Toggle(const Toggle& _copy) : super(_copy)
 }
 #pragma endregion
 #pragma region methods
+bool Engine::UI::Toggle::Status()
+{
+    return status;
+}
 void Engine::UI::Toggle::SetStatus(bool _status)
 {
     status = _status;

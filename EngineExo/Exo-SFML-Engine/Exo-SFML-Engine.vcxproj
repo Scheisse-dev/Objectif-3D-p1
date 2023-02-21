@@ -266,6 +266,7 @@
     <None Include=".editorconfig" />
     <None Include="a.asset" />
     <None Include="Assemblie.ps1" />
+    <None Include="b.asset" />
     <None Include="Register.ps1" />
     <None Include="RegisterMethod.ps1" />
     <None Include="RegisterProperty.ps1" />

@@ -10,12 +10,12 @@ void Engine::Reflection::ReflectionUtils::SerializePrimaryType(std::ostream& _os
         _os << std::string("\"") << _fieldName.ToString().ToCstr() << "\" : \"" << _obj->ToString() << "\"";
 }
 
-Engine::PrimaryType::String Engine::Reflection::ReflectionUtils::GetLine(std::istream& _is, const PrimaryType::String& _fieldName)
+Engine::PrimaryType::String Engine::Reflection::ReflectionUtils::GetLine(std::istream& _is, const Engine::PrimaryType::String& _fieldName)
 {
     std::string _line = "";
     while (std::getline(_is, _line))
     {
-        if (!PrimaryType::String::IsNullOrEmpty(_fieldName))
+        if (!Engine::PrimaryType::String::IsNullOrEmpty(_fieldName))
         {
             if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
             {

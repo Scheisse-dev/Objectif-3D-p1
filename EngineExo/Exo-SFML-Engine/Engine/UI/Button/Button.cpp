@@ -1,8 +1,9 @@
 #include "Button.h"
 #include "../../Manager/FontManager.h"
+#include "../../Manager/EventSystem/EventSystem.h"
 
 #pragma region const
-Engine::UI::Button::Button(const std::string& _text, float _width, float _height)
+Engine::UI::Button::Button(const std::string& _text, float _width, float _height) : super()
 {
     width = _width;
     height = _height;

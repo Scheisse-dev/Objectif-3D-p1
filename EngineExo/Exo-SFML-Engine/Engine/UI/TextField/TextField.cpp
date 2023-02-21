@@ -40,6 +40,10 @@ void Engine::UI::TextField::SetText(const char* _text)
     inputText = _text;
     text.setString(inputText);
 }
+std::string Engine::UI::TextField::GetText()
+{
+    return inputText;
+}
 #pragma endregion
 #pragma region override
 void Engine::UI::TextField::Draw(sf::RenderWindow* _window)

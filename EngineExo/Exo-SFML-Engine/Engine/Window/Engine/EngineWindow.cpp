@@ -11,11 +11,12 @@
 #include "../../PrimaryType/Vector2/Vector2.h"
 #include "../../UI/Slider/Slider.h"
 #include "../../UI/TextField/TextField.h"
-#include "../../UI/Menu/Menu.h"
+
 
 
 Engine::Window::EngineWindow::EngineWindow() : super("Engine", 1920, 1080) 
 {
+
 
 }
 
@@ -24,19 +25,15 @@ Engine::Window::EngineWindow::EngineWindow(const EngineWindow& _copy)
 
 void Engine::Window::EngineWindow::Test()
 {
-    LOG("Button CLick !");
+
 }
 
 void Engine::Window::EngineWindow::Open()
 {
-    
-    UI::Menu* menu = new UI::Menu();
-    //UI::Button* button = new UI::Button("Play", 400, 100);
-    //button->AddListener(this, &EngineWindow::Test);
-    //button->SetPosition(PrimaryType::Vector2(100, 50));
+
+    //UI::Toggle toggle = UI::Toggle();
+    //toggle.SetPosition(PrimaryType::Vector2(200, 100));
     super::Open();
-    //toggle = new UI::Toggle();
-    //toggle->SetPosition(PrimaryType::Vector2(200, 100));
     //UI::Slider* slider = new UI::Slider(0.f, 100.f, 0.f);
     //slider->SetPosition(sf::Vector2f(300, 300));
     //UI::TextField* textfield = new UI::TextField("Password", PrimaryType::Vector2(200, 40));
@@ -44,6 +41,7 @@ void Engine::Window::EngineWindow::Open()
 }
 void Engine::Window::EngineWindow::OnUpdate()
 {
+
     Time::deltaTime = clock.restart().asSeconds();
 
     Manager::GameObjectManager::Instance()->Update();
