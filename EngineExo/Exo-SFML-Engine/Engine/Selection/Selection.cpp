@@ -1,5 +1,7 @@
 #include "Selection.h"
 
+Engine::Selection::Selection(const Engine::Selection& _copy) = default;
+
 #pragma region methods
 void Engine::Selection::SetSelection(Object* _obj)
 {

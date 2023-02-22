@@ -22,6 +22,8 @@ REGISTER_TYPE(FieldsInfo)
 using namespace Test;
 #include "Test\A.h"
 REGISTER_TYPE(A)
+#include "Test\Z.h"
+REGISTER_TYPE(Z)
 #include "Test\Component\PlayerComponent.h"
 REGISTER_TYPE(PlayerComponent)
 

@@ -155,6 +155,10 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Editor\Editor.cpp" />
+    <ClCompile Include="Engine\UI\AssetButton\AssetButton.cpp" />
+    <ClCompile Include="Engine\Editor\Asset\AssetWindow.cpp" />
+    <ClCompile Include="Engine\Editor\Window\EditorWindow.cpp" />
     <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp" />
     <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp" />
     <ClCompile Include="Engine\UI\Button\Button.cpp" />
@@ -173,6 +177,8 @@
     <ClCompile Include="Engine\Manager\FontManager.cpp" />
     <ClCompile Include="Engine\Manager\EventSystem\EventSystem.cpp" />
     <ClCompile Include="Engine\UI\Menu\Menu.cpp" />
+    <ClCompile Include="Engine\IO\File.cpp" />
+    <ClCompile Include="Engine\Editor\Inspector\InspectorWindow.cpp" />
     <ClCompile Include="Test\Component\PlayerComponent.cpp" />
     <ClCompile Include="Test\PrimaryType\List\ListTest.cpp" />
     <ClCompile Include="Test\Reflexion\Json\JsonTest.cpp" />
@@ -198,6 +204,10 @@
     <ClCompile Include="Test\Z.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Editor\Editor.h" />
+    <ClInclude Include="Engine\UI\AssetButton\AssetButton.h" />
+    <ClInclude Include="Engine\Editor\Asset\AssetWindow.h" />
+    <ClInclude Include="Engine\Editor\Window\EditorWindow.h" />
     <ClInclude Include="Engine\UI\Button\Button.h" />
     <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h" />
     <ClInclude Include="Engine\Object\Clone.h" />
@@ -233,6 +243,8 @@
     <ClInclude Include="Engine\UI\Interface\IPointerEnterHandler.h" />
     <ClInclude Include="Engine\Manager\EventSystem\EventSystem.h" />
     <ClInclude Include="Engine\UI\Menu\Menu.h" />
+    <ClInclude Include="Engine\IO\File.h" />
+    <ClInclude Include="Engine\Editor\Inspector\InspectorWindow.h" />
     <ClInclude Include="Test\A.h" />
     <ClInclude Include="Assemblie.h" />
     <ClInclude Include="Test\Reflexion\Json\JsonTest.h" />
